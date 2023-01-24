@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+   @ObservedObject var viewModel = PersonListViewModel()
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ScrollView {
+            LazyVStack {
+                ForEach(viewModel.personList) { person in
+                   PersonCardView(person: person)
+                }
+            }
         }
-        .padding()
     }
 }
 
