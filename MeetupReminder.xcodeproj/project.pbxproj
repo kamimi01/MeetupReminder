@@ -17,6 +17,7 @@
 		D4C6D170298084EF00029E0B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D16F298084EF00029E0B /* Person.swift */; };
 		D4C6D172298085DF00029E0B /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D171298085DF00029E0B /* PersonListViewModel.swift */; };
 		D4C6D1742980867B00029E0B /* PersonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D1732980867B00029E0B /* PersonCardView.swift */; };
+		D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D1752980A70700029E0B /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		D4C6D16F298084EF00029E0B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		D4C6D171298085DF00029E0B /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
 		D4C6D1732980867B00029E0B /* PersonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCardView.swift; sourceTree = "<group>"; };
+		D4C6D1752980A70700029E0B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				D4C6D1732980867B00029E0B /* PersonCardView.swift */,
 				D4C6D171298085DF00029E0B /* PersonListViewModel.swift */,
 				D4C6D16F298084EF00029E0B /* Person.swift */,
+				D4C6D1752980A70700029E0B /* Color+Extension.swift */,
 				D4C6D149297F371100029E0B /* Assets.xcassets */,
 				D4C6D14B297F371100029E0B /* Preview Content */,
 			);
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4C6D170298084EF00029E0B /* Person.swift in Sources */,
+				D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */,
 				D4C6D148297F370F00029E0B /* ContentView.swift in Sources */,
 				D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */,
 				D4C6D1742980867B00029E0B /* PersonCardView.swift in Sources */,

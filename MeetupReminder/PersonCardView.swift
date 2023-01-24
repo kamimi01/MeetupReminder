@@ -21,7 +21,7 @@ struct PersonCardView: View {
                     VStack(alignment: .leading, spacing: 5) {
                         HStack {
                             Text(person.name)
-                                .foregroundColor(.black)
+                                .foregroundColor(.mainText)
                                 .font(.title)
                             Spacer()
                         }
@@ -36,7 +36,7 @@ struct PersonCardView: View {
         .padding()
         .frame(height: 150)
         .frame(maxWidth: .infinity)
-        .background(Color.green)
+        .background(Color.cardViewBlue)
         .cornerRadius(20)
     }
 }
@@ -78,7 +78,6 @@ private extension PersonCardView {
                 Image("twitter_icon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .clipShape(Circle())
                     .frame(maxWidth: 35, maxHeight: 35)
             }
             Button(action: {
