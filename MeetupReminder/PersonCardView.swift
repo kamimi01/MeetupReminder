@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PersonCardView: View {
     let person: Person
+    @Environment(\.openURL) var openURL
 
     var body: some View {
         Button(action: {
@@ -55,32 +56,42 @@ private extension PersonCardView {
     var contactList: some View {
         HStack(spacing: 10) {
             Spacer()
-            Button(action: {}) {
+            Button(action: {
+                openURL(URL(string: "https://line.me/R/")!)
+            }) {
                 Image("line_icon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 35, maxHeight: 35)
             }
-            Button(action: {}) {
+            Button(action: {
+                openURL(URL(string: "fb://")!)
+            }) {
                 Image("facebook_icon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 35, maxHeight: 35)
             }
-            Button(action: {}) {
+            Button(action: {
+                openURL(URL(string: "twitter://")!)
+            }) {
                 Image("twitter_icon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipShape(Circle())
                     .frame(maxWidth: 35, maxHeight: 35)
             }
-            Button(action: {}) {
+            Button(action: {
+                openURL(URL(string: "linkedin://")!)
+            }) {
                 Image("linkedin_icon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 35, maxHeight: 35)
             }
-            Button(action: {}) {
+            Button(action: {
+                openURL(URL(string: "slack://")!)
+            }) {
                 Image("slack_icon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
