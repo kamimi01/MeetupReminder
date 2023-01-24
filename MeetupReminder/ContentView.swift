@@ -12,9 +12,10 @@ struct ContentView: View {
 
     var body: some View {
         ScrollView {
-            LazyVStack {
+            LazyVStack(spacing: 15) {
                 ForEach(viewModel.personList) { person in
                    PersonCardView(person: person)
+                        .padding(.horizontal, 16)
                 }
             }
         }
