@@ -12,13 +12,17 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack(spacing: 15) {
-                    ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
-                       PersonCardView(person: person, cardColor: color(index: personIndex))
-                            .padding(.horizontal, 16)
+            ZStack {
+                ScrollView {
+                    LazyVStack(spacing: 15) {
+                        ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
+                           PersonCardView(person: person, cardColor: color(index: personIndex))
+                                .padding(.horizontal, 16)
+                        }
                     }
                 }
+                addButton
+                    .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 270)
             }
             .navigationTitle("ともだち")
             .navigationBarTitleDisplayMode(.inline)
@@ -27,6 +31,19 @@ struct ContentView: View {
 }
 
 private extension ContentView {
+    var addButton: some View {
+        Button(action: {}) {
+            Image(systemName: "plus")
+                .font(.title)
+                .frame(width: 90, height: 90)
+                .imageScale(.large)
+                .background(Color.orange)
+                .foregroundColor(.white)
+                .clipShape(Circle())
+                .shadow(color: .gray, radius: 3, x: 3, y: 3)
+        }
+    }
+
     // TODO: なんか間違っている気がするので後でみる
     func color(index: Int) -> Color {
         let orderOfCard = index + 1

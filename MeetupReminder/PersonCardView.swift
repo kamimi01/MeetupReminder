@@ -54,48 +54,58 @@ private extension PersonCardView {
         }
     }
 
-    var contactList: some View {
+    var contactList: some View { 
         HStack(spacing: 10) {
             Spacer()
-            Button(action: {
-                openURL(URL(string: "https://line.me/R/")!)
-            }) {
-                Image("line_icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 35, maxHeight: 35)
+            if person.canContactWithLINE {
+                Button(action: {
+                    openURL(URL(string: "https://line.me/R/")!)
+                }) {
+                    Image("line_icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 35, maxHeight: 35)
+                }
             }
-            Button(action: {
-                openURL(URL(string: "fb://")!)
-            }) {
-                Image("facebook_icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 35, maxHeight: 35)
+            if person.canContactWithFacebook {
+                Button(action: {
+                    openURL(URL(string: "fb://")!)
+                }) {
+                    Image("facebook_icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 35, maxHeight: 35)
+                }
             }
-            Button(action: {
-                openURL(URL(string: "twitter://")!)
-            }) {
-                Image("twitter_icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 35, maxHeight: 35)
+            if person.canContactWithTwitter {
+                Button(action: {
+                    openURL(URL(string: "twitter://")!)
+                }) {
+                    Image("twitter_icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 35, maxHeight: 35)
+                }
             }
-            Button(action: {
-                openURL(URL(string: "linkedin://")!)
-            }) {
-                Image("linkedin_icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 35, maxHeight: 35)
+            if person.canContactWithLinkedIn {
+                Button(action: {
+                    openURL(URL(string: "linkedin://")!)
+                }) {
+                    Image("linkedin_icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 35, maxHeight: 35)
+                }
             }
-            Button(action: {
-                openURL(URL(string: "slack://")!)
-            }) {
-                Image("slack_icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 35, maxHeight: 35)
+            if person.canContactWithSlack {
+                Button(action: {
+                    openURL(URL(string: "slack://")!)
+                }) {
+                    Image("slack_icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: 35, maxHeight: 35)
+                }
             }
         }
     }
