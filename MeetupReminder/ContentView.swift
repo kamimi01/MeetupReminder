@@ -45,7 +45,7 @@ private extension ContentView {
     }
 
     // TODO: なんか間違っている気がするので後でみる
-    func color(index: Int) -> Color {
+    func color(index: Int) -> CardViewColor {
         let orderOfCard = index + 1
 
         // 4種類ごとに違う色を使う。1つ目のカードの場合。
@@ -79,13 +79,13 @@ private extension ContentView {
 
         switch colorIndex {
         case 1:
-            return Color.cardViewRed
+            return CardViewColor.red
         case 2:
-            return Color.cardViewGreen
+            return CardViewColor.green
         case 3:
-            return Color.cardViewOrange
+            return CardViewColor.orange
         case 4:
-            return Color.cardViewBlue
+            return CardViewColor.blue
         default:
             fatalError("failed to switch")
         }

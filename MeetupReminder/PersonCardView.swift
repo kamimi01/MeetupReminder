@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PersonCardView: View {
     let person: Person
-    let cardColor: Color
+    let cardColor: CardViewColor
     @Environment(\.openURL) var openURL
 
     var body: some View {
@@ -22,12 +22,14 @@ struct PersonCardView: View {
                     VStack(alignment: .leading, spacing: 5) {
                         HStack {
                             Text(person.name)
-                                .foregroundColor(.mainText)
-                                .font(.title)
+                                .foregroundColor(cardColor.cardViewText)
+                                .font(.title2)
+                                .bold()
                             Spacer()
                         }
                         Text(person.remark)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.mainText)
+                            .font(.callout)
                             .lineLimit(1)
                     }
                     contactList
@@ -37,7 +39,7 @@ struct PersonCardView: View {
         .padding()
         .frame(height: 150)
         .frame(maxWidth: .infinity)
-        .background(cardColor)
+        .background(cardColor.carViewBackground)
         .cornerRadius(20)
     }
 }
@@ -54,7 +56,7 @@ private extension PersonCardView {
         }
     }
 
-    var contactList: some View { 
+    var contactList: some View {
         HStack(spacing: 10) {
             Spacer()
             if person.canContactWithLINE {
@@ -113,6 +115,6 @@ private extension PersonCardView {
 
 struct PersonCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonCardView(person: Person(name: "加藤花子", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "try! Swiftで会った。iOSエンジニアとしては珍しく女性なので定期的に連絡を取りたい。"), cardColor: Color.cardViewOrange)
+        PersonCardView(person: Person(name: "加藤花子", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "try! Swiftで会った。iOSエンジニアとしては珍しく女性なので定期的に連絡を取りたい。"), cardColor: CardViewColor.orange)
     }
 }
