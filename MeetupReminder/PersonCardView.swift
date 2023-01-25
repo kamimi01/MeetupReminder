@@ -16,27 +16,34 @@ struct PersonCardView: View {
         Button(action: {
             // TODO: 詳細画面へ遷移
         }) {
-            HStack(spacing: 20) {
-                profileImage
-                VStack(spacing: 20) {
-                    VStack(alignment: .leading, spacing: 5) {
-                        HStack {
-                            Text(person.name)
-                                .foregroundColor(cardColor.cardViewText)
-                                .font(.title2)
-                                .bold()
-                            Spacer()
+            ZStack {
+                HStack(spacing: 20) {
+                    profileImage
+                    VStack(spacing: 20) {
+                        VStack(alignment: .leading, spacing: 5) {
+                            HStack {
+                                Text(person.name)
+                                    .foregroundColor(cardColor.cardViewText)
+                                    .font(.title2)
+                                    .bold()
+                                Spacer()
+                            }
+                            Text(person.remark)
+                                .foregroundColor(.mainText)
+                                .font(.callout)
+                                .lineLimit(1)
                         }
-                        Text(person.remark)
-                            .foregroundColor(.mainText)
-                            .font(.callout)
-                            .lineLimit(1)
+                        contactList
                     }
-                    contactList
+                }
+                .padding()
+                HStack {
+                    cardColor.cardViewText
+                        .frame(width: 8)
+                    Spacer()
                 }
             }
         }
-        .padding()
         .frame(height: 150)
         .frame(maxWidth: .infinity)
         .background(cardColor.carViewBackground)
