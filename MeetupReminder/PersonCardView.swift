@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PersonCardView: View {
     let person: Person
+    let cardColor: Color
     @Environment(\.openURL) var openURL
 
     var body: some View {
@@ -36,7 +37,7 @@ struct PersonCardView: View {
         .padding()
         .frame(height: 150)
         .frame(maxWidth: .infinity)
-        .background(Color.cardViewBlue)
+        .background(cardColor)
         .cornerRadius(20)
     }
 }
@@ -102,6 +103,6 @@ private extension PersonCardView {
 
 struct PersonCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonCardView(person: Person(name: "加藤花子", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "try! Swiftで会った。iOSエンジニアとしては珍しく女性なので定期的に連絡を取りたい。"))
+        PersonCardView(person: Person(name: "加藤花子", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "try! Swiftで会った。iOSエンジニアとしては珍しく女性なので定期的に連絡を取りたい。"), cardColor: Color.cardViewOrange)
     }
 }
