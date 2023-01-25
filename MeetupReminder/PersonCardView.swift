@@ -14,9 +14,9 @@ struct PersonCardView: View {
 
     var body: some View {
         ZStack {
-            HStack(spacing: 20) {
+            HStack(alignment: .top, spacing: 20) {
                 profileImage
-                VStack(spacing: 20) {
+                VStack(spacing: 10) {
                     VStack(alignment: .leading, spacing: 5) {
                         HStack {
                             Text(person.name)
@@ -28,19 +28,20 @@ struct PersonCardView: View {
                         Text(person.remark)
                             .foregroundColor(.mainText)
                             .font(.callout)
-                            .lineLimit(1)
+                            .lineLimit(2)
                     }
+                    .frame(height: 90)
                     contactList
                 }
             }
-            .padding()
+            .padding(16)
             HStack {
                 cardColor.cardViewText
                     .frame(width: 8)
                 Spacer()
             }
         }
-        .frame(height: 150)
+        .frame(height: 170)
         .frame(maxWidth: .infinity)
         .background(cardColor.carViewBackground)
         .cornerRadius(20)
@@ -66,7 +67,7 @@ private extension PersonCardView {
                 Button(action: {
                     openURL(URL(string: "https://line.me/R/")!)
                 }) {
-                    Image("line_icon")
+                    Image(cardColor.lineImageFill)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 35, maxHeight: 35)
@@ -76,7 +77,7 @@ private extension PersonCardView {
                 Button(action: {
                     openURL(URL(string: "fb://")!)
                 }) {
-                    Image("facebook_icon")
+                    Image(cardColor.facebookImageFill)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 35, maxHeight: 35)
@@ -86,7 +87,7 @@ private extension PersonCardView {
                 Button(action: {
                     openURL(URL(string: "twitter://")!)
                 }) {
-                    Image("twitter_icon")
+                    Image(cardColor.twitterImageFill)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 35, maxHeight: 35)
@@ -96,7 +97,7 @@ private extension PersonCardView {
                 Button(action: {
                     openURL(URL(string: "linkedin://")!)
                 }) {
-                    Image("linkedin_icon")
+                    Image(cardColor.linkedinImageFill)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 35, maxHeight: 35)
@@ -106,7 +107,7 @@ private extension PersonCardView {
                 Button(action: {
                     openURL(URL(string: "slack://")!)
                 }) {
-                    Image("slack_icon")
+                    Image(cardColor.slackImageFill)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 35, maxHeight: 35)
