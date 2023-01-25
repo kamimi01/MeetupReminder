@@ -25,7 +25,6 @@ struct ContentView: View {
                     .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 270)
             }
             .navigationTitle("ともだち")
-            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
@@ -65,7 +64,7 @@ private extension ContentView {
             let integer3: Double = (Double(orderOfCard) - 2.0) / 4.0
             let decimal3 = integer3.truncatingRemainder(dividingBy: 1)
             if decimal3.truncatingRemainder(dividingBy: 1).isLess(than: .ulpOfOne) {
-                return 3  // オレンジ
+                return 3  // 黄色
             }
 
             let integer4: Double = (Double(index) - 2.0) / 4.0
@@ -83,7 +82,7 @@ private extension ContentView {
         case 2:
             return CardViewColor.green
         case 3:
-            return CardViewColor.orange
+            return CardViewColor.yellow
         case 4:
             return CardViewColor.blue
         default:

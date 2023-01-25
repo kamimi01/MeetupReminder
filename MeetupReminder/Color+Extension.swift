@@ -15,19 +15,19 @@ extension Color {
     static let cardViewRed = Color("person_card_color_red")
     static let cardViewGreen = Color("person_card_color_green")
     static let cardViewBlue = Color("person_card_color_blue")
-    static let cardViewOrange = Color("person_card_color_orange")
+    static let cardViewYellow = Color("person_card_color_yellow")
     // カードビューのテキスト色
     static let cardViewTextRed = Color("person_card_color_red_bold")
     static let cardViewTextGreen = Color("person_card_color_green_bold")
     static let cardViewTextBlue = Color("person_card_color_blue_bold")
-    static let cardViewTextOrange = Color("person_card_color_orange_bold")
+    static let cardViewTextYellow = Color("person_card_color_yellow_bold")
 }
 
 enum CardViewColor {
     case red
     case green
     case blue
-    case orange
+    case yellow
 
     var carViewBackground: Color {
         switch self {
@@ -37,8 +37,8 @@ enum CardViewColor {
             return Color.cardViewGreen
         case .blue:
             return Color.cardViewBlue
-        case .orange:
-            return Color.cardViewOrange
+        case .yellow:
+            return Color.cardViewYellow
         }
     }
 
@@ -50,8 +50,8 @@ enum CardViewColor {
             return Color.cardViewTextGreen
         case .blue:
             return Color.cardViewTextBlue
-        case .orange:
-            return Color.cardViewTextOrange
+        case .yellow:
+            return Color.cardViewTextYellow
         }
     }
 }
