@@ -18,6 +18,8 @@ struct AddFriendScreen: View {
     @State private var isTappedLinkedInButton = false
     @State private var isTappedSlackButton = false
 
+    @Environment(\.dismiss) private var dismiss
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -141,6 +143,14 @@ struct AddFriendScreen: View {
             }
             .navigationTitle("新しいともだち")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading){
+                    dismissButton
+                }
+                ToolbarItem(placement: .navigationBarTrailing){
+                    addButton
+                }
+            }
         }
     }
 }
@@ -160,6 +170,24 @@ private extension AddFriendScreen {
                 .foregroundColor(.mainText)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 16)
+        }
+    }
+
+    var dismissButton: some View {
+        Button(action: {
+            dismiss()
+        }) {
+            Image(systemName: "multiply")
+                .foregroundColor(.mainText)
+        }
+    }
+
+    var addButton: some View {
+        Button(action: {
+            
+        }) {
+            Text("追加")
+                .foregroundColor(.mainText)
         }
     }
 }
