@@ -47,7 +47,7 @@ private extension ContentView {
     func color(index: Int) -> CardViewColor {
         let orderOfCard = index + 1
 
-        // 4種類ごとに違う色を使う。1つ目のカードの場合。
+        // 4種類ごとに違う色を使う
         var colorIndex: Int {
             let integer1: Double = (Double(orderOfCard) - 1.0) / 4.0
             let decimal1 = integer1.truncatingRemainder(dividingBy: 1)
@@ -61,13 +61,13 @@ private extension ContentView {
                 return 2  // 緑
             }
 
-            let integer3: Double = (Double(orderOfCard) - 2.0) / 4.0
+            let integer3: Double = (Double(orderOfCard) - 3.0) / 4.0
             let decimal3 = integer3.truncatingRemainder(dividingBy: 1)
             if decimal3.truncatingRemainder(dividingBy: 1).isLess(than: .ulpOfOne) {
                 return 3  // 黄色
             }
 
-            let integer4: Double = (Double(index) - 2.0) / 4.0
+            let integer4: Double = (Double(index) - 4.0) / 4.0
             let decimal4 = integer4.truncatingRemainder(dividingBy: 1)
             if decimal4.truncatingRemainder(dividingBy: 1).isLess(than: .ulpOfOne) {
                 return 4  // 青
