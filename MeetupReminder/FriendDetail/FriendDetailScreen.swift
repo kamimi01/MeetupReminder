@@ -53,7 +53,7 @@ struct FriendDetailScreen: View {
                                 isTappedLineButton.toggle()
                             }) {
                                 if isTappedLineButton {
-                                    Image("line_icon_green")
+                                    Image(cardColor.lineImageFill)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(maxWidth: 70, maxHeight: 70)
@@ -68,7 +68,7 @@ struct FriendDetailScreen: View {
                                 isTappedFacebookButton.toggle()
                             }) {
                                 if isTappedFacebookButton {
-                                    Image("facebook_icon_green")
+                                    Image(cardColor.facebookImageFill)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(maxWidth: 70, maxHeight: 70)
@@ -83,7 +83,7 @@ struct FriendDetailScreen: View {
                                 isTappedTwitterButton.toggle()
                             }) {
                                 if isTappedTwitterButton {
-                                    Image("twitter_icon_green")
+                                    Image(cardColor.twitterImageFill)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(maxWidth: 70, maxHeight: 70)
@@ -102,7 +102,7 @@ struct FriendDetailScreen: View {
                                 isTappedLinkedInButton.toggle()
                             }) {
                                 if isTappedLinkedInButton {
-                                    Image("linkedin_icon_green")
+                                    Image(cardColor.linkedinImageFill)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(maxWidth: 70, maxHeight: 70)
@@ -117,7 +117,7 @@ struct FriendDetailScreen: View {
                                 isTappedSlackButton.toggle()
                             }) {
                                 if isTappedSlackButton {
-                                    Image("slack_icon_green")
+                                    Image(cardColor.slackImageFill)
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(maxWidth: 70, maxHeight: 70)

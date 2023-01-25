@@ -68,4 +68,69 @@ enum CardViewColor {
             return "profile_yellow"
         }
     }
+
+    var lineImageFill: String {
+        switch self {
+        case .red:
+            return "line_icon_red"
+        case .green:
+            return "line_icon_green"
+        case .blue:
+            return "line_icon_blue"
+        case .yellow:
+            return "line_icon_yellow"
+        }
+    }
+
+    var facebookImageFill: String {
+        switch self {
+        case .red:
+            return "facebook_icon_red"
+        case .green:
+            return "facebook_icon_green"
+        case .blue:
+            return "facebook_icon_blue"
+        case .yellow:
+            return "facebook_icon_yellow"
+        }
+    }
+
+    var twitterImageFill: String {
+        switch self {
+        case .red:
+            return "twitter_icon_red"
+        case .green:
+            return "twitter_icon_green"
+        case .blue:
+            return "twitter_icon_blue"
+        case .yellow:
+            return "twitter_icon_yellow"
+        }
+    }
+
+    var linkedinImageFill: String {
+        switch self {
+        case .red:
+            return "linkedin_icon_red"
+        case .green:
+            return "linkedin_icon_green"
+        case .blue:
+            return "linkedin_icon_blue"
+        case .yellow:
+            return "linkedin_icon_yellow"
+        }
+    }
+
+    var slackImageFill: String {
+        switch self {
+        case .red:
+            return "slack_icon_red"
+        case .green:
+            return "slack_icon_green"
+        case .blue:
+            return "slack_icon_blue"
+        case .yellow:
+            return "slack_icon_yellow"
+        }
+    }
 }
