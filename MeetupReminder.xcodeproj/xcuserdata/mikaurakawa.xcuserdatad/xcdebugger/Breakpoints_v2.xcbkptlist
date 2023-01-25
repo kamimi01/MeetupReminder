@@ -14,8 +14,8 @@
             filePath = "MeetupReminder/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "color(index:)"
             landmarkType = "7">
          </BreakpointContent>

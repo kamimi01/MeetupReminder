@@ -11,13 +11,17 @@ struct ContentView: View {
    @ObservedObject var viewModel = PersonListViewModel()
 
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: 15) {
-                ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
-                   PersonCardView(person: person, cardColor: color(index: personIndex))
-                        .padding(.horizontal, 16)
+        NavigationView {
+            ScrollView {
+                LazyVStack(spacing: 15) {
+                    ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
+                       PersonCardView(person: person, cardColor: color(index: personIndex))
+                            .padding(.horizontal, 16)
+                    }
                 }
             }
+            .navigationTitle("ともだち")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
