@@ -23,7 +23,7 @@ struct FriendDetailScreen: View {
             cardColor.carViewBackground
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
-                VStack {
+                VStack(spacing: 20) {
                     profileImage
                     VStack(alignment: .leading, spacing: 40) {
                         VStack(alignment: .leading, spacing: 5) {
@@ -134,6 +134,7 @@ struct FriendDetailScreen: View {
                         }
                     }
                     .padding(16)
+                    deleteButton
                     Spacer()
                 }
             }
@@ -157,6 +158,16 @@ private extension FriendDetailScreen {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 16)
         }
+    }
+
+    var deleteButton: some View {
+        Button(action: {}) {
+            Text("ともだちから削除")
+                .foregroundColor(cardColor.cardViewText)
+                .font(.title3)
+                .bold()
+        }
+        .frame(height: 60)
     }
 }
 
