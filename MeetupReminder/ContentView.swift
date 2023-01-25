@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-   @ObservedObject var viewModel = PersonListViewModel()
+    @ObservedObject var viewModel = PersonListViewModel()
+    @State private var isShowingAddFriendScreen = false
 
     var body: some View {
         NavigationView {
@@ -31,7 +32,9 @@ struct ContentView: View {
 
 private extension ContentView {
     var addButton: some View {
-        Button(action: {}) {
+        Button(action: {
+            isShowingAddFriendScreen = true
+        }) {
             Image(systemName: "plus")
                 .font(.title)
                 .frame(width: 90, height: 90)
@@ -40,6 +43,9 @@ private extension ContentView {
                 .foregroundColor(.white)
                 .clipShape(Circle())
                 .shadow(color: .gray, radius: 3, x: 3, y: 3)
+        }
+        .sheet(isPresented: $isShowingAddFriendScreen) {
+            AddFriendScreen()
         }
     }
 
