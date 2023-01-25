@@ -9,19 +9,35 @@ import SwiftUI
 
 struct FriendDetailScreen: View {
     let cardColor: CardViewColor
+    @State private var nameText = "佐藤花子"
+    @State private var remarkText = "try! Swiftで会った人。一緒に小籠包を食べた。"
 
     var body: some View {
         ZStack {
-            Color.mainBackground
+            cardColor.carViewBackground
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                ZStack(alignment: .center) {
-                    Rectangle()
-                        .foregroundColor(cardColor.carViewBackground)
-                        .frame(height: UIScreen.main.bounds.height / 2.5)
-                    profileImage
+                profileImage
+                VStack(alignment: .leading) {
+                    Text("メモ")
+                        .foregroundColor(.mainText)
+                        .padding(.horizontal, 5)
+                    ZStack {
+                        Color.mainBackground
+                            .frame(height: 100)
+                            .background(Color.mainBackground)
+                            .cornerRadius(20)
+                        VStack {
+                            TextField("", text: $remarkText)
+                                .foregroundColor(.mainText)
+                                .border(Color.red)
+                                .padding()
+                            Spacer()
+                        }
+                        .frame(height: 100)
+                    }
                 }
-                .edgesIgnoringSafeArea(.all)
+                .padding(16)
                 Spacer()
             }
         }
@@ -30,12 +46,21 @@ struct FriendDetailScreen: View {
 
 private extension FriendDetailScreen {
     var profileImage: some View {
-        Image(cardColor.profileImage)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .background(Color.mainBackground)
-            .clipShape(Circle())
-            .frame(maxWidth: 130, maxHeight: 130)
+        VStack(spacing: 10) {
+            Image(cardColor.profileImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .background(Color.mainBackground)
+                .clipShape(Circle())
+                .frame(maxWidth: 130, maxHeight: 130)
+            TextField("", text: $nameText)
+                .frame(width: 150)
+                .font(.title2)
+                .foregroundColor(.mainText)
+                .multilineTextAlignment(.center)
+                .border(Color.red)
+                .padding(.horizontal, 16)
+        }
     }
 }
 
