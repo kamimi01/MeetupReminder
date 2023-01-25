@@ -19,6 +19,7 @@
 		D4C6D1742980867B00029E0B /* PersonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D1732980867B00029E0B /* PersonCardView.swift */; };
 		D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D1752980A70700029E0B /* Color+Extension.swift */; };
 		D4C6D17C2980FAEF00029E0B /* AddFriendScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D17B2980FAEF00029E0B /* AddFriendScreen.swift */; };
+		D4C6D17E298148B500029E0B /* FriendDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D17D298148B500029E0B /* FriendDetailScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		D4C6D1732980867B00029E0B /* PersonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCardView.swift; sourceTree = "<group>"; };
 		D4C6D1752980A70700029E0B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D4C6D17B2980FAEF00029E0B /* AddFriendScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendScreen.swift; sourceTree = "<group>"; };
+		D4C6D17D298148B500029E0B /* FriendDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		D4C6D1782980FAB700029E0B /* FriendDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D4C6D17D298148B500029E0B /* FriendDetailScreen.swift */,
 			);
 			path = FriendDetail;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				D4C6D17C2980FAEF00029E0B /* AddFriendScreen.swift in Sources */,
 				D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */,
 				D4C6D1742980867B00029E0B /* PersonCardView.swift in Sources */,
+				D4C6D17E298148B500029E0B /* FriendDetailScreen.swift in Sources */,
 				D4C6D172298085DF00029E0B /* PersonListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,8 +19,10 @@ struct ContentView: View {
                 ScrollView {
                     LazyVStack(spacing: 15) {
                         ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
-                           PersonCardView(person: person, cardColor: color(index: personIndex))
-                                .padding(.horizontal, 16)
+                            NavigationLink(destination: FriendDetailScreen()) {
+                                PersonCardView(person: person, cardColor: color(index: personIndex))
+                                     .padding(.horizontal, 16)
+                            }
                         }
                     }
                 }

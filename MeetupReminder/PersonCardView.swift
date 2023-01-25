@@ -13,35 +13,31 @@ struct PersonCardView: View {
     @Environment(\.openURL) var openURL
 
     var body: some View {
-        Button(action: {
-            // TODO: 詳細画面へ遷移
-        }) {
-            ZStack {
-                HStack(spacing: 20) {
-                    profileImage
-                    VStack(spacing: 20) {
-                        VStack(alignment: .leading, spacing: 5) {
-                            HStack {
-                                Text(person.name)
-                                    .foregroundColor(cardColor.cardViewText)
-                                    .font(.title2)
-                                    .bold()
-                                Spacer()
-                            }
-                            Text(person.remark)
-                                .foregroundColor(.mainText)
-                                .font(.callout)
-                                .lineLimit(1)
+        ZStack {
+            HStack(spacing: 20) {
+                profileImage
+                VStack(spacing: 20) {
+                    VStack(alignment: .leading, spacing: 5) {
+                        HStack {
+                            Text(person.name)
+                                .foregroundColor(cardColor.cardViewText)
+                                .font(.title2)
+                                .bold()
+                            Spacer()
                         }
-                        contactList
+                        Text(person.remark)
+                            .foregroundColor(.mainText)
+                            .font(.callout)
+                            .lineLimit(1)
                     }
+                    contactList
                 }
-                .padding()
-                HStack {
-                    cardColor.cardViewText
-                        .frame(width: 8)
-                    Spacer()
-                }
+            }
+            .padding()
+            HStack {
+                cardColor.cardViewText
+                    .frame(width: 8)
+                Spacer()
             }
         }
         .frame(height: 150)
