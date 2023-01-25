@@ -10,6 +10,7 @@ import SwiftUI
 
 extension Color {
     static let mainText = Color("main_text_color")
+    static let mainBackground = Color("main_background_color")
 
     // カードビューの背景色
     static let cardViewRed = Color("person_card_color_red")

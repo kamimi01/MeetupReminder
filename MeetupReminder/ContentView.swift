@@ -14,6 +14,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                Color.mainBackground
+                    .edgesIgnoringSafeArea(.all)
                 ScrollView {
                     LazyVStack(spacing: 15) {
                         ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
