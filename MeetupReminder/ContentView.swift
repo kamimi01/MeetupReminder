@@ -48,7 +48,7 @@ private extension ContentView {
                 .clipShape(Circle())
                 .shadow(color: .gray, radius: 3, x: 3, y: 3)
         }
-        .sheet(isPresented: $isShowingAddFriendScreen) {
+        .fullScreenCover(isPresented: $isShowingAddFriendScreen) {
             AddFriendScreen()
         }
     }
