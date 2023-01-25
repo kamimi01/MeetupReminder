@@ -54,7 +54,7 @@ struct PersonCardView: View {
 private extension PersonCardView {
     var profileImage: some View {
         VStack {
-            Image("profile")
+            Image(cardColor.profileImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .clipShape(Circle())

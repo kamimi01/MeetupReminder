@@ -54,4 +54,17 @@ enum CardViewColor {
             return Color.cardViewTextYellow
         }
     }
+
+    var profileImage: String {
+        switch self {
+        case .red:
+            return "profile_red"
+        case .green:
+            return "profile_green"
+        case .blue:
+            return "profile_blue"
+        case .yellow:
+            return "profile_yellow"
+        }
+    }
 }
