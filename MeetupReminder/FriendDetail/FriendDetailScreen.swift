@@ -36,12 +36,12 @@ struct FriendDetailScreen: View {
                                     .background(Color.mainBackground)
                                     .cornerRadius(20)
                                 VStack {
-                                    TextField("", text: $remarkText)
+                                    TextField("", text: $remarkText, axis: .vertical)
                                         .foregroundColor(.mainText)
                                         .padding()
                                     Spacer()
                                 }
-                                .frame(height: 100)
+                                .frame(height: 110)
                             }
                         }
                         VStack(alignment: .leading, spacing: 20) {
