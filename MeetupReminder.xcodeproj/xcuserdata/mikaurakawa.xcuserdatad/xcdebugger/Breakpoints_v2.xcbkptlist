@@ -39,32 +39,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7F2A1264-82FE-44E1-B42E-297169B57114"
+            uuid = "85716B1D-D039-4CDE-9141-DDECF5760790"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeetupReminder/AddFriend/AddFriendScreen.swift"
+            filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
-            landmarkName = "addFriend()"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "addFriend(person:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "BE41E63C-F3FB-43A7-96E3-C908E81D9429"
+            uuid = "F7AECFC4-D02D-44F2-A126-571BC2547954"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MeetupReminder/AddFriend/AddFriendScreen.swift"
+            filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
-            landmarkName = "addFriend()"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "addFriend(person:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

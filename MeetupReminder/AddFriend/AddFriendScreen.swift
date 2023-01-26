@@ -202,16 +202,8 @@ private extension AddFriendScreen {
         person.canContactWithSlack = isTappedSlackButton
         person.remark = remarkText
 
-        let realm = try! Realm()
-        do {
-            try realm.write {
-                realm.add(person)
-            }
-        } catch {
-            print("保存に失敗しました")
-        }
-
-        print("Realmのファイルの場所：", Realm.Configuration.defaultConfiguration.fileURL)
+        let realmHelper = RealmHelper()
+        realmHelper.addFriend(person: person)
     }
 }
 
