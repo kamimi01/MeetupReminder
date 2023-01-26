@@ -90,15 +90,15 @@ class RealmHelper {
                     if let newRemark = remark {
                         willUpdateFriend.remark = newRemark
                     }
-                    return true
                 }
+                return true
             } catch {
                 print("更新に失敗しました")
                 return false
             }
         } else {
-            fatalError("更新対象データが見つかりませんでした")
+            print("更新対象データが見つかりませんでした")
+            return false
         }
-        return false
     }
 }
