@@ -213,7 +213,7 @@ private extension FriendDetailScreen {
                 self.presentation.wrappedValue.dismiss()
             }
         }) {
-            Text("編集")
+            Text("完了")
                 .foregroundColor(.mainText)
         }
     }
