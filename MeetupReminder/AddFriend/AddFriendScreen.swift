@@ -185,14 +185,17 @@ private extension AddFriendScreen {
 
     var addButton: some View {
         Button(action: {
-            addFriend()
+            let result = addFriend()
+            if result {
+                dismiss()
+            }
         }) {
             Text("追加")
                 .foregroundColor(.mainText)
         }
     }
 
-    func addFriend() {
+    func addFriend() -> Bool {
         let person = Person()
         person.name = nameText
         person.canContactWithLINE = isTappedLineButton
@@ -203,7 +206,7 @@ private extension AddFriendScreen {
         person.remark = remarkText
 
         let realmHelper = RealmHelper()
-        realmHelper.addFriend(person: person)
+        return realmHelper.addFriend(person: person)
     }
 }
 
