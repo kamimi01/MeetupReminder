@@ -29,6 +29,7 @@ struct PersonCardView: View {
                             .foregroundColor(.mainText)
                             .font(.callout)
                             .lineLimit(2)
+                            .multilineTextAlignment(.leading)
                     }
                     .frame(height: 90)
                     contactList
