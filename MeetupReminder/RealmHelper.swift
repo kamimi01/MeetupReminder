@@ -27,6 +27,25 @@ class RealmHelper {
         return false
     }
 
+    func deleteFriend(id: String) -> Bool {
+        let willDeleteFriends = realm.objects(Person.self).where {
+            $0.id == id
+        }
+        if let willDeleteFriend = willDeleteFriends.first {
+            do {
+                try realm.write {
+                    realm.delete(willDeleteFriend)
+                    return true
+                }
+            } catch {
+                print("削除に失敗しました")
+            }
+        } else {
+            fatalError("削除対象が見つかりませんでした")
+        }
+        return false
+    }
+
     func loadFriends() -> [Person] {
         let result = realm.objects(Person.self)
         print("Realmのファイルの場所：", Realm.Configuration.defaultConfiguration.fileURL)

@@ -24,6 +24,7 @@
 		D4CEE791298299FE005B863F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE790298299FE005B863F /* RealmSwift */; };
 		D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7922982A5C1005B863F /* RealmHelper.swift */; };
 		D4CEE7952982AE89005B863F /* AddFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7942982AE89005B863F /* AddFriendViewModel.swift */; };
+		D4CEE7972982B93E005B863F /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7962982B93E005B863F /* PersonModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		D4C6D17D298148B500029E0B /* FriendDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailScreen.swift; sourceTree = "<group>"; };
 		D4CEE7922982A5C1005B863F /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		D4CEE7942982AE89005B863F /* AddFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewModel.swift; sourceTree = "<group>"; };
+		D4CEE7962982B93E005B863F /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				D4C6D1732980867B00029E0B /* PersonCardView.swift */,
 				D4C6D171298085DF00029E0B /* PersonListViewModel.swift */,
 				D4C6D16F298084EF00029E0B /* Person.swift */,
+				D4CEE7962982B93E005B863F /* PersonModel.swift */,
 				D4C6D1752980A70700029E0B /* Color+Extension.swift */,
 				D4C6D149297F371100029E0B /* Assets.xcassets */,
 				D4C6D14B297F371100029E0B /* Preview Content */,
@@ -310,6 +313,7 @@
 			files = (
 				D4C6D170298084EF00029E0B /* Person.swift in Sources */,
 				D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */,
+				D4CEE7972982B93E005B863F /* PersonModel.swift in Sources */,
 				D4C6D148297F370F00029E0B /* ContentView.swift in Sources */,
 				D4C6D17C2980FAEF00029E0B /* AddFriendScreen.swift in Sources */,
 				D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */,

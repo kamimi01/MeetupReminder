@@ -10,7 +10,7 @@ import SwiftUI
 struct FriendDetailScreen: View {
     @ObservedObject var viewModel: PersonListViewModel
 
-    let person: Person
+    let person: PersonModel
     let cardColor: CardViewColor
 
     @State private var nameText: String
@@ -21,7 +21,7 @@ struct FriendDetailScreen: View {
     @State private var isTappedLinkedInButton: Bool
     @State private var isTappedSlackButton: Bool
 
-    init(viewModel: PersonListViewModel, person: Person, cardColor: CardViewColor) {
+    init(viewModel: PersonListViewModel, person: PersonModel, cardColor: CardViewColor) {
         self.viewModel = viewModel
         self.person = person
         self.cardColor = cardColor
@@ -190,7 +190,9 @@ private extension FriendDetailScreen {
     }
 
     var deleteButton: some View {
-        Button(action: {}) {
+        Button(action: {
+            viewModel.deleteFriend(id: person.id)
+        }) {
             Text("ともだちから削除")
                 .foregroundColor(cardColor.cardViewText)
                 .font(.title3)
@@ -202,6 +204,6 @@ private extension FriendDetailScreen {
 
 struct FriendDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        FriendDetailScreen(viewModel: PersonListViewModel(), person: Person(), cardColor: .red)
+        FriendDetailScreen(viewModel: PersonListViewModel(), person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ"), cardColor: .red)
     }
 }

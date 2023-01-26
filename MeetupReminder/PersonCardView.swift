@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PersonCardView: View {
-    let person: Person
+    let person: PersonModel
     let cardColor: CardViewColor
     @Environment(\.openURL) var openURL
 
@@ -122,14 +122,8 @@ struct PersonCardView_Previews: PreviewProvider {
         PersonCardView(person: createDummyData(), cardColor: CardViewColor.red)
     }
 
-    static func createDummyData() -> Person {
-        let person = Person()
-        person.name = "加藤花子"
-        person.canContactWithLINE = false
-        person.canContactWithFacebook = false
-        person.canContactWithTwitter = false
-        person.canContactWithLinkedIn = true
-        person.canContactWithSlack = false
+    static func createDummyData() -> PersonModel {
+        let person = PersonModel(id: "", name: "加藤花子", canContactWithLINE: false, canContactWithFacebook: false, canContactWithTwitter: false, canContactWithLinkedIn: false, canContactWithSlack: false, remark: "")
         return person
     }
 }
