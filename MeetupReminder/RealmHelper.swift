@@ -13,8 +13,11 @@ class RealmHelper {
     private let realm: Realm
 
     init() {
-        let config = Realm.Configuration(encryptionKey: RealmHelper.getKey())
+        let key = RealmHelper.getKey()
+        let config = Realm.Configuration(encryptionKey: key)
         realm = try! Realm(configuration: config)
+
+        print("key:", String(data: key, encoding: .utf8))
     }
 
     // あれば既存の暗号化キーを取得する。なければ新しく作成する
@@ -58,7 +61,6 @@ class RealmHelper {
         status = SecItemAdd(query as CFDictionary, nil)
         assert(status == errSecSuccess, "Failed to insert the new key in the keychain")
 
-        print("key:", String(data: key, encoding: .utf8))
         return key
     }
 

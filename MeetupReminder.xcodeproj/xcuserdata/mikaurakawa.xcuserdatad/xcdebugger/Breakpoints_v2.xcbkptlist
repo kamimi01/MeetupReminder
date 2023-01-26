@@ -46,8 +46,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "addFriend(person:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "addFriend(person:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "RealmHelper"
             landmarkType = "3">
          </BreakpointContent>
@@ -94,13 +94,13 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "9EB6E8A9-A75C-4BFE-8EC2-51AF3984DA5D - bb4394254c044373"
+                  uuid = "9EB6E8A9-A75C-4BFE-8EC2-51AF3984DA5D - bb4394254c044331"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -110,12 +110,12 @@
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/RealmHelper.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
                   offsetFromSymbolStart = "459">
                </Location>
                <Location
-                  uuid = "9EB6E8A9-A75C-4BFE-8EC2-51AF3984DA5D - bb4394254c044373"
+                  uuid = "9EB6E8A9-A75C-4BFE-8EC2-51AF3984DA5D - bb4394254c044331"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -125,8 +125,8 @@
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/RealmHelper.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
+                  startingLineNumber = "121"
+                  endingLineNumber = "121"
                   offsetFromSymbolStart = "507">
                </Location>
             </Locations>
@@ -158,8 +158,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,13 +206,13 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F81DB5C5-A32B-4D3E-BB26-7E041FFEFC64 - df78dc2582c78b4b"
+                  uuid = "F81DB5C5-A32B-4D3E-BB26-7E041FFEFC64 - df78dc2582c78885"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -222,12 +222,12 @@
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/RealmHelper.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
                   offsetFromSymbolStart = "345">
                </Location>
                <Location
-                  uuid = "F81DB5C5-A32B-4D3E-BB26-7E041FFEFC64 - 9c79d21555b5cea1"
+                  uuid = "F81DB5C5-A32B-4D3E-BB26-7E041FFEFC64 - 9c79d21555b5ceef"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -237,8 +237,8 @@
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/RealmHelper.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "114"
-                  endingLineNumber = "114"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
                   offsetFromSymbolStart = "47">
                </Location>
             </Locations>
@@ -254,8 +254,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +286,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +302,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "getKey()"
             landmarkType = "7">
          </BreakpointContent>
@@ -318,8 +318,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "getKey()"
             landmarkType = "7">
          </BreakpointContent>
