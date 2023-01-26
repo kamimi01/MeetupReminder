@@ -186,7 +186,10 @@ private extension FriendDetailScreen {
 
     var deleteButton: some View {
         Button(action: {
-            viewModel.deleteFriend(id: person.id)
+            let result = viewModel.deleteFriend(id: person.id)
+            if result {
+                self.presentation.wrappedValue.dismiss()
+            }
         }) {
             Text("ともだちから削除")
                 .foregroundColor(cardColor.cardViewText)

@@ -64,7 +64,7 @@ class PersonListViewModel: ObservableObject {
         )
     }
 
-    func deleteFriend(id: String) {
-        realmHelper.deleteFriend(id: id)
+    func deleteFriend(id: String) -> Bool {
+        return realmHelper.deleteFriend(id: id)
     }
 }

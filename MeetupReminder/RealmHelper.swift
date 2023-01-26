@@ -35,15 +35,15 @@ class RealmHelper {
             do {
                 try realm.write {
                     realm.delete(willDeleteFriend)
-                    return true
                 }
+                return true
             } catch {
                 print("削除に失敗しました")
+                return false
             }
         } else {
             fatalError("削除対象が見つかりませんでした")
         }
-        return false
     }
 
     // FIXME: 変更を監視するため、ここだけRealmのオブジェクトを返している
@@ -97,8 +97,7 @@ class RealmHelper {
                 return false
             }
         } else {
-            print("更新対象データが見つかりませんでした")
-            return false
+            fatalError("更新対象データが見つかりませんでした")
         }
     }
 }
