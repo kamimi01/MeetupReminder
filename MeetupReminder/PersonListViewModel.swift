@@ -6,23 +6,36 @@
 //
 
 import Foundation
+import RealmSwift
 
 class PersonListViewModel: ObservableObject {
     @Published var personList: [PersonModel] = []
+    private var allFriends: Results<Person>? = nil
     private let realmHelper: RealmHelper
+    private var token: NotificationToken?
 
     init() {
+        print("init呼ばれた")
         realmHelper = RealmHelper()
+        allFriends = realmHelper.loadFriends()
+        token = allFriends?.observe { [weak self] _ in
+            print("observe呼ばれた")
+            guard let self = self,
+                  let allFriendsNotOptional = self.allFriends
+            else {
+                return
+            }
+            self.personList = Array(allFriendsNotOptional).map {
+                PersonModel(id: $0.id, name: $0.name, canContactWithLINE: $0.canContactWithLINE, canContactWithFacebook: $0.canContactWithFacebook, canContactWithTwitter: $0.canContactWithTwitter, canContactWithLinkedIn: $0.canContactWithLinkedIn, canContactWithSlack: $0.canContactWithSlack, remark: $0.remark)
+            }
+        }
     }
 
     func onAppear() {
-        let allFriends = realmHelper.loadFriends()
-//        personList.append(contentsOf: allFriends)
-
         // Realmのオブジェクトを使用すると、Object has been deleted or invalidated. でクラッシュするため、表示するのための別の構造体を用意
-        personList = allFriends.map {
-            PersonModel(id: $0.id, name: $0.name, canContactWithLINE: $0.canContactWithLINE, canContactWithFacebook: $0.canContactWithFacebook, canContactWithTwitter: $0.canContactWithTwitter, canContactWithLinkedIn: $0.canContactWithLinkedIn, canContactWithSlack: $0.canContactWithSlack, remark: $0.remark)
-        }
+//        personList = allFriends.map {
+//            PersonModel(id: $0.id, name: $0.name, canContactWithLINE: $0.canContactWithLINE, canContactWithFacebook: $0.canContactWithFacebook, canContactWithTwitter: $0.canContactWithTwitter, canContactWithLinkedIn: $0.canContactWithLinkedIn, canContactWithSlack: $0.canContactWithSlack, remark: $0.remark)
+//        }
     }
 
     func updateFriend(

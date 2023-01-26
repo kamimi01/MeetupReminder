@@ -46,10 +46,11 @@ class RealmHelper {
         return false
     }
 
-    func loadFriends() -> [Person] {
+    // FIXME: 変更を監視するため、ここだけRealmのオブジェクトを返している
+    func loadFriends() -> Results<Person> {
         let result = realm.objects(Person.self)
         print("Realmのファイルの場所：", Realm.Configuration.defaultConfiguration.fileURL)
-        return Array(result)
+        return result
     }
 
     func updateFriend(
