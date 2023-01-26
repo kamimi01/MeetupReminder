@@ -13,12 +13,53 @@ class RealmHelper {
     private let realm: Realm
 
     init() {
-        var key = Data(count: 64)
-        _ = key.withUnsafeMutableBytes { (pointer) in
-            SecRandomCopyBytes(kSecRandomDefault, 64, pointer.baseAddress!)
-        }
-        let config = Realm.Configuration(encryptionKey: key)
+        let config = Realm.Configuration(encryptionKey: RealmHelper.getKey())
         realm = try! Realm(configuration: config)
+    }
+
+    // あれば既存の暗号化キーを取得する。なければ新しく作成する
+    private static func getKey() -> Data {
+
+        // Identifier for our keychain entry - should be unique for your application
+        let keychainIdentifier = "io.Realm.EncryptionExampleKey"
+        let keychainIdentifierData = keychainIdentifier.data(using: String.Encoding.utf8, allowLossyConversion: false)!
+
+        // 既存のキーがあるか確認する
+        var query: [NSString: AnyObject] = [
+            kSecClass: kSecClassKey,
+            kSecAttrApplicationTag: keychainIdentifierData as AnyObject,
+            kSecAttrKeySizeInBits: 512 as AnyObject,
+            kSecReturnData: true as AnyObject
+        ]
+
+        // Swiftの最適化のバグを避けるため、withUnsafeMutablePointer() を使って、キーチェーンからitemを取り出す
+        // See also: http://stackoverflow.com/questions/24145838/querying-ios-keychain-using-swift/27721328#27721328
+        var dataTypeRef: AnyObject?
+        var status = withUnsafeMutablePointer(to: &dataTypeRef) { SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0)) }
+        if status == errSecSuccess {
+            return dataTypeRef as! Data
+        }
+
+        // 事前に作成されたキーがない場合、新しく生成する
+        var key = Data(count: 64)
+        key.withUnsafeMutableBytes({ (pointer: UnsafeMutableRawBufferPointer) in
+            let result = SecRandomCopyBytes(kSecRandomDefault, 64, pointer.baseAddress!)
+            assert(result == 0, "Failed to get random bytes")
+        })
+
+        // キーチェーンにキーを保存する
+        query = [
+            kSecClass: kSecClassKey,
+            kSecAttrApplicationTag: keychainIdentifierData as AnyObject,
+            kSecAttrKeySizeInBits: 512 as AnyObject,
+            kSecValueData: key as AnyObject
+        ]
+
+        status = SecItemAdd(query as CFDictionary, nil)
+        assert(status == errSecSuccess, "Failed to insert the new key in the keychain")
+
+        print("key:", String(data: key, encoding: .utf8))
+        return key
     }
 
     func addFriend(person: Person) -> Bool {
