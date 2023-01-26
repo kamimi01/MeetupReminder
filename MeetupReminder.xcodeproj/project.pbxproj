@@ -23,6 +23,7 @@
 		D4CEE78F298299FE005B863F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE78E298299FE005B863F /* Realm */; };
 		D4CEE791298299FE005B863F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE790298299FE005B863F /* RealmSwift */; };
 		D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7922982A5C1005B863F /* RealmHelper.swift */; };
+		D4CEE7952982AE89005B863F /* AddFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7942982AE89005B863F /* AddFriendViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		D4C6D17B2980FAEF00029E0B /* AddFriendScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendScreen.swift; sourceTree = "<group>"; };
 		D4C6D17D298148B500029E0B /* FriendDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailScreen.swift; sourceTree = "<group>"; };
 		D4CEE7922982A5C1005B863F /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		D4CEE7942982AE89005B863F /* AddFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				D4C6D17B2980FAEF00029E0B /* AddFriendScreen.swift */,
+				D4CEE7942982AE89005B863F /* AddFriendViewModel.swift */,
 			);
 			path = AddFriend;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				D4C6D17C2980FAEF00029E0B /* AddFriendScreen.swift in Sources */,
 				D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */,
 				D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */,
+				D4CEE7952982AE89005B863F /* AddFriendViewModel.swift in Sources */,
 				D4C6D1742980867B00029E0B /* PersonCardView.swift in Sources */,
 				D4C6D17E298148B500029E0B /* FriendDetailScreen.swift in Sources */,
 				D4C6D172298085DF00029E0B /* PersonListViewModel.swift in Sources */,

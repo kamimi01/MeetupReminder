@@ -22,7 +22,7 @@ class RealmHelper {
             }
             return true
         } catch {
-            print("保存に失敗しました")
+            print("追加に失敗しました")
         }
         return false
     }
@@ -31,5 +31,53 @@ class RealmHelper {
         let result = realm.objects(Person.self)
         print("Realmのファイルの場所：", Realm.Configuration.defaultConfiguration.fileURL)
         return Array(result)
+    }
+
+    func updateFriend(
+        id: String,
+        name: String? = nil,
+        canContactWithLINE: Bool? = nil,
+        canContactWithFacebook: Bool? = nil,
+        canContactWithTwitter: Bool? = nil,
+        canContactWithLinkedIn: Bool? = nil,
+        canContactWithSlack: Bool? = nil,
+        remark: String? = nil
+    ) -> Bool {
+        let willUpdateFriends = realm.objects(Person.self).where {
+            $0.id == id
+        }
+        if let willUpdateFriend = willUpdateFriends.first {
+            do {
+                try realm.write {
+                    if let newName = name {
+                        willUpdateFriend.name = newName
+                    }
+                    if let newCanContactWithLINE = canContactWithLINE {
+                        willUpdateFriend.canContactWithLINE = newCanContactWithLINE
+                    }
+                    if let newCanContactWithFacebook = canContactWithFacebook {
+                        willUpdateFriend.canContactWithFacebook = newCanContactWithFacebook
+                    }
+                    if let newCanContactWithTwitter = canContactWithTwitter {
+                        willUpdateFriend.canContactWithTwitter = newCanContactWithTwitter
+                    }
+                    if let newCanContactWithLinkedIn = canContactWithLinkedIn {
+                        willUpdateFriend.canContactWithLinkedIn = newCanContactWithLinkedIn
+                    }
+                    if let newCanContactWithSlack = canContactWithSlack {
+                        willUpdateFriend.canContactWithSlack = newCanContactWithSlack
+                    }
+                    if let newRemark = remark {
+                        willUpdateFriend.remark = newRemark
+                    }
+                    return true
+                }
+            } catch {
+                print("更新に失敗しました")
+            }
+        } else {
+            fatalError("更新対象データが見つかりませんでした")
+        }
+        return false
     }
 }
