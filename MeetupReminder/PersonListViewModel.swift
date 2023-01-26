@@ -59,7 +59,8 @@ class PersonListViewModel: ObservableObject {
             canContactWithFacebook: canContactWithFacebook,
             canContactWithTwitter: canContactWithTwitter,
             canContactWithLinkedIn: canContactWithLinkedIn,
-            canContactWithSlack: canContactWithSlack
+            canContactWithSlack: canContactWithSlack,
+            remark: remark
         )
     }
 
