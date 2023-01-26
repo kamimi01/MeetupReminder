@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct AddFriendScreen: View {
     let cardColor = CardViewColor.red
@@ -184,11 +185,33 @@ private extension AddFriendScreen {
 
     var addButton: some View {
         Button(action: {
-
+            addFriend()
         }) {
             Text("追加")
                 .foregroundColor(.mainText)
         }
+    }
+
+    func addFriend() {
+        let person = Person()
+        person.name = nameText
+        person.canContactWithLINE = isTappedLineButton
+        person.canContactWithFacebook = isTappedFacebookButton
+        person.canContactWithTwitter = isTappedTwitterButton
+        person.canContactWithLinkedIn = isTappedLinkedInButton
+        person.canContactWithSlack = isTappedSlackButton
+        person.remark = remarkText
+
+        let realm = try! Realm()
+        do {
+            try realm.write {
+                realm.add(person)
+            }
+        } catch {
+            print("保存に失敗しました")
+        }
+
+        print("Realmのファイルの場所：", Realm.Configuration.defaultConfiguration.fileURL)
     }
 }
 
