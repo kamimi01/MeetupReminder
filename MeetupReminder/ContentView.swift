@@ -16,12 +16,23 @@ struct ContentView: View {
             ZStack {
                 Color.mainBackground
                     .edgesIgnoringSafeArea(.all)
-                ScrollView {
-                    LazyVStack(spacing: 15) {
-                        ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
-                            NavigationLink(destination: FriendDetailScreen(viewModel: viewModel, person: person, cardColor: color(index: personIndex))) {
-                                PersonCardView(person: person, cardColor: color(index: personIndex))
-                                     .padding(.horizontal, 16)
+                if viewModel.personList.isEmpty {
+                    Spacer()
+                    VStack(spacing: 5) {
+                        LottieView(animationType: .friendships)
+                            .frame(width: 250, height: 180)
+                        Text("ともだちを増やそう！")
+                            .foregroundColor(.mainText)
+                    }
+                    Spacer()
+                } else {
+                    ScrollView {
+                        LazyVStack(spacing: 15) {
+                            ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
+                                NavigationLink(destination: FriendDetailScreen(viewModel: viewModel, person: person, cardColor: color(index: personIndex))) {
+                                    PersonCardView(person: person, cardColor: color(index: personIndex))
+                                         .padding(.horizontal, 16)
+                                }
                             }
                         }
                     }
