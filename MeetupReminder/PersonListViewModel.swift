@@ -31,6 +31,10 @@ class PersonListViewModel: ObservableObject {
         }
     }
 
+    deinit {
+        token?.invalidate()
+    }
+
     func onAppear() {
         // Realmのオブジェクトを使用すると、Object has been deleted or invalidated. でクラッシュするため、表示するのための別の構造体を用意
 //        personList = allFriends.map {
@@ -47,8 +51,8 @@ class PersonListViewModel: ObservableObject {
         canContactWithLinkedIn: Bool? = nil,
         canContactWithSlack: Bool? = nil,
         remark: String? = nil
-    ) {
-        realmHelper.updateFriend(
+    ) -> Bool {
+        return realmHelper.updateFriend(
             id: id,
             name: name,
             canContactWithLINE: canContactWithLINE,

@@ -94,6 +94,7 @@ class RealmHelper {
                 }
             } catch {
                 print("更新に失敗しました")
+                return false
             }
         } else {
             fatalError("更新対象データが見つかりませんでした")

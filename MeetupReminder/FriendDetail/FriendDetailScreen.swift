@@ -21,6 +21,8 @@ struct FriendDetailScreen: View {
     @State private var isTappedLinkedInButton: Bool
     @State private var isTappedSlackButton: Bool
 
+    @Environment(\.presentationMode) var presentation
+
     init(viewModel: PersonListViewModel, person: PersonModel, cardColor: CardViewColor) {
         self.viewModel = viewModel
         self.person = person
@@ -155,6 +157,11 @@ struct FriendDetailScreen: View {
                     Spacer()
                 }
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing){
+                    updateButton
+                }
+            }
         }
     }
 }
@@ -174,18 +181,6 @@ private extension FriendDetailScreen {
                 .foregroundColor(.mainText)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 16)
-                .onSubmit {
-                    viewModel.updateFriend(
-                        id: person.id,
-                        name: nameText,
-                        canContactWithLINE: isTappedLineButton,
-                        canContactWithFacebook: isTappedFacebookButton,
-                        canContactWithTwitter: isTappedTwitterButton,
-                        canContactWithLinkedIn: isTappedLinkedInButton,
-                        canContactWithSlack: isTappedSlackButton,
-                        remark: remarkText
-                    )
-                }
         }
     }
 
@@ -199,6 +194,28 @@ private extension FriendDetailScreen {
                 .bold()
         }
         .frame(height: 60)
+    }
+
+    var updateButton: some View {
+        Button(action: {
+            let result = viewModel.updateFriend(
+                id: person.id,
+                name: nameText,
+                canContactWithLINE: isTappedLineButton,
+                canContactWithFacebook: isTappedFacebookButton,
+                canContactWithTwitter: isTappedTwitterButton,
+                canContactWithLinkedIn: isTappedLinkedInButton,
+                canContactWithSlack: isTappedSlackButton,
+                remark: remarkText
+            )
+            if result {
+                print("呼ばれた？")
+                self.presentation.wrappedValue.dismiss()
+            }
+        }) {
+            Text("更新")
+                .foregroundColor(.mainText)
+        }
     }
 }
 
