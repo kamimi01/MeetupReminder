@@ -17,7 +17,6 @@ struct FriendDetailScreen: View {
     @State private var isTappedLinkedInButton = false
     @State private var isTappedSlackButton = false
 
-
     var body: some View {
         ZStack {
             cardColor.carViewBackground

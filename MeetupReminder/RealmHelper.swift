@@ -19,14 +19,17 @@ class RealmHelper {
         do {
             try realm.write {
                 realm.add(person)
-                print("Realmのファイルの場所：", Realm.Configuration.defaultConfiguration.fileURL)
             }
             return true
         } catch {
             print("保存に失敗しました")
         }
-
-
         return false
+    }
+
+    func loadFriends() -> [Person] {
+        let result = realm.objects(Person.self)
+        print("Realmのファイルの場所：", Realm.Configuration.defaultConfiguration.fileURL)
+        return Array(result)
     }
 }
