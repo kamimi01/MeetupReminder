@@ -176,7 +176,7 @@ private extension FriendDetailScreen {
                 .clipShape(Circle())
                 .frame(maxWidth: 130, maxHeight: 130)
             TextField("", text: $nameText)
-                .frame(width: 150)
+                .frame(width: 200)
                 .font(.title2)
                 .foregroundColor(.mainText)
                 .multilineTextAlignment(.center)
