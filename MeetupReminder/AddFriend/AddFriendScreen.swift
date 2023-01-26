@@ -205,7 +205,7 @@ private extension AddFriendScreen {
         person.canContactWithSlack = isTappedSlackButton
         person.remark = remarkText
 
-        let realmHelper = RealmHelper()
+        let realmHelper = RealmHelper.shared
         return realmHelper.addFriend(person: person)
     }
 }

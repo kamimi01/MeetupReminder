@@ -16,7 +16,7 @@ class PersonListViewModel: ObservableObject {
 
     init() {
         print("init呼ばれた")
-        realmHelper = RealmHelper()
+        realmHelper = RealmHelper.shared
         allFriends = realmHelper.loadFriends()
         token = allFriends?.observe { [weak self] _ in
             print("observe呼ばれた")

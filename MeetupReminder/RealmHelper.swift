@@ -9,10 +9,16 @@ import Foundation
 import RealmSwift
 
 class RealmHelper {
+    static let shared = RealmHelper()
     private let realm: Realm
 
     init() {
-        realm = try! Realm()
+        var key = Data(count: 64)
+        _ = key.withUnsafeMutableBytes { (pointer) in
+            SecRandomCopyBytes(kSecRandomDefault, 64, pointer.baseAddress!)
+        }
+        let config = Realm.Configuration(encryptionKey: key)
+        realm = try! Realm(configuration: config)
     }
 
     func addFriend(person: Person) -> Bool {

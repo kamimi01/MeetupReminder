@@ -18,12 +18,8 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 if viewModel.personList.isEmpty {
                     Spacer()
-                    VStack(spacing: 5) {
-                        LottieView(animationType: .friendships)
-                            .frame(width: 250, height: 180)
-                        Text("ともだちを増やそう！")
-                            .foregroundColor(.mainText)
-                    }
+                    LottieView(animationType: .friendships)
+                        .frame(width: 250, height: 180)
                     Spacer()
                 } else {
                     ScrollView {
