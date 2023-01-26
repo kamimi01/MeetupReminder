@@ -31,6 +31,9 @@ struct ContentView: View {
             }
             .navigationTitle("ともだち")
         }
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 }
 

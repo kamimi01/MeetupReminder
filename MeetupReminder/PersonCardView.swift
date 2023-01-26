@@ -119,6 +119,17 @@ private extension PersonCardView {
 
 struct PersonCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonCardView(person: Person(name: "加藤花子", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "try! Swiftで会った。iOSエンジニアとしては珍しく女性なので定期的に連絡を取りたい。"), cardColor: CardViewColor.yellow)
+        PersonCardView(person: createDummyData(), cardColor: CardViewColor.red)
+    }
+
+    static func createDummyData() -> Person {
+        let person = Person()
+        person.name = "加藤花子"
+        person.canContactWithLINE = false
+        person.canContactWithFacebook = false
+        person.canContactWithTwitter = false
+        person.canContactWithLinkedIn = true
+        person.canContactWithSlack = false
+        return person
     }
 }

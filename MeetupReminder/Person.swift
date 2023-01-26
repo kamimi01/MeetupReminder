@@ -6,15 +6,15 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Person: Identifiable {
-    let id = UUID().uuidString
-    let name: String
-    let canContactWithLINE: Bool
-    let canContactWithFacebook: Bool
-    let canContactWithTwitter: Bool
-    let canContactWithLinkedIn: Bool
-    let canContactWithSlack: Bool
-    let remark: String
-//    let profileImage
+class Person: Object, Identifiable {
+    @objc dynamic var id = UUID().uuidString
+    @objc dynamic var name = ""
+    @objc dynamic var canContactWithLINE = false
+    @objc dynamic var canContactWithFacebook = false
+    @objc dynamic var canContactWithTwitter = false
+    @objc dynamic var canContactWithLinkedIn = false
+    @objc dynamic var canContactWithSlack = false
+    @objc dynamic var remark = ""
 }
