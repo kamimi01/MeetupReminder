@@ -35,6 +35,9 @@ struct FriendDetailScreen: View {
         _isTappedTwitterButton = State(initialValue: person.canContactWithTwitter)
         _isTappedLinkedInButton = State(initialValue: person.canContactWithLinkedIn)
         _isTappedSlackButton = State(initialValue: person.canContactWithSlack)
+
+        //ナビゲーションバーの背景色の設定
+        UINavigationBar.appearance().barTintColor = UIColor(cardColor.carViewBackground)
     }
 
     var body: some View {

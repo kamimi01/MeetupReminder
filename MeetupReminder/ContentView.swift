@@ -34,10 +34,11 @@ struct ContentView: View {
                     }
                 }
                 addButton
-                    .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 270)
+                    .position(x: UIScreen.main.bounds.width - 70, y: addButtonY)
             }
             .navigationTitle("ともだち")
         }
+        .accentColor(.mainText)
         .onAppear {
             viewModel.onAppear()
         }
@@ -60,6 +61,15 @@ private extension ContentView {
         }
         .fullScreenCover(isPresented: $isShowingAddFriendScreen) {
             AddFriendScreen()
+        }
+    }
+
+    var addButtonY: CGFloat {
+        // FIXME: 3枚の時だけ、アイコンが押せないのでずらした。UI含めてどうすべきか考え直したい
+        if viewModel.personList.count == 3 {
+            return UIScreen.main.bounds.height - 240
+        } else {
+            return UIScreen.main.bounds.height - 270
         }
     }
 

@@ -21,6 +21,11 @@ struct AddFriendScreen: View {
 
     @Environment(\.dismiss) private var dismiss
 
+    init(){
+        //ナビゲーションバーの背景色の設定
+        UINavigationBar.appearance().barTintColor = UIColor(Color.cardViewRed)
+    }
+
     var body: some View {
         NavigationView {
             ZStack {
