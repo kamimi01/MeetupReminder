@@ -20,6 +20,7 @@ struct AddFriendScreen: View {
     @State private var isTappedSlackButton = false
 
     @Environment(\.dismiss) private var dismiss
+    @FocusState private var isFocused: Bool
 
     init(){
         //ナビゲーションバーの背景色の設定
@@ -41,9 +42,13 @@ struct AddFriendScreen: View {
                                     .padding(.horizontal, 5)
                                 TextField("会社の同僚。悩み相談先。", text: $remarkText, axis: .vertical)
                                     .padding()
-                                    .frame(height : 110.0)
+                                    .frame(height: 110.0, alignment: .top)
                                     .background(Color.mainBackground)
                                     .cornerRadius(20)
+                                    .focused($isFocused)
+                                    .onTapGesture {
+                                        isFocused = true
+                                    }
                             }
                             VStack(alignment: .leading, spacing: 20) {
                                 Text("連絡方法")

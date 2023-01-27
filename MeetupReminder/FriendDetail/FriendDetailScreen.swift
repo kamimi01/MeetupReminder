@@ -22,6 +22,7 @@ struct FriendDetailScreen: View {
     @State private var isTappedSlackButton: Bool
 
     @Environment(\.presentationMode) var presentation
+    @FocusState private var isFocused: Bool
 
     init(viewModel: PersonListViewModel, person: PersonModel, cardColor: CardViewColor) {
         self.viewModel = viewModel
@@ -54,9 +55,13 @@ struct FriendDetailScreen: View {
                                 .padding(.horizontal, 5)
                             TextField("高校の友達。今度ランチに行く。", text: $remarkText, axis: .vertical)
                                 .padding()
-                                .frame(height : 110.0)
+                                .frame(height : 110.0, alignment: .top)
                                 .background(Color.mainBackground)
                                 .cornerRadius(20)
+                                .focused($isFocused)
+                                .onTapGesture {
+                                    isFocused = true
+                                }
                         }
                         VStack(alignment: .leading, spacing: 20) {
                             Text("連絡方法")
@@ -170,7 +175,7 @@ private extension FriendDetailScreen {
                 .background(Color.mainBackground)
                 .clipShape(Circle())
                 .frame(maxWidth: 130, maxHeight: 130)
-            TextField("", text: $nameText)
+            TextField("なまえ", text: $nameText)
                 .frame(width: 200)
                 .font(.title2)
                 .foregroundColor(.mainText)
