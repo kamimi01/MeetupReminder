@@ -39,19 +39,11 @@ struct AddFriendScreen: View {
                                 Text("メモ")
                                     .foregroundColor(.mainText)
                                     .padding(.horizontal, 5)
-                                ZStack {
-                                    Color.mainBackground
-                                        .frame(height: 100)
-                                        .background(Color.mainBackground)
-                                        .cornerRadius(20)
-                                    VStack {
-                                        TextField("", text: $remarkText, axis: .vertical)
-                                            .foregroundColor(.mainText)
-                                            .padding()
-                                        Spacer()
-                                    }
-                                    .frame(height: 110)
-                                }
+                                TextField("会社の同僚。悩み相談先。", text: $remarkText, axis: .vertical)
+                                    .padding()
+                                    .frame(height : 110.0)
+                                    .background(Color.mainBackground)
+                                    .cornerRadius(20)
                             }
                             VStack(alignment: .leading, spacing: 20) {
                                 Text("連絡方法")
