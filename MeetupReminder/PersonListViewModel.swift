@@ -52,9 +52,9 @@ class PersonListViewModel: ObservableObject {
         }
     }
 
-    func registerNotification(of id: String, date: Date) {
+    func registerNotification(of person: PersonModel, date: Date) {
         let notificationUtil = UserNotificationUtil.shared
-        notificationUtil.setTimeRequest(of: id, date: date)
+        notificationUtil.setTimeRequest(of: person, date: date)
     }
 
     func updateFriend(

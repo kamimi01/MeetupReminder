@@ -246,7 +246,7 @@ private extension FriendDetailScreen {
             )
             if result {
                 if reminderToggleFlag {
-                    viewModel.registerNotification(of: person.id, date: selectedRemindDate)
+                    viewModel.registerNotification(of: person, date: selectedRemindDate)
                 }
                 self.presentation.wrappedValue.dismiss()
             }

@@ -28,12 +28,7 @@ class UserNotificationUtil: NSObject {
         }
     }
 
-    func setTimeRequest(of taskId: String, date: Date) {
-        // 5秒後に通知を送る
-//        let trigger2 = UNTimeIntervalNotificationTrigger(
-//            timeInterval: TimeInterval(5),
-//            repeats: false
-//        )
+    func setTimeRequest(of person: PersonModel, date: Date) {
         // 指定の時間に送る
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: date.components,
@@ -41,12 +36,12 @@ class UserNotificationUtil: NSObject {
         )
         // 通知される内容
         let content = UNMutableNotificationContent()
-        content.body = "テストメッセージ"
+        content.body = "\(person.name) さんに連絡をとってみましょう"
         content.badge = 1
         content.sound = .default
         // リクエストを作成
         let request = UNNotificationRequest(
-            identifier: UUID().uuidString,
+            identifier: person.id,
             content: content,
             trigger: trigger
         )
@@ -66,8 +61,8 @@ extension UserNotificationUtil: UNUserNotificationCenterDelegate {
         willPresent notification: UNNotification,
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
-            print("フォアグラウンドで通知を受信")
-            completionHandler([.banner, .list, .sound, .badge])
+        print("フォアグラウンドで通知を受信")
+        completionHandler([.banner, .list, .sound, .badge])
     }
 
     /// 通知をタップした時に実行される処理
@@ -77,6 +72,7 @@ extension UserNotificationUtil: UNUserNotificationCenterDelegate {
         withCompletionHandler completionHandler: @escaping () -> Void
     ) {
         print("通知をタップした時に実行される処理")
+        // TODO: ディープリンクを実装したい
         completionHandler()
     }
 }
