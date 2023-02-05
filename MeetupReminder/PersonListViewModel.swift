@@ -36,10 +36,25 @@ class PersonListViewModel: ObservableObject {
     }
 
     func onAppear() {
-        // Realmのオブジェクトを使用すると、Object has been deleted or invalidated. でクラッシュするため、表示するのための別の構造体を用意
-//        personList = allFriends.map {
-//            PersonModel(id: $0.id, name: $0.name, canContactWithLINE: $0.canContactWithLINE, canContactWithFacebook: $0.canContactWithFacebook, canContactWithTwitter: $0.canContactWithTwitter, canContactWithLinkedIn: $0.canContactWithLinkedIn, canContactWithSlack: $0.canContactWithSlack, remark: $0.remark)
-//        }
+        setNotification()
+    }
+
+    private func setNotification() {
+        let notificationUtil = UserNotificationUtil.shared
+        notificationUtil.initialize()
+        notificationUtil.showPushPermission { result in
+            switch result {
+            case .success(let isGranted):
+                print("isGranted:", isGranted)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
+    func registerNotification(of id: String, date: Date) {
+        let notificationUtil = UserNotificationUtil.shared
+        notificationUtil.setTimeRequest(of: id, date: date)
     }
 
     func updateFriend(

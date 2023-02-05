@@ -20,6 +20,9 @@ struct FriendDetailScreen: View {
     @State private var isTappedTwitterButton: Bool
     @State private var isTappedLinkedInButton: Bool
     @State private var isTappedSlackButton: Bool
+    @State private var selectedRemindDate = Date()
+    @State private var reminderToggleFlag = false
+    @State private var isShowingReminderSetting = false
 
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
@@ -151,6 +154,36 @@ struct FriendDetailScreen: View {
                                 Spacer()
                             }
                         }
+                        VStack(alignment: .leading, spacing: 20) {
+                            HStack {
+                                Text("通知設定")
+                                    .foregroundColor(.mainText)
+                                    .padding(.horizontal, 5)
+                                Toggle("", isOn: $reminderToggleFlag)
+                                    .toggleStyle(SwitchToggleStyle(tint: cardColor.cardViewText))
+                                    .onChange(of: reminderToggleFlag) { _ in
+                                        if reminderToggleFlag {
+                                            isShowingReminderSetting = true
+                                        } else {
+                                            isShowingReminderSetting = false
+                                        }
+                                    }
+                                Spacer()
+                            }
+                            if isShowingReminderSetting {
+                                HStack {
+                                    DatePicker(
+                                        "",
+                                        selection: $selectedRemindDate,
+                                        displayedComponents: [.date, .hourAndMinute]
+                                    )
+                                    .labelsHidden()
+                                    .accentColor(.mainText)
+                                    .environment(\.locale, Locale(identifier: "ja_JP"))
+                                    Spacer()
+                                }
+                            }
+                        }
                     }
                     .padding(16)
                     deleteButton
@@ -212,7 +245,9 @@ private extension FriendDetailScreen {
                 remark: remarkText
             )
             if result {
-                print("呼ばれた？")
+                if reminderToggleFlag {
+                    viewModel.registerNotification(of: person.id, date: selectedRemindDate)
+                }
                 self.presentation.wrappedValue.dismiss()
             }
         }) {
