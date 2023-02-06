@@ -124,7 +124,7 @@ struct PersonCardView_Previews: PreviewProvider {
     }
 
     static func createDummyData() -> PersonModel {
-        let person = PersonModel(id: "", name: "加藤花子", canContactWithLINE: false, canContactWithFacebook: false, canContactWithTwitter: false, canContactWithLinkedIn: false, canContactWithSlack: false, remark: "")
+        let person = PersonModel(id: "", name: "加藤花子", canContactWithLINE: false, canContactWithFacebook: false, canContactWithTwitter: false, canContactWithLinkedIn: false, canContactWithSlack: false, remark: "", remindDate: nil)
         return person
     }
 }

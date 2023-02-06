@@ -14,7 +14,7 @@ class RealmHelper {
 
     init() {
         let key = RealmHelper.getKey()
-        let config = Realm.Configuration(encryptionKey: key)
+        let config = Realm.Configuration(encryptionKey: key, schemaVersion: 2)
         realm = try! Realm(configuration: config)
 
         print("key:", String(data: key, encoding: .utf8))

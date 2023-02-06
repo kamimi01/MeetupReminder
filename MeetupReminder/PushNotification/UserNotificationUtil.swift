@@ -7,6 +7,7 @@
 
 import Foundation
 import UserNotifications
+import UIKit
 
 class UserNotificationUtil: NSObject {
     static var shared = UserNotificationUtil()
@@ -14,6 +15,10 @@ class UserNotificationUtil: NSObject {
 
     func initialize() {
         center.delegate = UserNotificationUtil.shared
+    }
+
+    func resetNotification() {
+        UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
     /// 通知許可をしたかどうかを判定する
@@ -62,6 +67,7 @@ extension UserNotificationUtil: UNUserNotificationCenterDelegate {
         withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void
     ) {
         print("フォアグラウンドで通知を受信")
+        // TODO: ディープリンクを実装したい
         completionHandler([.banner, .list, .sound, .badge])
     }
 
