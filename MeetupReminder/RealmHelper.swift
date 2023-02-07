@@ -110,7 +110,8 @@ class RealmHelper {
         canContactWithTwitter: Bool? = nil,
         canContactWithLinkedIn: Bool? = nil,
         canContactWithSlack: Bool? = nil,
-        remark: String? = nil
+        remark: String? = nil,
+        remindDate: Date? = nil
     ) -> Bool {
         let willUpdateFriends = realm.objects(Person.self).where {
             $0.id == id
@@ -138,6 +139,9 @@ class RealmHelper {
                     }
                     if let newRemark = remark {
                         willUpdateFriend.remark = newRemark
+                    }
+                    if let newRemindDate = remindDate {
+                        willUpdateFriend.remindDate = newRemindDate
                     }
                 }
                 return true

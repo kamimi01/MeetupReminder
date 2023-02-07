@@ -41,10 +41,13 @@ struct FriendDetailScreen: View {
         _isTappedSlackButton = State(initialValue: person.canContactWithSlack)
         if let remindDate = person.remindDate {
             _selectedRemindDate = State(initialValue: remindDate)
+            // reminderToggleFlagの変化に合わせてisShowingReminderSettingも変化するように実装されているが、初期化の時だけは連動しないのでここで実装した
             _reminderToggleFlag = State(initialValue: true)
+            _isShowingReminderSetting = State(initialValue: true)
         } else {
             _selectedRemindDate = State(initialValue: Calendar.current.date(byAdding: .hour, value: 1, to: Date())!)
             _reminderToggleFlag = State(initialValue: false)
+            _isShowingReminderSetting = State(initialValue: false)
         }
 
         //ナビゲーションバーの背景色の設定
@@ -249,7 +252,8 @@ private extension FriendDetailScreen {
                 canContactWithTwitter: isTappedTwitterButton,
                 canContactWithLinkedIn: isTappedLinkedInButton,
                 canContactWithSlack: isTappedSlackButton,
-                remark: remarkText
+                remark: remarkText,
+                remindDate: selectedRemindDate
             )
             if result {
                 if reminderToggleFlag {

@@ -26,7 +26,7 @@ class PersonListViewModel: ObservableObject {
                 return
             }
             self.personList = Array(allFriendsNotOptional).map {
-                PersonModel(id: $0.id, name: $0.name, canContactWithLINE: $0.canContactWithLINE, canContactWithFacebook: $0.canContactWithFacebook, canContactWithTwitter: $0.canContactWithTwitter, canContactWithLinkedIn: $0.canContactWithLinkedIn, canContactWithSlack: $0.canContactWithSlack, remark: $0.remark, remindDate: nil)
+                PersonModel(id: $0.id, name: $0.name, canContactWithLINE: $0.canContactWithLINE, canContactWithFacebook: $0.canContactWithFacebook, canContactWithTwitter: $0.canContactWithTwitter, canContactWithLinkedIn: $0.canContactWithLinkedIn, canContactWithSlack: $0.canContactWithSlack, remark: $0.remark, remindDate: $0.remindDate)
             }
         }
     }
@@ -65,7 +65,8 @@ class PersonListViewModel: ObservableObject {
         canContactWithTwitter: Bool? = nil,
         canContactWithLinkedIn: Bool? = nil,
         canContactWithSlack: Bool? = nil,
-        remark: String? = nil
+        remark: String? = nil,
+        remindDate: Date? = nil
     ) -> Bool {
         return realmHelper.updateFriend(
             id: id,
@@ -75,7 +76,8 @@ class PersonListViewModel: ObservableObject {
             canContactWithTwitter: canContactWithTwitter,
             canContactWithLinkedIn: canContactWithLinkedIn,
             canContactWithSlack: canContactWithSlack,
-            remark: remark
+            remark: remark,
+            remindDate: remindDate
         )
     }
 
