@@ -23,6 +23,7 @@ struct FriendDetailScreen: View {
     @State private var selectedRemindDate: Date
     @State private var reminderToggleFlag: Bool
     @State private var isShowingReminderSetting = false
+    let minimumRemindDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())!
 
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
@@ -185,6 +186,7 @@ struct FriendDetailScreen: View {
                                     DatePicker(
                                         "",
                                         selection: $selectedRemindDate,
+                                        in: minimumRemindDate...,
                                         displayedComponents: [.date, .hourAndMinute]
                                     )
                                     .labelsHidden()
