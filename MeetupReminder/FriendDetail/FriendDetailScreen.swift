@@ -20,8 +20,8 @@ struct FriendDetailScreen: View {
     @State private var isTappedTwitterButton: Bool
     @State private var isTappedLinkedInButton: Bool
     @State private var isTappedSlackButton: Bool
-    @State private var selectedRemindDate = Date()
-    @State private var reminderToggleFlag = false
+    @State private var selectedRemindDate: Date
+    @State private var reminderToggleFlag: Bool
     @State private var isShowingReminderSetting = false
 
     @Environment(\.presentationMode) var presentation
@@ -39,6 +39,13 @@ struct FriendDetailScreen: View {
         _isTappedTwitterButton = State(initialValue: person.canContactWithTwitter)
         _isTappedLinkedInButton = State(initialValue: person.canContactWithLinkedIn)
         _isTappedSlackButton = State(initialValue: person.canContactWithSlack)
+        if let remindDate = person.remindDate {
+            _selectedRemindDate = State(initialValue: remindDate)
+            _reminderToggleFlag = State(initialValue: true)
+        } else {
+            _selectedRemindDate = State(initialValue: Calendar.current.date(byAdding: .hour, value: 1, to: Date())!)
+            _reminderToggleFlag = State(initialValue: false)
+        }
 
         //ナビゲーションバーの背景色の設定
         UINavigationBar.appearance().barTintColor = UIColor(cardColor.carViewBackground)
