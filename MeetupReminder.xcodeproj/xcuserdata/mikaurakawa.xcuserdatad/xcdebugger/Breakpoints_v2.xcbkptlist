@@ -174,8 +174,8 @@
             filePath = "MeetupReminder/PersonListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:remindDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,10 +334,42 @@
             filePath = "MeetupReminder/PushNotification/UserNotificationUtil.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "setTimeRequest(of:date:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "997D2127-6725-4541-A677-AD865AD6994D - 5832f24f951c4cca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MeetupReminder.UserNotificationUtil.setTimeRequest(of: MeetupReminder.PersonModel, date: Foundation.Date) -&gt; ()"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/PushNotification/UserNotificationUtil.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "1068">
+               </Location>
+               <Location
+                  uuid = "997D2127-6725-4541-A677-AD865AD6994D - 1f5fb4ace9a791c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeetupReminder.UserNotificationUtil.setTimeRequest(of: MeetupReminder.PersonModel, date: Foundation.Date) -&gt; ()"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/PushNotification/UserNotificationUtil.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

@@ -253,7 +253,7 @@ private extension FriendDetailScreen {
                 canContactWithLinkedIn: isTappedLinkedInButton,
                 canContactWithSlack: isTappedSlackButton,
                 remark: remarkText,
-                remindDate: selectedRemindDate
+                remindDate: reminderToggleFlag ? selectedRemindDate : nil
             )
             if result {
                 if reminderToggleFlag {

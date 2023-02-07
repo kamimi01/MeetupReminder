@@ -21,7 +21,7 @@ class UserNotificationUtil: NSObject {
         UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
-    /// 通知許可をしたかどうかを判定する
+    /// 通知許可をしたかどうかを判定する（同じIDで通知を設定すると以前設定された通知が上書きされるので、通知のupdateメソッドは実装していない）
     func showPushPermission(completion: @escaping (Result<Bool, Error>) -> Void) {
         center.requestAuthorization(options: [.alert, .badge, .sound]) { isGranted, error in
             if let error = error {
@@ -31,6 +31,10 @@ class UserNotificationUtil: NSObject {
             }
             completion(.success(isGranted))
         }
+    }
+
+    func deleteRequest(id: String) {
+        center.removePendingNotificationRequests(withIdentifiers: [id])
     }
 
     func setTimeRequest(of person: PersonModel, date: Date) {

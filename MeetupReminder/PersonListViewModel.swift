@@ -59,15 +59,26 @@ class PersonListViewModel: ObservableObject {
 
     func updateFriend(
         id: String,
-        name: String? = nil,
-        canContactWithLINE: Bool? = nil,
-        canContactWithFacebook: Bool? = nil,
-        canContactWithTwitter: Bool? = nil,
-        canContactWithLinkedIn: Bool? = nil,
-        canContactWithSlack: Bool? = nil,
-        remark: String? = nil,
+        name: String,
+        canContactWithLINE: Bool,
+        canContactWithFacebook: Bool,
+        canContactWithTwitter: Bool,
+        canContactWithLinkedIn: Bool,
+        canContactWithSlack: Bool,
+        remark: String,
         remindDate: Date? = nil
     ) -> Bool {
+        // TODO: remindDateがnilの場合は通知を削除したい
+        // TODO: remindDateが設定されていたら、過去の通知を削除して新しい通知を設定したい
+        let userNotificationUtil = UserNotificationUtil.shared
+        if let remindDate = remindDate {
+            // 通知を更新
+            let person = PersonModel(id: id, name: name, canContactWithLINE: canContactWithLINE, canContactWithFacebook: canContactWithFacebook, canContactWithTwitter: canContactWithTwitter, canContactWithLinkedIn: canContactWithLinkedIn, canContactWithSlack: canContactWithSlack, remark: remark, remindDate: remindDate)
+            userNotificationUtil.setTimeRequest(of: person, date: remindDate)
+        } else {
+            // 通知を削除
+            userNotificationUtil.deleteRequest(id: id)
+        }
         return realmHelper.updateFriend(
             id: id,
             name: name,
