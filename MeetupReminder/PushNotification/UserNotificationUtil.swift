@@ -56,7 +56,7 @@ class UserNotificationUtil: NSObject {
         )
         // 通知される内容
         let content = UNMutableNotificationContent()
-        content.body = "\(person.name) さんに連絡をとってみましょう"
+        content.body = "\(person.name) さんに連絡してみませんか？👀"
         content.badge = 1
         content.sound = .default
         // リクエストを作成
