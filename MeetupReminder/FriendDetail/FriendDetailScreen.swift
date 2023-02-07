@@ -186,7 +186,6 @@ struct FriendDetailScreen: View {
                                     DatePicker(
                                         "",
                                         selection: $selectedRemindDate,
-                                        in: minimumRemindDate...,
                                         displayedComponents: [.date, .hourAndMinute]
                                     )
                                     .labelsHidden()

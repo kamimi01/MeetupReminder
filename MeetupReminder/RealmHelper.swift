@@ -17,7 +17,7 @@ class RealmHelper {
         let config = Realm.Configuration(encryptionKey: key, schemaVersion: 2)
         realm = try! Realm(configuration: config)
 
-        print("key:", String(data: key, encoding: .utf8))
+        print("key:", key.map { String(format: "%.2hhx", $0) }.joined())
     }
 
     // あれば既存の暗号化キーを取得する。なければ新しく作成する
@@ -140,9 +140,7 @@ class RealmHelper {
                     if let newRemark = remark {
                         willUpdateFriend.remark = newRemark
                     }
-                    if let newRemindDate = remindDate {
-                        willUpdateFriend.remindDate = newRemindDate
-                    }
+                    willUpdateFriend.remindDate = remindDate
                 }
                 return true
             } catch {

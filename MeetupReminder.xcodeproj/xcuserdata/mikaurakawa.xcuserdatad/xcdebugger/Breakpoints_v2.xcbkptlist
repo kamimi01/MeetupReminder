@@ -96,7 +96,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "122"
             endingLineNumber = "122"
-            landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:)"
+            landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:remindDate:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -142,26 +142,10 @@
             filePath = "MeetupReminder/FriendDetail/FriendDetailScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "updateButton"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1D6376A9-3C50-4190-956D-1578E6DCED67"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeetupReminder/RealmHelper.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:remindDate:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -190,8 +174,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:remindDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -200,7 +184,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F81DB5C5-A32B-4D3E-BB26-7E041FFEFC64"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MeetupReminder/RealmHelper.swift"
@@ -208,30 +192,15 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "116"
             endingLineNumber = "116"
-            landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:)"
+            landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:remindDate:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F81DB5C5-A32B-4D3E-BB26-7E041FFEFC64 - df78dc2582c78885"
+                  uuid = "F81DB5C5-A32B-4D3E-BB26-7E041FFEFC64 - 1d5ba7bdb9f07aa2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "MeetupReminder.RealmHelper.updateFriend(id: Swift.String, name: Swift.Optional&lt;Swift.String&gt;, canContactWithLINE: Swift.Optional&lt;Swift.Bool&gt;, canContactWithFacebook: Swift.Optional&lt;Swift.Bool&gt;, canContactWithTwitter: Swift.Optional&lt;Swift.Bool&gt;, canContactWithLinkedIn: Swift.Optional&lt;Swift.Bool&gt;, canContactWithSlack: Swift.Optional&lt;Swift.Bool&gt;, remark: Swift.Optional&lt;Swift.String&gt;) -&gt; Swift.Bool"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/RealmHelper.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "115"
-                  endingLineNumber = "115"
-                  offsetFromSymbolStart = "324">
-               </Location>
-               <Location
-                  uuid = "F81DB5C5-A32B-4D3E-BB26-7E041FFEFC64 - 9c79d21555b5ceef"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (RealmSwift.Query&lt;MeetupReminder.Person&gt;) -&gt; RealmSwift.Query&lt;Swift.Bool&gt; in MeetupReminder.RealmHelper.updateFriend(id: Swift.String, name: Swift.Optional&lt;Swift.String&gt;, canContactWithLINE: Swift.Optional&lt;Swift.Bool&gt;, canContactWithFacebook: Swift.Optional&lt;Swift.Bool&gt;, canContactWithTwitter: Swift.Optional&lt;Swift.Bool&gt;, canContactWithLinkedIn: Swift.Optional&lt;Swift.Bool&gt;, canContactWithSlack: Swift.Optional&lt;Swift.Bool&gt;, remark: Swift.Optional&lt;Swift.String&gt;) -&gt; Swift.Bool"
+                  symbolName = "MeetupReminder.RealmHelper.updateFriend(id: Swift.String, name: Swift.Optional&lt;Swift.String&gt;, canContactWithLINE: Swift.Optional&lt;Swift.Bool&gt;, canContactWithFacebook: Swift.Optional&lt;Swift.Bool&gt;, canContactWithTwitter: Swift.Optional&lt;Swift.Bool&gt;, canContactWithLinkedIn: Swift.Optional&lt;Swift.Bool&gt;, canContactWithSlack: Swift.Optional&lt;Swift.Bool&gt;, remark: Swift.Optional&lt;Swift.String&gt;, remindDate: Swift.Optional&lt;Foundation.Date&gt;) -&gt; Swift.Bool"
                   moduleName = "MeetupReminder"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/RealmHelper.swift"
@@ -239,7 +208,22 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "116"
                   endingLineNumber = "116"
-                  offsetFromSymbolStart = "60">
+                  offsetFromSymbolStart = "415">
+               </Location>
+               <Location
+                  uuid = "F81DB5C5-A32B-4D3E-BB26-7E041FFEFC64 - a197cc156a8a2417"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (RealmSwift.Query&lt;MeetupReminder.Person&gt;) -&gt; RealmSwift.Query&lt;Swift.Bool&gt; in MeetupReminder.RealmHelper.updateFriend(id: Swift.String, name: Swift.Optional&lt;Swift.String&gt;, canContactWithLINE: Swift.Optional&lt;Swift.Bool&gt;, canContactWithFacebook: Swift.Optional&lt;Swift.Bool&gt;, canContactWithTwitter: Swift.Optional&lt;Swift.Bool&gt;, canContactWithLinkedIn: Swift.Optional&lt;Swift.Bool&gt;, canContactWithSlack: Swift.Optional&lt;Swift.Bool&gt;, remark: Swift.Optional&lt;Swift.String&gt;, remindDate: Swift.Optional&lt;Foundation.Date&gt;) -&gt; Swift.Bool"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/RealmHelper.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "47">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -256,7 +240,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
             endingLineNumber = "119"
-            landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:)"
+            landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:remindDate:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -270,8 +254,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:remindDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +270,8 @@
             filePath = "MeetupReminder/RealmHelper.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:remindDate:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,13 +318,13 @@
             filePath = "MeetupReminder/PushNotification/UserNotificationUtil.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "setTimeRequest(of:date:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "997D2127-6725-4541-A677-AD865AD6994D - 5832f24f951c4cca"
+                  uuid = "997D2127-6725-4541-A677-AD865AD6994D - 5832f24f951c4d61"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -350,12 +334,12 @@
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/PushNotification/UserNotificationUtil.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "1068">
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "1112">
                </Location>
                <Location
-                  uuid = "997D2127-6725-4541-A677-AD865AD6994D - 1f5fb4ace9a791c9"
+                  uuid = "997D2127-6725-4541-A677-AD865AD6994D - 1f5fb4ace9a790a4"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -365,9 +349,9 @@
                   urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/PushNotification/UserNotificationUtil.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "56">
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "73">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -382,10 +366,74 @@
             filePath = "MeetupReminder/FriendDetail/FriendDetailScreen.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
             landmarkName = "updateButton"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "85C75BB2-B0FC-460A-9F1E-812443C06E27"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetupReminder/FriendDetail/FriendDetailScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
+            landmarkName = "updateButton"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB328275-3E99-454B-8347-BCD03B85E672"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetupReminder/PersonListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:remindDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CDB237E2-A036-4675-A142-27ECFBBD3017"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetupReminder/RealmHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "updateFriend(id:name:canContactWithLINE:canContactWithFacebook:canContactWithTwitter:canContactWithLinkedIn:canContactWithSlack:remark:remindDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD7E91E3-C6BD-4CB6-AD58-BAF64B402D75"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetupReminder/RealmHelper.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "init()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -21,6 +21,17 @@ class UserNotificationUtil: NSObject {
         UIApplication.shared.applicationIconBadgeNumber = 0
     }
 
+    func hasPendingNotification(id: String, completion: @escaping (Bool) -> Void) {
+        center.getPendingNotificationRequests { requests in
+            for request in requests {
+                if request.identifier == id {
+                    completion(true)
+                }
+            }
+            completion(false)
+        }
+    }
+
     /// 通知許可をしたかどうかを判定する（同じIDで通知を設定すると以前設定された通知が上書きされるので、通知のupdateメソッドは実装していない）
     func showPushPermission(completion: @escaping (Result<Bool, Error>) -> Void) {
         center.requestAuthorization(options: [.alert, .badge, .sound]) { isGranted, error in
