@@ -20,6 +20,10 @@ struct FriendDetailScreen: View {
     @State private var isTappedTwitterButton: Bool
     @State private var isTappedLinkedInButton: Bool
     @State private var isTappedSlackButton: Bool
+    @State private var selectedRemindDate: Date
+    @State private var reminderToggleFlag: Bool
+    @State private var isShowingReminderSetting = false
+    let minimumRemindDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())!
 
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
@@ -36,6 +40,16 @@ struct FriendDetailScreen: View {
         _isTappedTwitterButton = State(initialValue: person.canContactWithTwitter)
         _isTappedLinkedInButton = State(initialValue: person.canContactWithLinkedIn)
         _isTappedSlackButton = State(initialValue: person.canContactWithSlack)
+        if let remindDate = person.remindDate {
+            _selectedRemindDate = State(initialValue: remindDate)
+            // reminderToggleFlagの変化に合わせてisShowingReminderSettingも変化するように実装されているが、初期化の時だけは連動しないのでここで実装した
+            _reminderToggleFlag = State(initialValue: true)
+            _isShowingReminderSetting = State(initialValue: true)
+        } else {
+            _selectedRemindDate = State(initialValue: Calendar.current.date(byAdding: .hour, value: 1, to: Date())!)
+            _reminderToggleFlag = State(initialValue: false)
+            _isShowingReminderSetting = State(initialValue: false)
+        }
 
         //ナビゲーションバーの背景色の設定
         UINavigationBar.appearance().barTintColor = UIColor(cardColor.carViewBackground)
@@ -151,6 +165,36 @@ struct FriendDetailScreen: View {
                                 Spacer()
                             }
                         }
+                        VStack(alignment: .leading, spacing: 20) {
+                            HStack {
+                                Text("通知設定")
+                                    .foregroundColor(.mainText)
+                                    .padding(.horizontal, 5)
+                                Toggle("", isOn: $reminderToggleFlag)
+                                    .toggleStyle(SwitchToggleStyle(tint: cardColor.cardViewText))
+                                    .onChange(of: reminderToggleFlag) { _ in
+                                        if reminderToggleFlag {
+                                            isShowingReminderSetting = true
+                                        } else {
+                                            isShowingReminderSetting = false
+                                        }
+                                    }
+                                Spacer()
+                            }
+                            if isShowingReminderSetting {
+                                HStack {
+                                    DatePicker(
+                                        "",
+                                        selection: $selectedRemindDate,
+                                        displayedComponents: [.date, .hourAndMinute]
+                                    )
+                                    .labelsHidden()
+                                    .accentColor(.mainText)
+                                    .environment(\.locale, Locale(identifier: "ja_JP"))
+                                    Spacer()
+                                }
+                            }
+                        }
                     }
                     .padding(16)
                     deleteButton
@@ -209,10 +253,13 @@ private extension FriendDetailScreen {
                 canContactWithTwitter: isTappedTwitterButton,
                 canContactWithLinkedIn: isTappedLinkedInButton,
                 canContactWithSlack: isTappedSlackButton,
-                remark: remarkText
+                remark: remarkText,
+                remindDate: reminderToggleFlag ? selectedRemindDate : nil
             )
             if result {
-                print("呼ばれた？")
+                if reminderToggleFlag {
+                    viewModel.registerNotification(of: person, date: selectedRemindDate)
+                }
                 self.presentation.wrappedValue.dismiss()
             }
         }) {
@@ -224,6 +271,6 @@ private extension FriendDetailScreen {
 
 struct FriendDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        FriendDetailScreen(viewModel: PersonListViewModel(), person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ"), cardColor: .red)
+        FriendDetailScreen(viewModel: PersonListViewModel(), person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardColor: .red)
     }
 }

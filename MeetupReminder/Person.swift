@@ -17,4 +17,5 @@ class Person: Object, Identifiable {
     @objc dynamic var canContactWithLinkedIn = false
     @objc dynamic var canContactWithSlack = false
     @objc dynamic var remark = ""
+    @objc dynamic var remindDate: Date?
 }

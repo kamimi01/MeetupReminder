@@ -14,10 +14,10 @@ class RealmHelper {
 
     init() {
         let key = RealmHelper.getKey()
-        let config = Realm.Configuration(encryptionKey: key)
+        let config = Realm.Configuration(encryptionKey: key, schemaVersion: 2)
         realm = try! Realm(configuration: config)
 
-        print("key:", String(data: key, encoding: .utf8))
+        print("key:", key.map { String(format: "%.2hhx", $0) }.joined())
     }
 
     // あれば既存の暗号化キーを取得する。なければ新しく作成する
@@ -110,7 +110,8 @@ class RealmHelper {
         canContactWithTwitter: Bool? = nil,
         canContactWithLinkedIn: Bool? = nil,
         canContactWithSlack: Bool? = nil,
-        remark: String? = nil
+        remark: String? = nil,
+        remindDate: Date? = nil
     ) -> Bool {
         let willUpdateFriends = realm.objects(Person.self).where {
             $0.id == id
@@ -139,6 +140,7 @@ class RealmHelper {
                     if let newRemark = remark {
                         willUpdateFriend.remark = newRemark
                     }
+                    willUpdateFriend.remindDate = remindDate
                 }
                 return true
             } catch {

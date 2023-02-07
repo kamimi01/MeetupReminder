@@ -16,4 +16,5 @@ struct PersonModel {
     let canContactWithLinkedIn: Bool
     let canContactWithSlack: Bool
     let remark: String
+    let remindDate: Date?
 }

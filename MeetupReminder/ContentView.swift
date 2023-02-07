@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel = PersonListViewModel()
     @State private var isShowingAddFriendScreen = false
+    @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
         NavigationView {
@@ -41,6 +42,20 @@ struct ContentView: View {
         .accentColor(.mainText)
         .onAppear {
             viewModel.onAppear()
+        }
+        .onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active:
+                print("active")
+                let userNotificationUtil = UserNotificationUtil.shared
+                userNotificationUtil.resetNotification()
+            case .inactive:
+                print("inactive")
+            case .background:
+                print("background")
+            @unknown default:
+                print("do nothing")
+            }
         }
     }
 }
