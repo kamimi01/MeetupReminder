@@ -9,6 +9,7 @@ import SwiftUI
 import RealmSwift
 
 struct AddFriendScreen: View {
+    let personList: [PersonModel]
     let cardColor = CardViewColor.red
 
     @State private var nameText = ""
@@ -22,7 +23,9 @@ struct AddFriendScreen: View {
     @Environment(\.dismiss) private var dismiss
     @FocusState private var isFocused: Bool
 
-    init(){
+    init(personList: [PersonModel]){
+        self.personList = personList
+
         //ナビゲーションバーの背景色の設定
         UINavigationBar.appearance().barTintColor = UIColor(Color.cardViewRed)
     }
@@ -190,6 +193,11 @@ private extension AddFriendScreen {
             let result = addFriend()
             if result {
                 dismiss()
+                // レビューダイアログの表示
+                if let windowScene = UIApplication.shared.windows.first?.windowScene {
+                    let appReview = AppReview(personList: personList)
+                    appReview.requestReview(in: windowScene)
+                }
             }
         }) {
             Text("追加")
@@ -214,6 +222,6 @@ private extension AddFriendScreen {
 
 struct AddFriendScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AddFriendScreen()
+        AddFriendScreen(personList: [PersonModel(id: "", name: "加藤花子", canContactWithLINE: false, canContactWithFacebook: false, canContactWithTwitter: false, canContactWithLinkedIn: false, canContactWithSlack: false, remark: "", remindDate: nil)])
     }
 }
