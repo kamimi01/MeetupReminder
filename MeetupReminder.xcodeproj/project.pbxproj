@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4096B0229965B80009090AE /* AppReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4096B0129965B80009090AE /* AppReview.swift */; };
 		D4A90103298F1B9500BCCA5D /* UserNotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A90102298F1B9500BCCA5D /* UserNotificationUtil.swift */; };
 		D4A90106298F23CB00BCCA5D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A90105298F23CB00BCCA5D /* Date+Extension.swift */; };
 		D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D145297F370F00029E0B /* MeetupReminderApp.swift */; };
@@ -51,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		D4096B0029930131009090AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D4096B0129965B80009090AE /* AppReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReview.swift; sourceTree = "<group>"; };
 		D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeetupReminder.entitlements; sourceTree = "<group>"; };
 		D4A90102298F1B9500BCCA5D /* UserNotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationUtil.swift; sourceTree = "<group>"; };
 		D4A90105298F23CB00BCCA5D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				D4CEE7922982A5C1005B863F /* RealmHelper.swift */,
 				D4CEE79829833C3A005B863F /* friendships.json */,
 				D4CEE79A29833C65005B863F /* LottieView.swift */,
+				D4096B0129965B80009090AE /* AppReview.swift */,
 			);
 			path = MeetupReminder;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 			files = (
 				D4A90103298F1B9500BCCA5D /* UserNotificationUtil.swift in Sources */,
 				D4C6D170298084EF00029E0B /* Person.swift in Sources */,
+				D4096B0229965B80009090AE /* AppReview.swift in Sources */,
 				D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */,
 				D4CEE7972982B93E005B863F /* PersonModel.swift in Sources */,
 				D4C6D148297F370F00029E0B /* ContentView.swift in Sources */,

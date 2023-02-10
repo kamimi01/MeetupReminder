@@ -75,7 +75,7 @@ private extension ContentView {
                 .shadow(color: .gray, radius: 3, x: 3, y: 3)
         }
         .fullScreenCover(isPresented: $isShowingAddFriendScreen) {
-            AddFriendScreen()
+            AddFriendScreen(personList: viewModel.personList)
         }
     }
 
