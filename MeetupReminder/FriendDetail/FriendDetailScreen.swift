@@ -231,6 +231,10 @@ private extension FriendDetailScreen {
     var deleteButton: some View {
         Button(action: {
             let result = viewModel.deleteFriend(id: person.id)
+            // 通知を削除する
+            let userNotificationUtil = UserNotificationUtil.shared
+            userNotificationUtil.deleteRequest(id: person.id)
+
             if result {
                 self.presentation.wrappedValue.dismiss()
             }
