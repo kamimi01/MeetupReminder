@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D4096B0229965B80009090AE /* AppReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4096B0129965B80009090AE /* AppReview.swift */; };
+		D49734082998E1F400FA6272 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49734072998E1F400FA6272 /* SettingScreen.swift */; };
+		D497340B2998E25700FA6272 /* AppInfoList in Frameworks */ = {isa = PBXBuildFile; productRef = D497340A2998E25700FA6272 /* AppInfoList */; };
+		D497340D2998E2B300FA6272 /* license-list.plist in Resources */ = {isa = PBXBuildFile; fileRef = D497340C2998E2B200FA6272 /* license-list.plist */; };
 		D4A90103298F1B9500BCCA5D /* UserNotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A90102298F1B9500BCCA5D /* UserNotificationUtil.swift */; };
 		D4A90106298F23CB00BCCA5D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A90105298F23CB00BCCA5D /* Date+Extension.swift */; };
 		D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D145297F370F00029E0B /* MeetupReminderApp.swift */; };
@@ -53,6 +56,8 @@
 /* Begin PBXFileReference section */
 		D4096B0029930131009090AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D4096B0129965B80009090AE /* AppReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReview.swift; sourceTree = "<group>"; };
+		D49734072998E1F400FA6272 /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
+		D497340C2998E2B200FA6272 /* license-list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "license-list.plist"; sourceTree = "<group>"; };
 		D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeetupReminder.entitlements; sourceTree = "<group>"; };
 		D4A90102298F1B9500BCCA5D /* UserNotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNotificationUtil.swift; sourceTree = "<group>"; };
 		D4A90105298F23CB00BCCA5D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D497340B2998E25700FA6272 /* AppInfoList in Frameworks */,
 				D4CEE791298299FE005B863F /* RealmSwift in Frameworks */,
 				D4CEE78F298299FE005B863F /* Realm in Frameworks */,
 				D4CEE79E29833C8E005B863F /* Lottie in Frameworks */,
@@ -107,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D49734062998E1E400FA6272 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				D49734072998E1F400FA6272 /* SettingScreen.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		D4A90101298F1B7B00BCCA5D /* PushNotification */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +140,7 @@
 		D4C6D139297F370F00029E0B = {
 			isa = PBXGroup;
 			children = (
+				D497340C2998E2B200FA6272 /* license-list.plist */,
 				D4C6D144297F370F00029E0B /* MeetupReminder */,
 				D4C6D155297F371200029E0B /* MeetupReminderTests */,
 				D4C6D15F297F371200029E0B /* MeetupReminderUITests */,
@@ -146,6 +161,7 @@
 		D4C6D144297F370F00029E0B /* MeetupReminder */ = {
 			isa = PBXGroup;
 			children = (
+				D49734062998E1E400FA6272 /* Setting */,
 				D4096B0029930131009090AE /* Info.plist */,
 				D4A90104298F23AA00BCCA5D /* Extensions */,
 				D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */,
@@ -221,6 +237,7 @@
 				D4C6D13E297F370F00029E0B /* Sources */,
 				D4C6D13F297F370F00029E0B /* Frameworks */,
 				D4C6D140297F370F00029E0B /* Resources */,
+				D497340E2998E2BA00FA6272 /* LicenseList */,
 			);
 			buildRules = (
 			);
@@ -231,6 +248,7 @@
 				D4CEE78E298299FE005B863F /* Realm */,
 				D4CEE790298299FE005B863F /* RealmSwift */,
 				D4CEE79D29833C8E005B863F /* Lottie */,
+				D497340A2998E25700FA6272 /* AppInfoList */,
 			);
 			productName = MeetupReminder;
 			productReference = D4C6D142297F370F00029E0B /* MeetupReminder.app */;
@@ -307,6 +325,7 @@
 			packageReferences = (
 				D4CEE78D298299FE005B863F /* XCRemoteSwiftPackageReference "realm-swift" */,
 				D4CEE79C29833C8D005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				D49734092998E25700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */,
 			);
 			productRefGroup = D4C6D143297F370F00029E0B /* Products */;
 			projectDirPath = "";
@@ -324,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D497340D2998E2B300FA6272 /* license-list.plist in Resources */,
 				D4C6D14D297F371100029E0B /* Preview Assets.xcassets in Resources */,
 				D4C6D14A297F371100029E0B /* Assets.xcassets in Resources */,
 				D4CEE79929833C3A005B863F /* friendships.json in Resources */,
@@ -346,6 +366,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D497340E2998E2BA00FA6272 /* LicenseList */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = LicenseList;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SOURCE_PACKAGES_PATH=`echo ${BUILD_DIR%Build/*}SourcePackages`\n\n# Build SourcePackagesParser\nxcrun --sdk macosx swift build -c release \\\n  --package-path ${SOURCE_PACKAGES_PATH}/checkouts/LicenseList \\\n  --product spp\n\n# Run SourcePackagesParser\n${SOURCE_PACKAGES_PATH}/checkouts/LicenseList/.build/release/spp ${SRCROOT} ${SOURCE_PACKAGES_PATH}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D4C6D13E297F370F00029E0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -363,6 +404,7 @@
 				D4CEE7952982AE89005B863F /* AddFriendViewModel.swift in Sources */,
 				D4C6D1742980867B00029E0B /* PersonCardView.swift in Sources */,
 				D4C6D17E298148B500029E0B /* FriendDetailScreen.swift in Sources */,
+				D49734082998E1F400FA6272 /* SettingScreen.swift in Sources */,
 				D4A90106298F23CB00BCCA5D /* Date+Extension.swift in Sources */,
 				D4C6D172298085DF00029E0B /* PersonListViewModel.swift in Sources */,
 				D4CEE79B29833C65005B863F /* LottieView.swift in Sources */,
@@ -541,7 +583,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamimi.MeetupReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -576,7 +618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamimi.MeetupReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -704,6 +746,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D49734092998E25700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kamimi01/AppInfoList.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		D4CEE78D298299FE005B863F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
@@ -723,6 +773,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D497340A2998E25700FA6272 /* AppInfoList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D49734092998E25700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */;
+			productName = AppInfoList;
+		};
 		D4CEE78E298299FE005B863F /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D4CEE78D298299FE005B863F /* XCRemoteSwiftPackageReference "realm-swift" */;

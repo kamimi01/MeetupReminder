@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @ObservedObject var viewModel = PersonListViewModel()
     @State private var isShowingAddFriendScreen = false
+    @State private var isShowingAppInfoScreen = false
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
@@ -40,6 +41,11 @@ struct ContentView: View {
                     .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 240)
             }
             .navigationTitle("ともだち")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing){
+                    appInfoButton
+                }
+            }
         }
         .accentColor(.mainText)
         .onAppear {
@@ -63,6 +69,18 @@ struct ContentView: View {
 }
 
 private extension ContentView {
+    var appInfoButton: some View {
+        Button(action: {
+            isShowingAppInfoScreen = true
+        }) {
+            Image(systemName: "info.circle")
+                .foregroundColor(.mainText)
+        }
+        .fullScreenCover(isPresented: $isShowingAppInfoScreen) {
+            SettingScreen()
+        }
+    }
+
     var addButton: some View {
         Button(action: {
             isShowingAddFriendScreen = true
