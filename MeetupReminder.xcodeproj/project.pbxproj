@@ -167,7 +167,6 @@
 		D4A90101298F1B7B00BCCA5D /* PushNotification */ = {
 			isa = PBXGroup;
 			children = (
-				D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */,
 				D4A90102298F1B9500BCCA5D /* UserNotificationUtil.swift */,
 			);
 			path = PushNotification;
@@ -211,6 +210,7 @@
 				D43202582A71CE0B0096642C /* FriendList */,
 				D43202572A71CDD30096642C /* AppReview */,
 				D49734062998E1E400FA6272 /* Setting */,
+				D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */,
 				D4096B0029930131009090AE /* Info.plist */,
 				D4A90104298F23AA00BCCA5D /* Extensions */,
 				D4A90101298F1B7B00BCCA5D /* PushNotification */,
