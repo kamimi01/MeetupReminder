@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kamimi01/AppInfoList.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "26aefc691871818bd07a4ed29005d5b4c784e883"
+        "revision" : "146cc577e7d5d100f3b45b76e2bc72b8258d5018",
+        "version" : "1.0.0"
       }
     },
     {

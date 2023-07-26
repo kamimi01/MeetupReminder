@@ -750,8 +750,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kamimi01/AppInfoList.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = exactVersion;
+				version = 1.0.0;
 			};
 		};
 		D4CEE78D298299FE005B863F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
