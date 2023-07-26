@@ -4,3 +4,4 @@ AuthKey_R97U894728.p8
 MeetupReminder.app.dSYM.zip
 *.ipa
 fastlane/*
+MeetupReminder/GoogleService-Info.plist
