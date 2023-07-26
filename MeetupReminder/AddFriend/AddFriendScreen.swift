@@ -194,7 +194,7 @@ private extension AddFriendScreen {
             if result {
                 dismiss()
                 // レビューダイアログの表示
-                if let windowScene = UIApplication.shared.windows.first?.windowScene {
+                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
                     let appReview = AppReview(personList: personList)
                     appReview.requestReview(in: windowScene)
                 }
