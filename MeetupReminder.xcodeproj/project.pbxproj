@@ -113,6 +113,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D43202572A71CDD30096642C /* AppReview */ = {
+			isa = PBXGroup;
+			children = (
+				D4096B0129965B80009090AE /* AppReview.swift */,
+			);
+			path = AppReview;
+			sourceTree = "<group>";
+		};
+		D43202582A71CE0B0096642C /* FriendList */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6D1732980867B00029E0B /* PersonCardView.swift */,
+				D4C6D171298085DF00029E0B /* PersonListViewModel.swift */,
+			);
+			path = FriendList;
+			sourceTree = "<group>";
+		};
+		D43202592A71CE430096642C /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				D432025A2A71CE500096642C /* Resources */,
+				D4CEE79A29833C65005B863F /* LottieView.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		D432025A2A71CE500096642C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE79829833C3A005B863F /* friendships.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D432025B2A71CE940096642C /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7922982A5C1005B863F /* RealmHelper.swift */,
+				D4C6D16F298084EF00029E0B /* Person.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		D49734062998E1E400FA6272 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +167,7 @@
 		D4A90101298F1B7B00BCCA5D /* PushNotification */ = {
 			isa = PBXGroup;
 			children = (
+				D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */,
 				D4A90102298F1B9500BCCA5D /* UserNotificationUtil.swift */,
 			);
 			path = PushNotification;
@@ -132,6 +176,7 @@
 		D4A90104298F23AA00BCCA5D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D4C6D1752980A70700029E0B /* Color+Extension.swift */,
 				D4A90105298F23CB00BCCA5D /* Date+Extension.swift */,
 			);
 			path = Extensions;
@@ -161,26 +206,21 @@
 		D4C6D144297F370F00029E0B /* MeetupReminder */ = {
 			isa = PBXGroup;
 			children = (
+				D432025B2A71CE940096642C /* Realm */,
+				D43202592A71CE430096642C /* Animation */,
+				D43202582A71CE0B0096642C /* FriendList */,
+				D43202572A71CDD30096642C /* AppReview */,
 				D49734062998E1E400FA6272 /* Setting */,
 				D4096B0029930131009090AE /* Info.plist */,
 				D4A90104298F23AA00BCCA5D /* Extensions */,
-				D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */,
 				D4A90101298F1B7B00BCCA5D /* PushNotification */,
 				D4C6D1782980FAB700029E0B /* FriendDetail */,
 				D4C6D1772980FAAC00029E0B /* AddFriend */,
 				D4C6D145297F370F00029E0B /* MeetupReminderApp.swift */,
 				D4C6D147297F370F00029E0B /* ContentView.swift */,
-				D4C6D1732980867B00029E0B /* PersonCardView.swift */,
-				D4C6D171298085DF00029E0B /* PersonListViewModel.swift */,
-				D4C6D16F298084EF00029E0B /* Person.swift */,
 				D4CEE7962982B93E005B863F /* PersonModel.swift */,
-				D4C6D1752980A70700029E0B /* Color+Extension.swift */,
 				D4C6D149297F371100029E0B /* Assets.xcassets */,
 				D4C6D14B297F371100029E0B /* Preview Content */,
-				D4CEE7922982A5C1005B863F /* RealmHelper.swift */,
-				D4CEE79829833C3A005B863F /* friendships.json */,
-				D4CEE79A29833C65005B863F /* LottieView.swift */,
-				D4096B0129965B80009090AE /* AppReview.swift */,
 			);
 			path = MeetupReminder;
 			sourceTree = "<group>";
