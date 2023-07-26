@@ -86,14 +86,14 @@ private extension ContentView {
             isShowingAddFriendScreen = true
         }) {
             Image(systemName: "plus")
-                .font(.title)
-                .frame(width: 90, height: 90)
-                .imageScale(.large)
-                .background(Color.cardViewTextRed)
-                .foregroundColor(.white)
-                .clipShape(Circle())
-                .shadow(color: .gray, radius: 3, x: 3, y: 3)
+                .resizable()
+                .frame(width: 20, height: 20)
         }
+        .frame(width: 60, height: 60)
+        .background(Color.cardViewTextRed)
+        .foregroundColor(.white)
+        .clipShape(Circle())
+        .shadow(color: .gray, radius: 3, x: 3, y: 3)
         .fullScreenCover(isPresented: $isShowingAddFriendScreen) {
             AddFriendScreen(personList: viewModel.personList)
         }
