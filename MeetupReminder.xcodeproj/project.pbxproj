@@ -192,7 +192,6 @@
 		D4C6D139297F370F00029E0B = {
 			isa = PBXGroup;
 			children = (
-				D4B50B992A7B0B2A002B4F91 /* ContactMethod.swift */,
 				D497340C2998E2B200FA6272 /* license-list.plist */,
 				D4C6D144297F370F00029E0B /* MeetupReminder */,
 				D4C6D155297F371200029E0B /* MeetupReminderTests */,
@@ -229,6 +228,7 @@
 				D4C6D145297F370F00029E0B /* MeetupReminderApp.swift */,
 				D4C6D147297F370F00029E0B /* ContentView.swift */,
 				D4CEE7962982B93E005B863F /* PersonModel.swift */,
+				D4B50B992A7B0B2A002B4F91 /* ContactMethod.swift */,
 				D4C6D149297F371100029E0B /* Assets.xcassets */,
 				D4C6D14B297F371100029E0B /* Preview Content */,
 			);
