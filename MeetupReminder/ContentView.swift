@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var viewModel = PersonListViewModel()
+    @ObservedObject var viewModel = FriendListViewModel()
     @State private var isShowingAddFriendScreen = false
     @State private var isShowingAppInfoScreen = false
     @Environment(\.scenePhase) private var scenePhase
@@ -28,7 +28,7 @@ struct ContentView: View {
                         LazyVStack(spacing: 15) {
                             ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
                                 NavigationLink(destination: FriendDetailScreen(viewModel: viewModel, person: person, cardColor: color(index: personIndex))) {
-                                    PersonCardView(person: person, cardColor: color(index: personIndex))
+                                    FriendCardView(person: person, cardColor: color(index: personIndex))
                                          .padding(.horizontal, 16)
                                 }
                             }

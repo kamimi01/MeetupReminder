@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PersonCardView: View {
+struct FriendCardView: View {
     let person: PersonModel
     let cardColor: CardViewColor
     @Environment(\.openURL) var openURL
@@ -49,7 +49,7 @@ struct PersonCardView: View {
     }
 }
 
-private extension PersonCardView {
+private extension FriendCardView {
     var profileImage: some View {
         VStack {
             Image(cardColor.profileImage)
@@ -120,7 +120,7 @@ private extension PersonCardView {
 
 struct PersonCardView_Previews: PreviewProvider {
     static var previews: some View {
-        PersonCardView(person: createDummyData(), cardColor: CardViewColor.red)
+        FriendCardView(person: createDummyData(), cardColor: CardViewColor.red)
     }
 
     static func createDummyData() -> PersonModel {

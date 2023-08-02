@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FriendDetailScreen: View {
-    @ObservedObject var viewModel: PersonListViewModel
+    @ObservedObject var viewModel: FriendListViewModel
 
     let person: PersonModel
     let cardColor: CardViewColor
@@ -28,7 +28,7 @@ struct FriendDetailScreen: View {
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
 
-    init(viewModel: PersonListViewModel, person: PersonModel, cardColor: CardViewColor) {
+    init(viewModel: FriendListViewModel, person: PersonModel, cardColor: CardViewColor) {
         self.viewModel = viewModel
         self.person = person
         self.cardColor = cardColor
@@ -275,6 +275,6 @@ private extension FriendDetailScreen {
 
 struct FriendDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        FriendDetailScreen(viewModel: PersonListViewModel(), person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardColor: .red)
+        FriendDetailScreen(viewModel: FriendListViewModel(), person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardColor: .red)
     }
 }

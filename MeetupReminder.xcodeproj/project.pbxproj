@@ -22,8 +22,8 @@
 		D4C6D161297F371200029E0B /* MeetupReminderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D160297F371200029E0B /* MeetupReminderUITests.swift */; };
 		D4C6D163297F371200029E0B /* MeetupReminderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D162297F371200029E0B /* MeetupReminderUITestsLaunchTests.swift */; };
 		D4C6D170298084EF00029E0B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D16F298084EF00029E0B /* Person.swift */; };
-		D4C6D172298085DF00029E0B /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D171298085DF00029E0B /* PersonListViewModel.swift */; };
-		D4C6D1742980867B00029E0B /* PersonCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D1732980867B00029E0B /* PersonCardView.swift */; };
+		D4C6D172298085DF00029E0B /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D171298085DF00029E0B /* FriendListViewModel.swift */; };
+		D4C6D1742980867B00029E0B /* FriendCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D1732980867B00029E0B /* FriendCardView.swift */; };
 		D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D1752980A70700029E0B /* Color+Extension.swift */; };
 		D4C6D17C2980FAEF00029E0B /* AddFriendScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D17B2980FAEF00029E0B /* AddFriendScreen.swift */; };
 		D4C6D17E298148B500029E0B /* FriendDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D17D298148B500029E0B /* FriendDetailScreen.swift */; };
@@ -75,8 +75,8 @@
 		D4C6D160297F371200029E0B /* MeetupReminderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupReminderUITests.swift; sourceTree = "<group>"; };
 		D4C6D162297F371200029E0B /* MeetupReminderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupReminderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4C6D16F298084EF00029E0B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		D4C6D171298085DF00029E0B /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
-		D4C6D1732980867B00029E0B /* PersonCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCardView.swift; sourceTree = "<group>"; };
+		D4C6D171298085DF00029E0B /* FriendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
+		D4C6D1732980867B00029E0B /* FriendCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCardView.swift; sourceTree = "<group>"; };
 		D4C6D1752980A70700029E0B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		D4C6D17B2980FAEF00029E0B /* AddFriendScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendScreen.swift; sourceTree = "<group>"; };
 		D4C6D17D298148B500029E0B /* FriendDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailScreen.swift; sourceTree = "<group>"; };
@@ -128,8 +128,8 @@
 		D43202582A71CE0B0096642C /* FriendList */ = {
 			isa = PBXGroup;
 			children = (
-				D4C6D1732980867B00029E0B /* PersonCardView.swift */,
-				D4C6D171298085DF00029E0B /* PersonListViewModel.swift */,
+				D4C6D1732980867B00029E0B /* FriendCardView.swift */,
+				D4C6D171298085DF00029E0B /* FriendListViewModel.swift */,
 			);
 			path = FriendList;
 			sourceTree = "<group>";
@@ -450,11 +450,11 @@
 				D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */,
 				D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */,
 				D4CEE7952982AE89005B863F /* AddFriendViewModel.swift in Sources */,
-				D4C6D1742980867B00029E0B /* PersonCardView.swift in Sources */,
+				D4C6D1742980867B00029E0B /* FriendCardView.swift in Sources */,
 				D4C6D17E298148B500029E0B /* FriendDetailScreen.swift in Sources */,
 				D49734082998E1F400FA6272 /* SettingScreen.swift in Sources */,
 				D4A90106298F23CB00BCCA5D /* Date+Extension.swift in Sources */,
-				D4C6D172298085DF00029E0B /* PersonListViewModel.swift in Sources */,
+				D4C6D172298085DF00029E0B /* FriendListViewModel.swift in Sources */,
 				D4CEE79B29833C65005B863F /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
