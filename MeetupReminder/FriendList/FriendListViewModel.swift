@@ -13,6 +13,8 @@ class FriendListViewModel: ObservableObject {
     private var allFriends: Results<Person>? = nil
     private let realmHelper: RealmHelper
     private var token: NotificationToken?
+    @Published var isShowingAppInfoScreen = false
+    @Published var isShowingAddFriendScreen = false
 
     init() {
         print("init呼ばれた")
@@ -55,6 +57,19 @@ class FriendListViewModel: ObservableObject {
     func registerNotification(of person: PersonModel, date: Date) {
         let notificationUtil = UserNotificationUtil.shared
         notificationUtil.setTimeRequest(of: person, date: date)
+    }
+
+    func didActivate() {
+        let userNotificationUtil = UserNotificationUtil.shared
+        userNotificationUtil.resetNotification()
+    }
+
+    func didTapInfoButton() {
+        isShowingAppInfoScreen = true
+    }
+
+    func didTapAddButton() {
+        isShowingAddFriendScreen = true
     }
 
     func updateFriend(

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var viewModel = FriendListViewModel()
-    @State private var isShowingAddFriendScreen = false
-    @State private var isShowingAppInfoScreen = false
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
@@ -55,8 +53,7 @@ struct ContentView: View {
             switch phase {
             case .active:
                 print("active")
-                let userNotificationUtil = UserNotificationUtil.shared
-                userNotificationUtil.resetNotification()
+                viewModel.didActivate()
             case .inactive:
                 print("inactive")
             case .background:
@@ -71,19 +68,19 @@ struct ContentView: View {
 private extension ContentView {
     var appInfoButton: some View {
         Button(action: {
-            isShowingAppInfoScreen = true
+            viewModel.didTapInfoButton()
         }) {
             Image(systemName: "info.circle")
                 .foregroundColor(.mainText)
         }
-        .fullScreenCover(isPresented: $isShowingAppInfoScreen) {
+        .fullScreenCover(isPresented: $viewModel.isShowingAppInfoScreen) {
             SettingScreen()
         }
     }
 
     var addButton: some View {
         Button(action: {
-            isShowingAddFriendScreen = true
+            viewModel.didTapAddButton()
         }) {
             Image(systemName: "plus")
                 .resizable()
@@ -94,7 +91,7 @@ private extension ContentView {
         .foregroundColor(.white)
         .clipShape(Circle())
         .shadow(color: .gray, radius: 3, x: 3, y: 3)
-        .fullScreenCover(isPresented: $isShowingAddFriendScreen) {
+        .fullScreenCover(isPresented: $viewModel.isShowingAddFriendScreen) {
             AddFriendScreen(personList: viewModel.personList)
         }
     }
