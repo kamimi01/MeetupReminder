@@ -9,12 +9,11 @@ import SwiftUI
 
 struct FriendDetailScreen: View {
     @ObservedObject var viewModel: FriendListViewModel
+    @ObservedObject private var detailViewModel = FriendDetailViewModel()
 
     let person: PersonModel
     let cardColor: CardViewColor
 
-    @State private var nameText: String
-    @State private var remarkText: String
     @State private var isTappedLineButton: Bool
     @State private var isTappedFacebookButton: Bool
     @State private var isTappedTwitterButton: Bool
@@ -33,8 +32,6 @@ struct FriendDetailScreen: View {
         self.person = person
         self.cardColor = cardColor
 
-        _nameText = State(initialValue: person.name)
-        _remarkText = State(initialValue: person.remark)
         _isTappedLineButton = State(initialValue: person.canContactWithLINE)
         _isTappedFacebookButton = State(initialValue: person.canContactWithFacebook)
         _isTappedTwitterButton = State(initialValue: person.canContactWithTwitter)
@@ -50,6 +47,8 @@ struct FriendDetailScreen: View {
             _reminderToggleFlag = State(initialValue: false)
             _isShowingReminderSetting = State(initialValue: false)
         }
+
+        detailViewModel.initialize(person: person)
 
         //ナビゲーションバーの背景色の設定
         UINavigationBar.appearance().barTintColor = UIColor(cardColor.carViewBackground)
@@ -67,7 +66,7 @@ struct FriendDetailScreen: View {
                             Text("メモ")
                                 .foregroundColor(.mainText)
                                 .padding(.horizontal, 5)
-                            TextField("高校の友達。今度ランチに行く。", text: $remarkText, axis: .vertical)
+                            TextField("高校の友達。今度ランチに行く。", text: $detailViewModel.remarkLabel, axis: .vertical)
                                 .padding()
                                 .frame(height : 110.0, alignment: .top)
                                 .background(Color.mainBackground)
@@ -219,7 +218,7 @@ private extension FriendDetailScreen {
                 .background(Color.mainBackground)
                 .clipShape(Circle())
                 .frame(maxWidth: 130, maxHeight: 130)
-            TextField("なまえ", text: $nameText)
+            TextField("なまえ", text: $detailViewModel.nameLabel)
                 .frame(width: 200)
                 .font(.title2)
                 .foregroundColor(.mainText)
@@ -251,13 +250,13 @@ private extension FriendDetailScreen {
         Button(action: {
             let result = viewModel.updateFriend(
                 id: person.id,
-                name: nameText,
+                name: detailViewModel.nameLabel,
                 canContactWithLINE: isTappedLineButton,
                 canContactWithFacebook: isTappedFacebookButton,
                 canContactWithTwitter: isTappedTwitterButton,
                 canContactWithLinkedIn: isTappedLinkedInButton,
                 canContactWithSlack: isTappedSlackButton,
-                remark: remarkText,
+                remark: detailViewModel.remarkLabel,
                 remindDate: reminderToggleFlag ? selectedRemindDate : nil
             )
             if result {
