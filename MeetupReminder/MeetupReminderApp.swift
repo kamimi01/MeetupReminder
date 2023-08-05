@@ -22,7 +22,7 @@ struct MeetupReminderApp: App {
 
     var body: some Scene {
         WindowGroup {
-            FriendListScreen()
+            FriendListScreen(viewModel: FriendListViewModel())
         }
     }
 }

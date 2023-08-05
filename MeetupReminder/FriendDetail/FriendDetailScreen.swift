@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct FriendDetailScreen: View {
-    @ObservedObject var viewModel: FriendListViewModel
+struct FriendDetailScreen<ViewModel: FriendListViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     @ObservedObject private var detailViewModel = FriendDetailViewModel()
 
     let person: PersonModel
@@ -26,7 +26,7 @@ struct FriendDetailScreen: View {
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
 
-    init(viewModel: FriendListViewModel, person: PersonModel, cardIndex: Int) {
+    init(viewModel: ViewModel, person: PersonModel, cardIndex: Int) {
         self.viewModel = viewModel
         self.person = person
 
@@ -271,9 +271,11 @@ private extension FriendDetailScreen {
         }
     }
 }
-
-struct FriendDetailScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendDetailScreen(viewModel: FriendListViewModel(), person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardIndex: 1)
-    }
-}
+//
+//struct FriendDetailScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let viewModel = FriendListViewModel()
+//
+//        return FriendDetailScreen<viewModel>(person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardIndex: 1)
+//    }
+//}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol FriendListViewModelProtocol {
+protocol FriendListViewModelProtocol: ObservableObject {
     var personList: [PersonModel] { get set }
     var isShowingAppInfoScreen: Bool { get set }
     var isShowingAddFriendScreen: Bool { get set }

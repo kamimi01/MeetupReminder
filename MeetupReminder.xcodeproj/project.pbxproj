@@ -125,6 +125,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D42262562A7E29DE005AAC42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6D147297F370F00029E0B /* FriendListScreen.swift */,
+				D4C6D1732980867B00029E0B /* FriendCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D42262592A7E29FA005AAC42 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6D171298085DF00029E0B /* FriendListViewModel.swift */,
+				D42262542A7E23F9005AAC42 /* FriendListViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D43202572A71CDD30096642C /* AppReview */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,10 +154,8 @@
 		D43202582A71CE0B0096642C /* FriendList */ = {
 			isa = PBXGroup;
 			children = (
-				D4C6D147297F370F00029E0B /* FriendListScreen.swift */,
-				D4C6D1732980867B00029E0B /* FriendCardView.swift */,
-				D4C6D171298085DF00029E0B /* FriendListViewModel.swift */,
-				D42262542A7E23F9005AAC42 /* FriendListViewModelProtocol.swift */,
+				D42262592A7E29FA005AAC42 /* ViewModel */,
+				D42262562A7E29DE005AAC42 /* View */,
 			);
 			path = FriendList;
 			sourceTree = "<group>";

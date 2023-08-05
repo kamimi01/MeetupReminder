@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct FriendListScreen: View {
-    @ObservedObject var viewModel = FriendListViewModel()
+struct FriendListScreen<ViewModel: FriendListViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     @Environment(\.scenePhase) private var scenePhase
 
     var body: some View {
@@ -101,6 +101,6 @@ private extension FriendListScreen {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendListScreen()
+        FriendListScreen(viewModel: FriendListViewModel())
     }
 }
