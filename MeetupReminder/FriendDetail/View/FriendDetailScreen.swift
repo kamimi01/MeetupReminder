@@ -13,11 +13,6 @@ struct FriendDetailScreen<ViewModel: FriendListViewModelProtocol>: View {
 
     let person: PersonModel
 
-    @State private var isTappedLineButton: Bool
-    @State private var isTappedFacebookButton: Bool
-    @State private var isTappedTwitterButton: Bool
-    @State private var isTappedLinkedInButton: Bool
-    @State private var isTappedSlackButton: Bool
     @State private var selectedRemindDate: Date
     @State private var reminderToggleFlag: Bool
     @State private var isShowingReminderSetting = false
@@ -30,11 +25,6 @@ struct FriendDetailScreen<ViewModel: FriendListViewModelProtocol>: View {
         self.viewModel = viewModel
         self.person = person
 
-        _isTappedLineButton = State(initialValue: person.canContactWithLINE)
-        _isTappedFacebookButton = State(initialValue: person.canContactWithFacebook)
-        _isTappedTwitterButton = State(initialValue: person.canContactWithTwitter)
-        _isTappedLinkedInButton = State(initialValue: person.canContactWithLinkedIn)
-        _isTappedSlackButton = State(initialValue: person.canContactWithSlack)
         if let remindDate = person.remindDate {
             _selectedRemindDate = State(initialValue: remindDate)
             // reminderToggleFlagの変化に合わせてisShowingReminderSettingも変化するように実装されているが、初期化の時だけは連動しないのでここで実装した
@@ -53,6 +43,9 @@ struct FriendDetailScreen<ViewModel: FriendListViewModelProtocol>: View {
     }
 
     var body: some View {
+        let columns: [GridItem] = Array(repeating: .init(.flexible()),
+                                                count: 3)
+
         ZStack {
             detailViewModel.cardColor.carViewBackground
                 .edgesIgnoringSafeArea(.all)
@@ -78,88 +71,10 @@ struct FriendDetailScreen<ViewModel: FriendListViewModelProtocol>: View {
                             Text("連絡方法")
                                 .foregroundColor(.mainText)
                                 .padding(.horizontal, 5)
-                            HStack(spacing: 20) {
-                                Spacer()
-                                Button(action: {
-                                    isTappedLineButton.toggle()
-                                }) {
-                                    if isTappedLineButton {
-                                        Image(detailViewModel.cardColor.lineImageFill)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 70, maxHeight: 70)
-                                    } else {
-                                        Image("line_icon")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 70, maxHeight: 70)
-                                    }
+                            LazyVGrid(columns: columns) {
+                                ForEach(ContactMethod.allCases(color: detailViewModel.cardColor), id: \.self) { method in
+                                    contactMethodOption(contactMethod: method)
                                 }
-                                Button(action: {
-                                    isTappedFacebookButton.toggle()
-                                }) {
-                                    if isTappedFacebookButton {
-                                        Image(detailViewModel.cardColor.facebookImageFill)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 70, maxHeight: 70)
-                                    } else {
-                                        Image("facebook_icon")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 70, maxHeight: 70)
-                                    }
-                                }
-                                Button(action: {
-                                    isTappedTwitterButton.toggle()
-                                }) {
-                                    if isTappedTwitterButton {
-                                        Image(detailViewModel.cardColor.twitterImageFill)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 70, maxHeight: 70)
-                                    } else {
-                                        Image("twitter_icon")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 70, maxHeight: 70)
-                                    }
-                                }
-                                Spacer()
-                            }
-                            HStack(spacing: 20) {
-                                Spacer()
-                                Button(action: {
-                                    isTappedLinkedInButton.toggle()
-                                }) {
-                                    if isTappedLinkedInButton {
-                                        Image(detailViewModel.cardColor.linkedinImageFill)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 70, maxHeight: 70)
-                                    } else {
-                                        Image("linkedin_icon")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 70, maxHeight: 70)
-                                    }
-                                }
-                                Button(action: {
-                                    isTappedSlackButton.toggle()
-                                }) {
-                                    if isTappedSlackButton {
-                                        Image(detailViewModel.cardColor.slackImageFill)
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 70, maxHeight: 70)
-                                    } else {
-                                        Image("slack_icon")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(maxWidth: 70, maxHeight: 70)
-                                    }
-                                }
-                                Spacer()
                             }
                         }
                         VStack(alignment: .leading, spacing: 20) {
@@ -248,26 +163,33 @@ private extension FriendDetailScreen {
 
     var updateButton: some View {
         Button(action: {
-            let result = viewModel.updateFriend(
+            detailViewModel.didTapUpdateFriendButton(
                 id: person.id,
-                name: detailViewModel.nameLabel,
-                canContactWithLINE: isTappedLineButton,
-                canContactWithFacebook: isTappedFacebookButton,
-                canContactWithTwitter: isTappedTwitterButton,
-                canContactWithLinkedIn: isTappedLinkedInButton,
-                canContactWithSlack: isTappedSlackButton,
-                remark: detailViewModel.remarkLabel,
                 remindDate: reminderToggleFlag ? selectedRemindDate : nil
-            )
-            if result {
-                if reminderToggleFlag {
-                    viewModel.registerNotification(of: person, date: selectedRemindDate)
-                }
-                self.presentation.wrappedValue.dismiss()
+            ) {
+                presentation.wrappedValue.dismiss()
             }
         }) {
             Text("完了")
                 .foregroundColor(.mainText)
+        }
+    }
+
+    func contactMethodOption(contactMethod: ContactMethod) -> some View {
+        Button(action: {
+            detailViewModel.didTapContactButton(contactMethod: contactMethod)
+        }) {
+            if detailViewModel.isTappedContactMethodButton(contactMethod: contactMethod) {
+                return Image(contactMethod.selectImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 70, maxHeight: 70)
+            } else {
+                return Image(contactMethod.deselectImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 70, maxHeight: 70)
+            }
         }
     }
 }

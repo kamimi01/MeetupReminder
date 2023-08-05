@@ -304,7 +304,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
             endingLineNumber = "69"
-            landmarkName = "setTimeRequest(of:date:)"
+            landmarkName = "setTimeRequest(id:message:date:)"
             landmarkType = "7">
             <Locations>
                <Location

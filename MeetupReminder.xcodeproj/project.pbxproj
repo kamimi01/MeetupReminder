@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D4096B0229965B80009090AE /* AppReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4096B0129965B80009090AE /* AppReview.swift */; };
 		D42262552A7E23F9005AAC42 /* FriendListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42262542A7E23F9005AAC42 /* FriendListViewModelProtocol.swift */; };
+		D422625D2A7E5F41005AAC42 /* NotificationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422625C2A7E5F41005AAC42 /* NotificationMessage.swift */; };
 		D454A0502A71D692003E1E64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D454A04F2A71D692003E1E64 /* GoogleService-Info.plist */; };
 		D49734082998E1F400FA6272 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49734072998E1F400FA6272 /* SettingScreen.swift */; };
 		D497340B2998E25700FA6272 /* AppInfoList in Frameworks */ = {isa = PBXBuildFile; productRef = D497340A2998E25700FA6272 /* AppInfoList */; };
@@ -63,6 +64,7 @@
 		D4096B0029930131009090AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D4096B0129965B80009090AE /* AppReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReview.swift; sourceTree = "<group>"; };
 		D42262542A7E23F9005AAC42 /* FriendListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModelProtocol.swift; sourceTree = "<group>"; };
+		D422625C2A7E5F41005AAC42 /* NotificationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationMessage.swift; sourceTree = "<group>"; };
 		D454A04F2A71D692003E1E64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D49734072998E1F400FA6272 /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
 		D497340C2998E2B200FA6272 /* license-list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "license-list.plist"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				D4A90102298F1B9500BCCA5D /* UserNotificationUtil.swift */,
+				D422625C2A7E5F41005AAC42 /* NotificationMessage.swift */,
 			);
 			path = PushNotification;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				D4B50B982A7B05D0002B4F91 /* FriendDetailViewModel.swift in Sources */,
 				D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */,
 				D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */,
+				D422625D2A7E5F41005AAC42 /* NotificationMessage.swift in Sources */,
 				D4CEE7952982AE89005B863F /* NewFriendViewModel.swift in Sources */,
 				D4B50B9C2A7C610E002B4F91 /* ColorGenerator.swift in Sources */,
 				D4B50B9A2A7B0B2A002B4F91 /* ContactMethod.swift in Sources */,

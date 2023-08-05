@@ -48,7 +48,7 @@ class UserNotificationUtil: NSObject {
         center.removePendingNotificationRequests(withIdentifiers: [id])
     }
 
-    func setTimeRequest(of person: PersonModel, date: Date) {
+    func setTimeRequest(id: String, message: NotificationMessage, date: Date) {
         // 指定の時間に送る
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: date.components,
@@ -56,12 +56,12 @@ class UserNotificationUtil: NSObject {
         )
         // 通知される内容
         let content = UNMutableNotificationContent()
-        content.body = "\(person.name) さんに連絡してみませんか？👀"
+        content.body = message.body
         content.badge = 1
         content.sound = .default
         // リクエストを作成
         let request = UNNotificationRequest(
-            identifier: person.id,
+            identifier: id,
             content: content,
             trigger: trigger
         )

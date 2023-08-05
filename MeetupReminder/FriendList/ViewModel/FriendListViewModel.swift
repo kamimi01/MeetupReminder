@@ -56,8 +56,8 @@ class FriendListViewModel: FriendListViewModelProtocol {
     }
 
     func registerNotification(of person: PersonModel, date: Date) {
-        let notificationUtil = UserNotificationUtil.shared
-        notificationUtil.setTimeRequest(of: person, date: date)
+//        let notificationUtil = UserNotificationUtil.shared
+//        notificationUtil.setTimeRequest(of: person, date: date)
     }
 
     func didActivate() {
@@ -90,7 +90,7 @@ class FriendListViewModel: FriendListViewModelProtocol {
         if let remindDate = remindDate {
             // 通知を更新
             let person = PersonModel(id: id, name: name, canContactWithLINE: canContactWithLINE, canContactWithFacebook: canContactWithFacebook, canContactWithTwitter: canContactWithTwitter, canContactWithLinkedIn: canContactWithLinkedIn, canContactWithSlack: canContactWithSlack, remark: remark, remindDate: remindDate)
-            userNotificationUtil.setTimeRequest(of: person, date: remindDate)
+//            userNotificationUtil.setTimeRequest(of: person, date: remindDate)
         } else {
             // 通知を削除
             userNotificationUtil.deleteRequest(id: id)
