@@ -12,16 +12,8 @@ protocol FriendListViewModelProtocol: ObservableObject {
     var isShowingAppInfoScreen: Bool { get set }
     var isShowingAddFriendScreen: Bool { get set }
     func onAppear()
-    func registerNotification(of person: PersonModel, date: Date)
     func didActivate()
     func didTapInfoButton()
     func didTapAddButton()
-    func updateFriend(id: String, name: String, canContactWithLINE: Bool, canContactWithFacebook: Bool, canContactWithTwitter: Bool, canContactWithLinkedIn: Bool, canContactWithSlack: Bool, remark: String, remindDate: Date?) -> Bool
     func deleteFriend(id: String) -> Bool
-}
-
-extension FriendListViewModelProtocol {
-    func updateFriend(id: String, name: String, canContactWithLINE: Bool, canContactWithFacebook: Bool, canContactWithTwitter: Bool, canContactWithLinkedIn: Bool, canContactWithSlack: Bool, remark: String, remindDate: Date? = nil) -> Bool {
-        updateFriend(id: id, name: name, canContactWithLINE: canContactWithLINE, canContactWithFacebook: canContactWithFacebook, canContactWithTwitter: canContactWithTwitter, canContactWithLinkedIn: canContactWithLinkedIn, canContactWithSlack: canContactWithSlack, remark: remark, remindDate: remindDate)
-    }
 }
