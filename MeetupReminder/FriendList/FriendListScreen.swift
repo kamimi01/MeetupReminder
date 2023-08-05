@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct FriendListScreen: View {
     @ObservedObject var viewModel = FriendListViewModel()
     @Environment(\.scenePhase) private var scenePhase
 
@@ -65,7 +65,7 @@ struct ContentView: View {
     }
 }
 
-private extension ContentView {
+private extension FriendListScreen {
     var appInfoButton: some View {
         Button(action: {
             viewModel.didTapInfoButton()
@@ -99,6 +99,6 @@ private extension ContentView {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        FriendListScreen()
     }
 }

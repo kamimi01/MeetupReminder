@@ -12,7 +12,6 @@ struct FriendDetailScreen: View {
     @ObservedObject private var detailViewModel = FriendDetailViewModel()
 
     let person: PersonModel
-//    let cardColor: CardViewColor
 
     @State private var isTappedLineButton: Bool
     @State private var isTappedFacebookButton: Bool
