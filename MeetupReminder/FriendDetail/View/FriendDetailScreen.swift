@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct FriendDetailScreen: View {
-    @ObservedObject private var detailViewModel = FriendDetailViewModel()
+    @ObservedObject private var viewModel = FriendDetailViewModel()
 
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
 
     init(person: PersonModel, cardIndex: Int) {
-        detailViewModel.initialize(person: person, cardIndex: cardIndex)
+        viewModel.initialize(person: person, cardIndex: cardIndex)
 
         //ナビゲーションバーの背景色の設定
-        UINavigationBar.appearance().barTintColor = UIColor(detailViewModel.cardColor.carViewBackground)
+        UINavigationBar.appearance().barTintColor = UIColor(viewModel.cardColor.carViewBackground)
     }
 
     var body: some View {
@@ -25,7 +25,7 @@ struct FriendDetailScreen: View {
                                                 count: 3)
 
         ZStack {
-            detailViewModel.cardColor.carViewBackground
+            viewModel.cardColor.carViewBackground
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack(spacing: 20) {
@@ -35,7 +35,7 @@ struct FriendDetailScreen: View {
                             Text("メモ")
                                 .foregroundColor(.mainText)
                                 .padding(.horizontal, 5)
-                            TextField("高校の友達。今度ランチに行く。", text: $detailViewModel.remarkLabel, axis: .vertical)
+                            TextField("高校の友達。今度ランチに行く。", text: $viewModel.remarkLabel, axis: .vertical)
                                 .padding()
                                 .frame(height : 110.0, alignment: .top)
                                 .background(Color.mainBackground)
@@ -50,7 +50,7 @@ struct FriendDetailScreen: View {
                                 .foregroundColor(.mainText)
                                 .padding(.horizontal, 5)
                             LazyVGrid(columns: columns) {
-                                ForEach(ContactMethod.allCases(color: detailViewModel.cardColor), id: \.self) { method in
+                                ForEach(ContactMethod.allCases(color: viewModel.cardColor), id: \.self) { method in
                                     contactMethodOption(contactMethod: method)
                                 }
                             }
@@ -60,15 +60,15 @@ struct FriendDetailScreen: View {
                                 Text("通知設定")
                                     .foregroundColor(.mainText)
                                     .padding(.horizontal, 5)
-                                Toggle("", isOn: $detailViewModel.isOnReminder)
-                                    .toggleStyle(SwitchToggleStyle(tint: detailViewModel.cardColor.cardViewText))
+                                Toggle("", isOn: $viewModel.isOnReminder)
+                                    .toggleStyle(SwitchToggleStyle(tint: viewModel.cardColor.cardViewText))
                                 Spacer()
                             }
-                            if detailViewModel.isOnReminder {
+                            if viewModel.isOnReminder {
                                 HStack {
                                     DatePicker(
                                         "",
-                                        selection: $detailViewModel.selectedRemindDate,
+                                        selection: $viewModel.selectedRemindDate,
                                         displayedComponents: [.date, .hourAndMinute]
                                     )
                                     .labelsHidden()
@@ -98,13 +98,13 @@ struct FriendDetailScreen: View {
 private extension FriendDetailScreen {
     var profileImage: some View {
         VStack(spacing: 10) {
-            Image(detailViewModel.cardColor.profileImage)
+            Image(viewModel.cardColor.profileImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .background(Color.mainBackground)
                 .clipShape(Circle())
                 .frame(maxWidth: 130, maxHeight: 130)
-            TextField("なまえ", text: $detailViewModel.nameLabel)
+            TextField("なまえ", text: $viewModel.nameLabel)
                 .frame(width: 200)
                 .font(.title2)
                 .foregroundColor(.mainText)
@@ -115,12 +115,12 @@ private extension FriendDetailScreen {
 
     var deleteButton: some View {
         Button(action: {
-            detailViewModel.didTapFriendDeleteButton() {
+            viewModel.didTapFriendDeleteButton() {
                 self.presentation.wrappedValue.dismiss()
             }
         }) {
             Text("ともだちから削除")
-                .foregroundColor(detailViewModel.cardColor.cardViewText)
+                .foregroundColor(viewModel.cardColor.cardViewText)
                 .font(.title3)
                 .bold()
         }
@@ -129,7 +129,7 @@ private extension FriendDetailScreen {
 
     var updateButton: some View {
         Button(action: {
-            detailViewModel.didTapUpdateFriendButton {
+            viewModel.didTapUpdateFriendButton {
                 presentation.wrappedValue.dismiss()
             }
         }) {
@@ -140,9 +140,9 @@ private extension FriendDetailScreen {
 
     func contactMethodOption(contactMethod: ContactMethod) -> some View {
         Button(action: {
-            detailViewModel.didTapContactButton(contactMethod: contactMethod)
+            viewModel.didTapContactButton(contactMethod: contactMethod)
         }) {
-            if detailViewModel.isTappedContactMethodButton(contactMethod: contactMethod) {
+            if viewModel.isTappedContactMethodButton(contactMethod: contactMethod) {
                 return Image(contactMethod.selectImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
