@@ -15,5 +15,4 @@ protocol FriendListViewModelProtocol: ObservableObject {
     func didActivate()
     func didTapInfoButton()
     func didTapAddButton()
-    func deleteFriend(id: String) -> Bool
 }

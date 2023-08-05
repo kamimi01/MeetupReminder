@@ -92,12 +92,23 @@ class FriendDetailViewModel: ObservableObject {
         }
     }
 
-    func switchReminderToggle() {
+    func didTapFriendDeleteButton(id: String, completionHandler: () -> Void) {
+        deleteNotification(id: id)
 
+        if deleteFriend(id: id) {
+            completionHandler()
+        }
     }
 
-    func didTapFriendDeleteButton() {
+    /// Realm からともだち情報を削除する
+    private func deleteFriend(id: String) -> Bool {
+        realmHelper.deleteFriend(id: id)
+    }
 
+    /// 通知を削除する
+    private func deleteNotification(id: String) {
+        let userNotificationUtil = UserNotificationUtil.shared
+        userNotificationUtil.deleteRequest(id: id)
     }
 
     func didTapUpdateFriendButton(id: String, remindDate: Date? = nil, completionHandler: () -> Void) {

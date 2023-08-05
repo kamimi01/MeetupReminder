@@ -67,8 +67,4 @@ class FriendListViewModel: FriendListViewModelProtocol {
     func didTapAddButton() {
         isShowingAddFriendScreen = true
     }
-
-    func deleteFriend(id: String) -> Bool {
-        return realmHelper.deleteFriend(id: id)
-    }
 }

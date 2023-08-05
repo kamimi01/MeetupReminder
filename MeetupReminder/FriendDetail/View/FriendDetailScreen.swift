@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct FriendDetailScreen<ViewModel: FriendListViewModelProtocol>: View {
-    @ObservedObject var viewModel: ViewModel
+struct FriendDetailScreen: View {
     @ObservedObject private var detailViewModel = FriendDetailViewModel()
 
     let person: PersonModel
@@ -16,8 +15,7 @@ struct FriendDetailScreen<ViewModel: FriendListViewModelProtocol>: View {
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
 
-    init(viewModel: ViewModel, person: PersonModel, cardIndex: Int) {
-        self.viewModel = viewModel
+    init(person: PersonModel, cardIndex: Int) {
         self.person = person
 
         detailViewModel.initialize(person: person, cardIndex: cardIndex)
@@ -121,12 +119,7 @@ private extension FriendDetailScreen {
 
     var deleteButton: some View {
         Button(action: {
-            let result = viewModel.deleteFriend(id: person.id)
-            // 通知を削除する
-            let userNotificationUtil = UserNotificationUtil.shared
-            userNotificationUtil.deleteRequest(id: person.id)
-
-            if result {
+            detailViewModel.didTapFriendDeleteButton(id: person.id) {
                 self.presentation.wrappedValue.dismiss()
             }
         }) {
@@ -173,6 +166,6 @@ private extension FriendDetailScreen {
 
 struct FriendDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        FriendDetailScreen(viewModel: FriendListViewModel(), person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardIndex: 1)
+        FriendDetailScreen(person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardIndex: 1)
     }
 }
