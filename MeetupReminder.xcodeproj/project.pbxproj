@@ -28,12 +28,12 @@
 		D4C6D172298085DF00029E0B /* FriendListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D171298085DF00029E0B /* FriendListViewModel.swift */; };
 		D4C6D1742980867B00029E0B /* FriendCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D1732980867B00029E0B /* FriendCardView.swift */; };
 		D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D1752980A70700029E0B /* Color+Extension.swift */; };
-		D4C6D17C2980FAEF00029E0B /* AddFriendScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D17B2980FAEF00029E0B /* AddFriendScreen.swift */; };
+		D4C6D17C2980FAEF00029E0B /* NewFriendScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D17B2980FAEF00029E0B /* NewFriendScreen.swift */; };
 		D4C6D17E298148B500029E0B /* FriendDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D17D298148B500029E0B /* FriendDetailScreen.swift */; };
 		D4CEE78F298299FE005B863F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE78E298299FE005B863F /* Realm */; };
 		D4CEE791298299FE005B863F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE790298299FE005B863F /* RealmSwift */; };
 		D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7922982A5C1005B863F /* RealmHelper.swift */; };
-		D4CEE7952982AE89005B863F /* AddFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7942982AE89005B863F /* AddFriendViewModel.swift */; };
+		D4CEE7952982AE89005B863F /* NewFriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7942982AE89005B863F /* NewFriendViewModel.swift */; };
 		D4CEE7972982B93E005B863F /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE7962982B93E005B863F /* PersonModel.swift */; };
 		D4CEE79929833C3A005B863F /* friendships.json in Resources */ = {isa = PBXBuildFile; fileRef = D4CEE79829833C3A005B863F /* friendships.json */; };
 		D4CEE79B29833C65005B863F /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE79A29833C65005B863F /* LottieView.swift */; };
@@ -84,10 +84,10 @@
 		D4C6D171298085DF00029E0B /* FriendListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModel.swift; sourceTree = "<group>"; };
 		D4C6D1732980867B00029E0B /* FriendCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCardView.swift; sourceTree = "<group>"; };
 		D4C6D1752980A70700029E0B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
-		D4C6D17B2980FAEF00029E0B /* AddFriendScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendScreen.swift; sourceTree = "<group>"; };
+		D4C6D17B2980FAEF00029E0B /* NewFriendScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendScreen.swift; sourceTree = "<group>"; };
 		D4C6D17D298148B500029E0B /* FriendDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailScreen.swift; sourceTree = "<group>"; };
 		D4CEE7922982A5C1005B863F /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
-		D4CEE7942982AE89005B863F /* AddFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFriendViewModel.swift; sourceTree = "<group>"; };
+		D4CEE7942982AE89005B863F /* NewFriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendViewModel.swift; sourceTree = "<group>"; };
 		D4CEE7962982B93E005B863F /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		D4CEE79829833C3A005B863F /* friendships.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = friendships.json; sourceTree = "<group>"; };
 		D4CEE79A29833C65005B863F /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 				D4A90104298F23AA00BCCA5D /* Extensions */,
 				D4A90101298F1B7B00BCCA5D /* PushNotification */,
 				D4C6D1782980FAB700029E0B /* FriendDetail */,
-				D4C6D1772980FAAC00029E0B /* AddFriend */,
+				D4C6D1772980FAAC00029E0B /* NewFriend */,
 				D4C6D145297F370F00029E0B /* MeetupReminderApp.swift */,
 				D4CEE7962982B93E005B863F /* PersonModel.swift */,
 				D4B50B992A7B0B2A002B4F91 /* ContactMethod.swift */,
@@ -263,13 +263,13 @@
 			path = MeetupReminderUITests;
 			sourceTree = "<group>";
 		};
-		D4C6D1772980FAAC00029E0B /* AddFriend */ = {
+		D4C6D1772980FAAC00029E0B /* NewFriend */ = {
 			isa = PBXGroup;
 			children = (
-				D4C6D17B2980FAEF00029E0B /* AddFriendScreen.swift */,
-				D4CEE7942982AE89005B863F /* AddFriendViewModel.swift */,
+				D4C6D17B2980FAEF00029E0B /* NewFriendScreen.swift */,
+				D4CEE7942982AE89005B863F /* NewFriendViewModel.swift */,
 			);
-			path = AddFriend;
+			path = NewFriend;
 			sourceTree = "<group>";
 		};
 		D4C6D1782980FAB700029E0B /* FriendDetail */ = {
@@ -455,11 +455,11 @@
 				D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */,
 				D4CEE7972982B93E005B863F /* PersonModel.swift in Sources */,
 				D4C6D148297F370F00029E0B /* FriendListScreen.swift in Sources */,
-				D4C6D17C2980FAEF00029E0B /* AddFriendScreen.swift in Sources */,
+				D4C6D17C2980FAEF00029E0B /* NewFriendScreen.swift in Sources */,
 				D4B50B982A7B05D0002B4F91 /* FriendDetailViewModel.swift in Sources */,
 				D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */,
 				D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */,
-				D4CEE7952982AE89005B863F /* AddFriendViewModel.swift in Sources */,
+				D4CEE7952982AE89005B863F /* NewFriendViewModel.swift in Sources */,
 				D4B50B9C2A7C610E002B4F91 /* ColorGenerator.swift in Sources */,
 				D4B50B9A2A7B0B2A002B4F91 /* ContactMethod.swift in Sources */,
 				D4C6D1742980867B00029E0B /* FriendCardView.swift in Sources */,

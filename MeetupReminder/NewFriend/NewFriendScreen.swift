@@ -8,7 +8,7 @@
 import SwiftUI
 import RealmSwift
 
-struct AddFriendScreen: View {
+struct NewFriendScreen: View {
     let personList: [PersonModel]
     let cardColor = CardViewColor.red
 
@@ -163,7 +163,7 @@ struct AddFriendScreen: View {
 
 // MARK: - Private Properties and Methods
 
-private extension AddFriendScreen {
+private extension NewFriendScreen {
     var profileImage: some View {
         VStack(spacing: 10) {
             Image(cardColor.profileImage)
@@ -224,6 +224,6 @@ private extension AddFriendScreen {
 
 struct AddFriendScreen_Previews: PreviewProvider {
     static var previews: some View {
-        AddFriendScreen(personList: [PersonModel(id: "", name: "加藤花子", canContactWithLINE: false, canContactWithFacebook: false, canContactWithTwitter: false, canContactWithLinkedIn: false, canContactWithSlack: false, remark: "", remindDate: nil)])
+        NewFriendScreen(personList: [PersonModel(id: "", name: "加藤花子", canContactWithLINE: false, canContactWithFacebook: false, canContactWithTwitter: false, canContactWithLinkedIn: false, canContactWithSlack: false, remark: "", remindDate: nil)])
     }
 }

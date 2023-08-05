@@ -7,7 +7,7 @@
 
 import Foundation
 
-class AddFriendViewModel: ObservableObject {
+class NewFriendViewModel: ObservableObject {
     func addFriend() {
         
     }
