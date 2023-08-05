@@ -271,11 +271,9 @@ private extension FriendDetailScreen {
         }
     }
 }
-//
-//struct FriendDetailScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        let viewModel = FriendListViewModel()
-//
-//        return FriendDetailScreen<viewModel>(person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardIndex: 1)
-//    }
-//}
+
+struct FriendDetailScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        FriendDetailScreen(viewModel: FriendListViewModel(), person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardIndex: 1)
+    }
+}
