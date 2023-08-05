@@ -39,6 +39,8 @@ struct SettingScreen: View {
     }
 }
 
+// MARK: - Private Properties and Methods
+
 private extension SettingScreen {
     var dismissButton: some View {
         Button(action: {

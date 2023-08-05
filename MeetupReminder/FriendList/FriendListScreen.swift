@@ -65,6 +65,8 @@ struct FriendListScreen: View {
     }
 }
 
+// MARK: - Private Properties and Methods
+
 private extension FriendListScreen {
     var appInfoButton: some View {
         Button(action: {

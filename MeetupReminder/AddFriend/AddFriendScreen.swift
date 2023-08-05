@@ -161,6 +161,8 @@ struct AddFriendScreen: View {
     }
 }
 
+// MARK: - Private Properties and Methods
+
 private extension AddFriendScreen {
     var profileImage: some View {
         VStack(spacing: 10) {

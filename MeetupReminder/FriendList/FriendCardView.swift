@@ -52,6 +52,9 @@ struct FriendCardView: View {
     }
 }
 
+
+// MARK: - Private Properties and Methods
+
 private extension FriendCardView {
     var profileImage: some View {
         VStack {

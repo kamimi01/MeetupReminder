@@ -207,6 +207,8 @@ struct FriendDetailScreen: View {
     }
 }
 
+// MARK: - Private Properties and Methods
+
 private extension FriendDetailScreen {
     var profileImage: some View {
         VStack(spacing: 10) {
