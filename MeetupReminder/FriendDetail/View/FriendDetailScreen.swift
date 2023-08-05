@@ -10,14 +10,10 @@ import SwiftUI
 struct FriendDetailScreen: View {
     @ObservedObject private var detailViewModel = FriendDetailViewModel()
 
-    let person: PersonModel
-
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
 
     init(person: PersonModel, cardIndex: Int) {
-        self.person = person
-
         detailViewModel.initialize(person: person, cardIndex: cardIndex)
 
         //ナビゲーションバーの背景色の設定
@@ -119,7 +115,7 @@ private extension FriendDetailScreen {
 
     var deleteButton: some View {
         Button(action: {
-            detailViewModel.didTapFriendDeleteButton(id: person.id) {
+            detailViewModel.didTapFriendDeleteButton() {
                 self.presentation.wrappedValue.dismiss()
             }
         }) {
@@ -133,10 +129,7 @@ private extension FriendDetailScreen {
 
     var updateButton: some View {
         Button(action: {
-            detailViewModel.didTapUpdateFriendButton(
-                id: person.id,
-                remindDate: detailViewModel.isOnReminder ? detailViewModel.selectedRemindDate : nil
-            ) {
+            detailViewModel.didTapUpdateFriendButton {
                 presentation.wrappedValue.dismiss()
             }
         }) {
@@ -166,6 +159,7 @@ private extension FriendDetailScreen {
 
 struct FriendDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        FriendDetailScreen(person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardIndex: 1)
+        let person = PersonModel()
+        FriendDetailScreen(person: person, cardIndex: 1)
     }
 }

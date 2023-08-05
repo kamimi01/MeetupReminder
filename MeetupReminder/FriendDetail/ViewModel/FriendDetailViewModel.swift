@@ -11,6 +11,7 @@ import Combine
 class FriendDetailViewModel: ObservableObject {
     private(set) var objectWillChange = ObservableObjectPublisher()
 
+    private var person = PersonModel()
     @Published var nameLabel = ""
     @Published var remarkLabel = ""
     var cardColor = CardViewColor.blue
@@ -41,6 +42,7 @@ class FriendDetailViewModel: ObservableObject {
     }
 
     func initialize(person: PersonModel, cardIndex: Int) {
+        self.person = person
         nameLabel = person.name
         remarkLabel = person.remark
         isTappedLineButton = person.canContactWithLINE
@@ -92,10 +94,10 @@ class FriendDetailViewModel: ObservableObject {
         }
     }
 
-    func didTapFriendDeleteButton(id: String, completionHandler: () -> Void) {
-        deleteNotification(id: id)
+    func didTapFriendDeleteButton(completionHandler: () -> Void) {
+        deleteNotification(id: person.id)
 
-        if deleteFriend(id: id) {
+        if deleteFriend(id: person.id) {
             completionHandler()
         }
     }
@@ -111,10 +113,11 @@ class FriendDetailViewModel: ObservableObject {
         userNotificationUtil.deleteRequest(id: id)
     }
 
-    func didTapUpdateFriendButton(id: String, remindDate: Date? = nil, completionHandler: () -> Void) {
-        updateNotification(id: id, remindDate: remindDate)
+    func didTapUpdateFriendButton(completionHandler: () -> Void) {
+        let remindDate = isOnReminder ? selectedRemindDate : nil
+        updateNotification(id: person.id, remindDate: remindDate)
 
-        if updateFriendInfo(id: id, remindDate: remindDate) {
+        if updateFriendInfo(id: person.id, remindDate: remindDate) {
             completionHandler()
         }
     }
