@@ -8,13 +8,13 @@
 import Foundation
 import Combine
 
-class FriendDetailViewModel: ObservableObject {
+class FriendDetailViewModel: FriendDetailViewModelProtocol {
     private(set) var objectWillChange = ObservableObjectPublisher()
 
     private var person = PersonModel()
     @Published var nameLabel = ""
     @Published var remarkLabel = ""
-    var cardColor = CardViewColor.blue
+    private(set) var cardColor = CardViewColor.blue
     /// 連絡方法のいずれかが押下された場合に、View を再描画する。
     /// そうすることで、連絡方法のアイコンの画像が切り替わる。
     private var isTappedContactButton = false {
