@@ -25,7 +25,7 @@ struct FriendListScreen<ViewModel: FriendListViewModelProtocol>: View {
                     ScrollView {
                         LazyVStack(spacing: 15) {
                             ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
-                                NavigationLink(destination: FriendDetailScreen(person: person, cardIndex: personIndex)) {
+                                NavigationLink(destination: FriendDetailScreen(viewModel: FriendDetailViewModel(), person: person, cardIndex: personIndex)) {
                                     FriendCardView(person: person, cardIndex: personIndex)
                                          .padding(.horizontal, 16)
                                 }

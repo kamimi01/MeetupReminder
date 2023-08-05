@@ -10,6 +10,7 @@ import Foundation
 protocol FriendDetailViewModelProtocol: ObservableObject {
     var nameLabel: String { get set }
     var remarkLabel: String { get set }
+    var cardColor: CardViewColor { get }
     var isOnReminder: Bool { get set }
     var selectedRemindDate: Date { get set }
     func initialize(person: PersonModel, cardIndex: Int)
