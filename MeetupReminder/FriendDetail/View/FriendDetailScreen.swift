@@ -13,28 +13,12 @@ struct FriendDetailScreen<ViewModel: FriendListViewModelProtocol>: View {
 
     let person: PersonModel
 
-    @State private var selectedRemindDate: Date
-    @State private var reminderToggleFlag: Bool
-    @State private var isShowingReminderSetting = false
-    let minimumRemindDate = Calendar.current.date(byAdding: .minute, value: 1, to: Date())!
-
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
 
     init(viewModel: ViewModel, person: PersonModel, cardIndex: Int) {
         self.viewModel = viewModel
         self.person = person
-
-        if let remindDate = person.remindDate {
-            _selectedRemindDate = State(initialValue: remindDate)
-            // reminderToggleFlagの変化に合わせてisShowingReminderSettingも変化するように実装されているが、初期化の時だけは連動しないのでここで実装した
-            _reminderToggleFlag = State(initialValue: true)
-            _isShowingReminderSetting = State(initialValue: true)
-        } else {
-            _selectedRemindDate = State(initialValue: Calendar.current.date(byAdding: .hour, value: 1, to: Date())!)
-            _reminderToggleFlag = State(initialValue: false)
-            _isShowingReminderSetting = State(initialValue: false)
-        }
 
         detailViewModel.initialize(person: person, cardIndex: cardIndex)
 
@@ -82,22 +66,15 @@ struct FriendDetailScreen<ViewModel: FriendListViewModelProtocol>: View {
                                 Text("通知設定")
                                     .foregroundColor(.mainText)
                                     .padding(.horizontal, 5)
-                                Toggle("", isOn: $reminderToggleFlag)
+                                Toggle("", isOn: $detailViewModel.isOnReminder)
                                     .toggleStyle(SwitchToggleStyle(tint: detailViewModel.cardColor.cardViewText))
-                                    .onChange(of: reminderToggleFlag) { _ in
-                                        if reminderToggleFlag {
-                                            isShowingReminderSetting = true
-                                        } else {
-                                            isShowingReminderSetting = false
-                                        }
-                                    }
                                 Spacer()
                             }
-                            if isShowingReminderSetting {
+                            if detailViewModel.isOnReminder {
                                 HStack {
                                     DatePicker(
                                         "",
-                                        selection: $selectedRemindDate,
+                                        selection: $detailViewModel.selectedRemindDate,
                                         displayedComponents: [.date, .hourAndMinute]
                                     )
                                     .labelsHidden()
@@ -165,7 +142,7 @@ private extension FriendDetailScreen {
         Button(action: {
             detailViewModel.didTapUpdateFriendButton(
                 id: person.id,
-                remindDate: reminderToggleFlag ? selectedRemindDate : nil
+                remindDate: detailViewModel.isOnReminder ? detailViewModel.selectedRemindDate : nil
             ) {
                 presentation.wrappedValue.dismiss()
             }

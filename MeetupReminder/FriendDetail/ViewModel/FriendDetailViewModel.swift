@@ -26,6 +26,13 @@ class FriendDetailViewModel: ObservableObject {
     private var isTappedTwitterButton = false
     private var isTappedLinkedinButton = false
     private var isTappedSlackButton = false
+    /// Toggle に onChange モディファイアをつけても呼ばれず、View の再描画が行われなかったので、ここで明示的に対応した
+    @Published var isOnReminder = false {
+        didSet {
+            objectWillChange.send()
+        }
+    }
+    @Published var selectedRemindDate = Date()
 
     private let realmHelper: RealmHelper
 
@@ -41,6 +48,14 @@ class FriendDetailViewModel: ObservableObject {
         isTappedTwitterButton = person.canContactWithTwitter
         isTappedLinkedinButton = person.canContactWithLinkedIn
         isTappedSlackButton = person.canContactWithSlack
+
+        if let remindDate = person.remindDate {
+            isOnReminder = true
+            selectedRemindDate = remindDate
+        } else {
+            isOnReminder = false
+            selectedRemindDate = Calendar.current.date(byAdding: .hour, value: 1, to: Date())!
+        }
 
         cardColor = CardColorGenerator.color(with: cardIndex)
     }
