@@ -16,6 +16,7 @@
 		D4A90106298F23CB00BCCA5D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A90105298F23CB00BCCA5D /* Date+Extension.swift */; };
 		D4B50B982A7B05D0002B4F91 /* FriendDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B50B972A7B05D0002B4F91 /* FriendDetailViewModel.swift */; };
 		D4B50B9A2A7B0B2A002B4F91 /* ContactMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B50B992A7B0B2A002B4F91 /* ContactMethod.swift */; };
+		D4B50B9C2A7C610E002B4F91 /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B50B9B2A7C610E002B4F91 /* ColorGenerator.swift */; };
 		D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D145297F370F00029E0B /* MeetupReminderApp.swift */; };
 		D4C6D148297F370F00029E0B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C6D147297F370F00029E0B /* ContentView.swift */; };
 		D4C6D14A297F371100029E0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4C6D149297F371100029E0B /* Assets.xcassets */; };
@@ -68,6 +69,7 @@
 		D4A90105298F23CB00BCCA5D /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		D4B50B972A7B05D0002B4F91 /* FriendDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailViewModel.swift; sourceTree = "<group>"; };
 		D4B50B992A7B0B2A002B4F91 /* ContactMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMethod.swift; sourceTree = "<group>"; };
+		D4B50B9B2A7C610E002B4F91 /* ColorGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorGenerator.swift; sourceTree = "<group>"; };
 		D4C6D142297F370F00029E0B /* MeetupReminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeetupReminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C6D145297F370F00029E0B /* MeetupReminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupReminderApp.swift; sourceTree = "<group>"; };
 		D4C6D147297F370F00029E0B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				D4C6D147297F370F00029E0B /* ContentView.swift */,
 				D4CEE7962982B93E005B863F /* PersonModel.swift */,
 				D4B50B992A7B0B2A002B4F91 /* ContactMethod.swift */,
+				D4B50B9B2A7C610E002B4F91 /* ColorGenerator.swift */,
 				D4C6D149297F371100029E0B /* Assets.xcassets */,
 				D4C6D14B297F371100029E0B /* Preview Content */,
 			);
@@ -457,6 +460,7 @@
 				D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */,
 				D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */,
 				D4CEE7952982AE89005B863F /* AddFriendViewModel.swift in Sources */,
+				D4B50B9C2A7C610E002B4F91 /* ColorGenerator.swift in Sources */,
 				D4B50B9A2A7B0B2A002B4F91 /* ContactMethod.swift in Sources */,
 				D4C6D1742980867B00029E0B /* FriendCardView.swift in Sources */,
 				D4C6D17E298148B500029E0B /* FriendDetailScreen.swift in Sources */,

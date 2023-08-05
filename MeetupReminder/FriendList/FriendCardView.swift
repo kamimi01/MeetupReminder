@@ -9,7 +9,10 @@ import SwiftUI
 
 struct FriendCardView: View {
     let person: PersonModel
-    let cardColor: CardViewColor
+    let cardIndex: Int
+    private var cardColor: CardViewColor {
+        return CardColorGenerator.color(with: cardIndex)
+    }
     @Environment(\.openURL) var openURL
 
     var body: some View {
@@ -120,7 +123,7 @@ private extension FriendCardView {
 
 struct PersonCardView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendCardView(person: createDummyData(), cardColor: CardViewColor.red)
+        FriendCardView(person: createDummyData(), cardIndex: 2)
     }
 
     static func createDummyData() -> PersonModel {

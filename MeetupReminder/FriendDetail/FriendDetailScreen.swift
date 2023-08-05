@@ -12,7 +12,7 @@ struct FriendDetailScreen: View {
     @ObservedObject private var detailViewModel = FriendDetailViewModel()
 
     let person: PersonModel
-    let cardColor: CardViewColor
+//    let cardColor: CardViewColor
 
     @State private var isTappedLineButton: Bool
     @State private var isTappedFacebookButton: Bool
@@ -27,10 +27,9 @@ struct FriendDetailScreen: View {
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
 
-    init(viewModel: FriendListViewModel, person: PersonModel, cardColor: CardViewColor) {
+    init(viewModel: FriendListViewModel, person: PersonModel, cardIndex: Int) {
         self.viewModel = viewModel
         self.person = person
-        self.cardColor = cardColor
 
         _isTappedLineButton = State(initialValue: person.canContactWithLINE)
         _isTappedFacebookButton = State(initialValue: person.canContactWithFacebook)
@@ -48,15 +47,15 @@ struct FriendDetailScreen: View {
             _isShowingReminderSetting = State(initialValue: false)
         }
 
-        detailViewModel.initialize(person: person)
+        detailViewModel.initialize(person: person, cardIndex: cardIndex)
 
         //ナビゲーションバーの背景色の設定
-        UINavigationBar.appearance().barTintColor = UIColor(cardColor.carViewBackground)
+        UINavigationBar.appearance().barTintColor = UIColor(detailViewModel.cardColor.carViewBackground)
     }
 
     var body: some View {
         ZStack {
-            cardColor.carViewBackground
+            detailViewModel.cardColor.carViewBackground
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack(spacing: 20) {
@@ -86,7 +85,7 @@ struct FriendDetailScreen: View {
                                     isTappedLineButton.toggle()
                                 }) {
                                     if isTappedLineButton {
-                                        Image(cardColor.lineImageFill)
+                                        Image(detailViewModel.cardColor.lineImageFill)
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(maxWidth: 70, maxHeight: 70)
@@ -101,7 +100,7 @@ struct FriendDetailScreen: View {
                                     isTappedFacebookButton.toggle()
                                 }) {
                                     if isTappedFacebookButton {
-                                        Image(cardColor.facebookImageFill)
+                                        Image(detailViewModel.cardColor.facebookImageFill)
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(maxWidth: 70, maxHeight: 70)
@@ -116,7 +115,7 @@ struct FriendDetailScreen: View {
                                     isTappedTwitterButton.toggle()
                                 }) {
                                     if isTappedTwitterButton {
-                                        Image(cardColor.twitterImageFill)
+                                        Image(detailViewModel.cardColor.twitterImageFill)
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(maxWidth: 70, maxHeight: 70)
@@ -135,7 +134,7 @@ struct FriendDetailScreen: View {
                                     isTappedLinkedInButton.toggle()
                                 }) {
                                     if isTappedLinkedInButton {
-                                        Image(cardColor.linkedinImageFill)
+                                        Image(detailViewModel.cardColor.linkedinImageFill)
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(maxWidth: 70, maxHeight: 70)
@@ -150,7 +149,7 @@ struct FriendDetailScreen: View {
                                     isTappedSlackButton.toggle()
                                 }) {
                                     if isTappedSlackButton {
-                                        Image(cardColor.slackImageFill)
+                                        Image(detailViewModel.cardColor.slackImageFill)
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
                                             .frame(maxWidth: 70, maxHeight: 70)
@@ -170,7 +169,7 @@ struct FriendDetailScreen: View {
                                     .foregroundColor(.mainText)
                                     .padding(.horizontal, 5)
                                 Toggle("", isOn: $reminderToggleFlag)
-                                    .toggleStyle(SwitchToggleStyle(tint: cardColor.cardViewText))
+                                    .toggleStyle(SwitchToggleStyle(tint: detailViewModel.cardColor.cardViewText))
                                     .onChange(of: reminderToggleFlag) { _ in
                                         if reminderToggleFlag {
                                             isShowingReminderSetting = true
@@ -212,7 +211,7 @@ struct FriendDetailScreen: View {
 private extension FriendDetailScreen {
     var profileImage: some View {
         VStack(spacing: 10) {
-            Image(cardColor.profileImage)
+            Image(detailViewModel.cardColor.profileImage)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .background(Color.mainBackground)
@@ -239,7 +238,7 @@ private extension FriendDetailScreen {
             }
         }) {
             Text("ともだちから削除")
-                .foregroundColor(cardColor.cardViewText)
+                .foregroundColor(detailViewModel.cardColor.cardViewText)
                 .font(.title3)
                 .bold()
         }
@@ -274,6 +273,6 @@ private extension FriendDetailScreen {
 
 struct FriendDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        FriendDetailScreen(viewModel: FriendListViewModel(), person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardColor: .red)
+        FriendDetailScreen(viewModel: FriendListViewModel(), person: PersonModel(id: "", name: "名前", canContactWithLINE: true, canContactWithFacebook: true, canContactWithTwitter: true, canContactWithLinkedIn: true, canContactWithSlack: true, remark: "メモ", remindDate: nil), cardIndex: 1)
     }
 }
