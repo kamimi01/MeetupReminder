@@ -8,7 +8,8 @@
 import Foundation
 import RealmSwift
 
-class FriendListViewModel: ObservableObject {
+class FriendListViewModel: ObservableObject, FriendListViewModelProtocol {
+
     @Published var personList: [PersonModel] = []
     private var allFriends: Results<Person>? = nil
     private let realmHelper: RealmHelper
