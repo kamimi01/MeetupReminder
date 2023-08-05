@@ -143,17 +143,10 @@ private extension FriendDetailScreen {
         Button(action: {
             viewModel.didTapContactButton(contactMethod: contactMethod)
         }) {
-            if viewModel.isTappedContactMethodButton(contactMethod: contactMethod) {
-                return Image(contactMethod.selectImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 70, maxHeight: 70)
-            } else {
-                return Image(contactMethod.deselectImage)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: 70, maxHeight: 70)
-            }
+            Image(viewModel.isTappedContactMethodButton(contactMethod: contactMethod) ? contactMethod.selectImage : contactMethod.deselectImage)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 70, maxHeight: 70)
         }
     }
 }
