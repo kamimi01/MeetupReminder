@@ -62,6 +62,15 @@ class FriendDetailViewModel: FriendDetailViewModelProtocol {
         cardColor = CardColorGenerator.color(with: cardIndex)
     }
 
+    func onAppear() {
+        logEvent()
+    }
+
+    private func logEvent() {
+        let firebaseAnalytics = FirebaseAnalyticsHelper()
+        firebaseAnalytics.sendLogEvent(screen: .friendupdate)
+    }
+
     func didTapContactButton(contactMethod: ContactMethod) {
         isTappedContactButton.toggle()
 

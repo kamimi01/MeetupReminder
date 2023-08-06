@@ -91,6 +91,9 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 }
 
