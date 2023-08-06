@@ -9,6 +9,8 @@ import SwiftUI
 import RealmSwift
 
 struct NewFriendScreen: View {
+    @ObservedObject private var viewModel = NewFriendViewModel()
+
     let personList: [PersonModel]
     let cardColor = CardViewColor.red
 
@@ -157,6 +159,9 @@ struct NewFriendScreen: View {
                     addButton
                 }
             }
+        }
+        .onAppear {
+            viewModel.onAppear()
         }
     }
 }

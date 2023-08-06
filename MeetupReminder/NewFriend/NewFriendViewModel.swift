@@ -11,4 +11,13 @@ class NewFriendViewModel: ObservableObject {
     func addFriend() {
         
     }
+
+    func onAppear() {
+        logEvent()
+    }
+
+    private func logEvent() {
+        let firebaseAnalytics = FirebaseAnalyticsHelper()
+        firebaseAnalytics.sendLogEvent(screen: .newfriend)
+    }
 }
