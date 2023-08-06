@@ -8,7 +8,9 @@
 import SwiftUI
 import AppInfoList
 
-struct SettingScreen: View {
+struct SettingScreen<ViewModel: SettingViewModelProtocol>: View {
+
+    @ObservedObject var viewModel: ViewModel
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -36,6 +38,9 @@ struct SettingScreen: View {
             }
         }
         .accentColor(.mainText)
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 }
 
@@ -54,6 +59,6 @@ private extension SettingScreen {
 
 struct SettingScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SettingScreen()
+        SettingScreen(viewModel: SettingViewModel())
     }
 }

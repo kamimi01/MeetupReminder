@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import FirebaseAnalytics
 
 class FriendListViewModel: FriendListViewModelProtocol {
 
@@ -42,6 +43,7 @@ class FriendListViewModel: FriendListViewModelProtocol {
 
     func onAppear() {
         setNotification()
+        logEvent()
     }
 
     private func setNotification() {
@@ -55,6 +57,11 @@ class FriendListViewModel: FriendListViewModelProtocol {
                 print(error.localizedDescription)
             }
         }
+    }
+
+    private func logEvent() {
+        let firebaseAnalytics = FirebaseAnalyticsHelper()
+        firebaseAnalytics.sendLogEvent(screen: .friendlist)
     }
 
     func didActivate() {

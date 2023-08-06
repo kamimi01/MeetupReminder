@@ -76,7 +76,7 @@ private extension FriendListScreen {
                 .foregroundColor(.mainText)
         }
         .fullScreenCover(isPresented: $viewModel.isShowingAppInfoScreen) {
-            SettingScreen()
+            SettingScreen(viewModel: SettingViewModel())
         }
     }
 

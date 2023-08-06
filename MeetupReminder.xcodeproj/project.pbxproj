@@ -41,6 +41,11 @@
 		D4CEE79929833C3A005B863F /* friendships.json in Resources */ = {isa = PBXBuildFile; fileRef = D4CEE79829833C3A005B863F /* friendships.json */; };
 		D4CEE79B29833C65005B863F /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CEE79A29833C65005B863F /* LottieView.swift */; };
 		D4CEE79E29833C8E005B863F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D4CEE79D29833C8E005B863F /* Lottie */; };
+		D4E600FC2A7FAB6A006999AE /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E600FB2A7FAB6A006999AE /* LogEvent.swift */; };
+		D4E600FE2A7FABEE006999AE /* FirebaseAnalyticsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E600FD2A7FABEE006999AE /* FirebaseAnalyticsHelper.swift */; };
+		D4E601002A7FAD11006999AE /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E600FF2A7FAD11006999AE /* Loggable.swift */; };
+		D4E601022A7FADB6006999AE /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601012A7FADB6006999AE /* SettingViewModel.swift */; };
+		D4E601042A7FADF9006999AE /* SettingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601032A7FADF9006999AE /* SettingViewModelProtocol.swift */; };
 		D4FE57BF2A71DEDE005DD3FC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +102,11 @@
 		D4CEE7962982B93E005B863F /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 		D4CEE79829833C3A005B863F /* friendships.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = friendships.json; sourceTree = "<group>"; };
 		D4CEE79A29833C65005B863F /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		D4E600FB2A7FAB6A006999AE /* LogEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEvent.swift; sourceTree = "<group>"; };
+		D4E600FD2A7FABEE006999AE /* FirebaseAnalyticsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsHelper.swift; sourceTree = "<group>"; };
+		D4E600FF2A7FAD11006999AE /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
+		D4E601012A7FADB6006999AE /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		D4E601032A7FADF9006999AE /* SettingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +220,8 @@
 		D49734062998E1E400FA6272 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				D49734072998E1F400FA6272 /* SettingScreen.swift */,
+				D4E601062A7FAE7C006999AE /* ViewModel */,
+				D4E601052A7FAE74006999AE /* View */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -257,6 +268,7 @@
 		D4C6D144297F370F00029E0B /* MeetupReminder */ = {
 			isa = PBXGroup;
 			children = (
+				D4E600FA2A7FAB15006999AE /* Logging */,
 				D432025B2A71CE940096642C /* Realm */,
 				D43202592A71CE430096642C /* Animation */,
 				D43202582A71CE0B0096642C /* FriendList */,
@@ -320,6 +332,33 @@
 				D422625A2A7E3548005AAC42 /* View */,
 			);
 			path = FriendDetail;
+			sourceTree = "<group>";
+		};
+		D4E600FA2A7FAB15006999AE /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				D4E600FB2A7FAB6A006999AE /* LogEvent.swift */,
+				D4E600FD2A7FABEE006999AE /* FirebaseAnalyticsHelper.swift */,
+				D4E600FF2A7FAD11006999AE /* Loggable.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
+		D4E601052A7FAE74006999AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D49734072998E1F400FA6272 /* SettingScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D4E601062A7FAE7C006999AE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D4E601012A7FADB6006999AE /* SettingViewModel.swift */,
+				D4E601032A7FADF9006999AE /* SettingViewModelProtocol.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,13 +530,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A90103298F1B9500BCCA5D /* UserNotificationUtil.swift in Sources */,
+				D4E600FE2A7FABEE006999AE /* FirebaseAnalyticsHelper.swift in Sources */,
 				D4C6D170298084EF00029E0B /* Person.swift in Sources */,
+				D4E601022A7FADB6006999AE /* SettingViewModel.swift in Sources */,
 				D42262552A7E23F9005AAC42 /* FriendListViewModelProtocol.swift in Sources */,
 				D4096B0229965B80009090AE /* AppReview.swift in Sources */,
 				D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */,
 				D4CEE7972982B93E005B863F /* PersonModel.swift in Sources */,
+				D4E601042A7FADF9006999AE /* SettingViewModelProtocol.swift in Sources */,
 				D4C6D148297F370F00029E0B /* FriendListScreen.swift in Sources */,
 				D4C6D17C2980FAEF00029E0B /* NewFriendScreen.swift in Sources */,
+				D4E600FC2A7FAB6A006999AE /* LogEvent.swift in Sources */,
 				D4B50B982A7B05D0002B4F91 /* FriendDetailViewModel.swift in Sources */,
 				D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */,
 				D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */,
@@ -506,6 +549,7 @@
 				D4B50B9C2A7C610E002B4F91 /* ColorGenerator.swift in Sources */,
 				D4B50B9A2A7B0B2A002B4F91 /* ContactMethod.swift in Sources */,
 				D4C6D1742980867B00029E0B /* FriendCardView.swift in Sources */,
+				D4E601002A7FAD11006999AE /* Loggable.swift in Sources */,
 				D4C6D17E298148B500029E0B /* FriendDetailScreen.swift in Sources */,
 				D49734082998E1F400FA6272 /* SettingScreen.swift in Sources */,
 				D4A90106298F23CB00BCCA5D /* Date+Extension.swift in Sources */,
