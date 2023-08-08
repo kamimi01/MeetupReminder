@@ -18,25 +18,9 @@ struct FriendListScreen<ViewModel: FriendListViewModelProtocol>: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack {
                     if viewModel.personList.isEmpty {
-                        VStack {
-                            Spacer()
-                            LottieView(animationType: .friendships)
-                                .frame(width: 250, height: 180)
-                            Spacer()
-                        }
+                        friendEmptyView()
                     } else {
-                        ScrollView {
-                            LazyVStack(spacing: 15) {
-                                ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
-                                    NavigationLink(destination: FriendDetailScreen(viewModel: FriendDetailViewModel(), person: person, cardIndex: personIndex)) {
-                                        FriendCardView(person: person, cardIndex: personIndex)
-                                             .padding(.horizontal, 16)
-                                    }
-                                }
-                                Color.mainBackground
-                                    .frame(height: 170)
-                            }
-                        }
+                        friendListView()
                     }
                     AdmobBannerView()
                         .frame(width: 320, height: 50)
@@ -74,6 +58,30 @@ struct FriendListScreen<ViewModel: FriendListViewModelProtocol>: View {
 // MARK: - Private Properties and Methods
 
 private extension FriendListScreen {
+    func friendEmptyView() -> some View {
+        VStack {
+            Spacer()
+            LottieView(animationType: .friendships)
+                .frame(width: 250, height: 180)
+            Spacer()
+        }
+    }
+
+    func friendListView() -> some View {
+        ScrollView {
+            LazyVStack(spacing: 15) {
+                ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
+                    NavigationLink(destination: FriendDetailScreen(viewModel: FriendDetailViewModel(), person: person, cardIndex: personIndex)) {
+                        FriendCardView(person: person, cardIndex: personIndex)
+                             .padding(.horizontal, 16)
+                    }
+                }
+                Color.mainBackground
+                    .frame(height: 170)
+            }
+        }
+    }
+
     var appInfoButton: some View {
         Button(action: {
             viewModel.didTapInfoButton()
