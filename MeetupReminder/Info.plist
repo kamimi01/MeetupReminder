@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SKAdNetworkIdentifier</key>
+	<string>cstr6suwn9.skadnetwork</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>許可すると、あなたに合った広告が表示されやすくなります。これによる個人情報へのアクセスはありません。</string>
 	<key>AppConfig</key>
 	<dict>
 		<key>AdmobUnitID</key>

@@ -49,6 +49,7 @@
 		D4E601092A7FDA97006999AE /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = D4E601082A7FDA97006999AE /* GoogleMobileAds */; };
 		D4E6010D2A81C89A006999AE /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6010C2A81C89A006999AE /* AdmobBannerView.swift */; };
 		D4E6010F2A81CB2D006999AE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6010E2A81CB2D006999AE /* Configuration.swift */; };
+		D4E601112A8230ED006999AE /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601102A8230ED006999AE /* UIApplication+Extension.swift */; };
 		D4FE57BF2A71DEDE005DD3FC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		D4E601032A7FADF9006999AE /* SettingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelProtocol.swift; sourceTree = "<group>"; };
 		D4E6010C2A81C89A006999AE /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
 		D4E6010E2A81CB2D006999AE /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		D4E601102A8230ED006999AE /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			children = (
 				D4C6D1752980A70700029E0B /* Color+Extension.swift */,
 				D4A90105298F23CB00BCCA5D /* Date+Extension.swift */,
+				D4E601102A8230ED006999AE /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -583,6 +586,7 @@
 				D4A90106298F23CB00BCCA5D /* Date+Extension.swift in Sources */,
 				D422625F2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift in Sources */,
 				D4C6D172298085DF00029E0B /* FriendListViewModel.swift in Sources */,
+				D4E601112A8230ED006999AE /* UIApplication+Extension.swift in Sources */,
 				D4CEE79B29833C65005B863F /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
