@@ -46,6 +46,9 @@
 		D4E601002A7FAD11006999AE /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E600FF2A7FAD11006999AE /* Loggable.swift */; };
 		D4E601022A7FADB6006999AE /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601012A7FADB6006999AE /* SettingViewModel.swift */; };
 		D4E601042A7FADF9006999AE /* SettingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601032A7FADF9006999AE /* SettingViewModelProtocol.swift */; };
+		D4E601092A7FDA97006999AE /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = D4E601082A7FDA97006999AE /* GoogleMobileAds */; };
+		D4E6010D2A81C89A006999AE /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6010C2A81C89A006999AE /* AdmobBannerView.swift */; };
+		D4E6010F2A81CB2D006999AE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6010E2A81CB2D006999AE /* Configuration.swift */; };
 		D4FE57BF2A71DEDE005DD3FC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +110,8 @@
 		D4E600FF2A7FAD11006999AE /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		D4E601012A7FADB6006999AE /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		D4E601032A7FADF9006999AE /* SettingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModelProtocol.swift; sourceTree = "<group>"; };
+		D4E6010C2A81C89A006999AE /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
+		D4E6010E2A81CB2D006999AE /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E601092A7FDA97006999AE /* GoogleMobileAds in Frameworks */,
 				D497340B2998E25700FA6272 /* AppInfoList in Frameworks */,
 				D4CEE791298299FE005B863F /* RealmSwift in Frameworks */,
 				D4CEE78F298299FE005B863F /* Realm in Frameworks */,
@@ -268,6 +274,7 @@
 		D4C6D144297F370F00029E0B /* MeetupReminder */ = {
 			isa = PBXGroup;
 			children = (
+				D4E6010A2A81C863006999AE /* Advertisement */,
 				D4E600FA2A7FAB15006999AE /* Logging */,
 				D432025B2A71CE940096642C /* Realm */,
 				D43202592A71CE430096642C /* Animation */,
@@ -287,6 +294,7 @@
 				D4B50B9B2A7C610E002B4F91 /* ColorGenerator.swift */,
 				D4C6D149297F371100029E0B /* Assets.xcassets */,
 				D4C6D14B297F371100029E0B /* Preview Content */,
+				D4E6010E2A81CB2D006999AE /* Configuration.swift */,
 			);
 			path = MeetupReminder;
 			sourceTree = "<group>";
@@ -361,6 +369,22 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D4E6010A2A81C863006999AE /* Advertisement */ = {
+			isa = PBXGroup;
+			children = (
+				D4E6010B2A81C872006999AE /* GoogleAdmob */,
+			);
+			path = Advertisement;
+			sourceTree = "<group>";
+		};
+		D4E6010B2A81C872006999AE /* GoogleAdmob */ = {
+			isa = PBXGroup;
+			children = (
+				D4E6010C2A81C89A006999AE /* AdmobBannerView.swift */,
+			);
+			path = GoogleAdmob;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,6 +408,7 @@
 				D4CEE79D29833C8E005B863F /* Lottie */,
 				D497340A2998E25700FA6272 /* AppInfoList */,
 				D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */,
+				D4E601082A7FDA97006999AE /* GoogleMobileAds */,
 			);
 			productName = MeetupReminder;
 			productReference = D4C6D142297F370F00029E0B /* MeetupReminder.app */;
@@ -462,6 +487,7 @@
 				D4CEE79C29833C8D005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				D49734092998E25700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */,
 				D4FE57BD2A71DEDE005DD3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				D4E601072A7FDA97006999AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = D4C6D143297F370F00029E0B /* Products */;
 			projectDirPath = "";
@@ -529,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E6010D2A81C89A006999AE /* AdmobBannerView.swift in Sources */,
 				D4A90103298F1B9500BCCA5D /* UserNotificationUtil.swift in Sources */,
 				D4E600FE2A7FABEE006999AE /* FirebaseAnalyticsHelper.swift in Sources */,
 				D4C6D170298084EF00029E0B /* Person.swift in Sources */,
@@ -538,6 +565,7 @@
 				D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */,
 				D4CEE7972982B93E005B863F /* PersonModel.swift in Sources */,
 				D4E601042A7FADF9006999AE /* SettingViewModelProtocol.swift in Sources */,
+				D4E6010F2A81CB2D006999AE /* Configuration.swift in Sources */,
 				D4C6D148297F370F00029E0B /* FriendListScreen.swift in Sources */,
 				D4C6D17C2980FAEF00029E0B /* NewFriendScreen.swift in Sources */,
 				D4E600FC2A7FAB6A006999AE /* LogEvent.swift in Sources */,
@@ -595,6 +623,7 @@
 		D4C6D164297F371200029E0B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ADMOB_UNIT_ID = "ca-app-pub-3940256099942544/2934735716";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -655,6 +684,7 @@
 		D4C6D165297F371200029E0B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ADMOB_UNIT_ID = "ca-app-pub-6708304974330091/3760516804";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -918,6 +948,14 @@
 				version = 4.1.2;
 			};
 		};
+		D4E601072A7FDA97006999AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
 		D4FE57BD2A71DEDE005DD3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -948,6 +986,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D4CEE79C29833C8D005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		D4E601082A7FDA97006999AE /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D4E601072A7FDA97006999AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 		D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */ = {
 			isa = XCSwiftPackageProductDependency;

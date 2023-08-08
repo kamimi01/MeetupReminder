@@ -16,27 +16,33 @@ struct FriendListScreen<ViewModel: FriendListViewModelProtocol>: View {
             ZStack {
                 Color.mainBackground
                     .edgesIgnoringSafeArea(.all)
-                if viewModel.personList.isEmpty {
-                    Spacer()
-                    LottieView(animationType: .friendships)
-                        .frame(width: 250, height: 180)
-                    Spacer()
-                } else {
-                    ScrollView {
-                        LazyVStack(spacing: 15) {
-                            ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
-                                NavigationLink(destination: FriendDetailScreen(viewModel: FriendDetailViewModel(), person: person, cardIndex: personIndex)) {
-                                    FriendCardView(person: person, cardIndex: personIndex)
-                                         .padding(.horizontal, 16)
+                VStack {
+                    if viewModel.personList.isEmpty {
+                        VStack {
+                            Spacer()
+                            LottieView(animationType: .friendships)
+                                .frame(width: 250, height: 180)
+                            Spacer()
+                        }
+                    } else {
+                        ScrollView {
+                            LazyVStack(spacing: 15) {
+                                ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
+                                    NavigationLink(destination: FriendDetailScreen(viewModel: FriendDetailViewModel(), person: person, cardIndex: personIndex)) {
+                                        FriendCardView(person: person, cardIndex: personIndex)
+                                             .padding(.horizontal, 16)
+                                    }
                                 }
+                                Color.mainBackground
+                                    .frame(height: 170)
                             }
-                            Color.mainBackground
-                                .frame(height: 170)
                         }
                     }
+                    AdmobBannerView()
+                        .frame(width: 320, height: 50)
                 }
                 addButton
-                    .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 240)
+                    .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 280)
             }
             .navigationTitle("ともだち")
             .toolbar {

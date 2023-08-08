@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+	<key>AppConfig</key>
+	<dict>
+		<key>AdmobUnitID</key>
+		<string>$(ADMOB_UNIT_ID)</string>
+	</dict>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-6708304974330091~5701829026</string>
+</dict>
 </plist>
