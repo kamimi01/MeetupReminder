@@ -199,6 +199,7 @@ private extension NewFriendScreen {
         Button(action: {
             let result = addFriend()
             if result {
+                viewModel.addFriend(personList: personList)
                 dismiss()
                 // レビューダイアログの表示
                 if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {

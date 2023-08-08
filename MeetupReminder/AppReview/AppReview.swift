@@ -16,21 +16,20 @@ class AppReview {
     }
 
     func requestReview(in window: UIWindowScene) {
-        if fullfilled {
-            Task { @MainActor in
-                // ユーザーがアプリで操作をしてしまわないよう2秒待機する
-                try? await Task.sleep(nanoseconds: UInt64(2e9))
-                SKStoreReviewController.requestReview(in: window)
-            }
+        if fulfilled == false {
+            return
+        }
+
+        Task { @MainActor in
+            // ユーザーがアプリで操作をしてしまわないよう2秒待機する
+            try? await Task.sleep(nanoseconds: UInt64(2e9))
+            SKStoreReviewController.requestReview(in: window)
         }
     }
 
-    private var fullfilled: Bool {
+    private var fulfilled: Bool {
         let numOfPerson = personList.count
         let threshholdList = [4, 9, 19]
-        if threshholdList.contains(numOfPerson) {
-            return true
-        }
-        return false
+        return threshholdList.contains(numOfPerson)
     }
 }

@@ -42,6 +42,7 @@ class FriendListViewModel: FriendListViewModelProtocol {
     }
 
     func onAppear() {
+
         setNotification()
         logEvent()
     }
