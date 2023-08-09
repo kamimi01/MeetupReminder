@@ -11,7 +11,6 @@
 		D42262552A7E23F9005AAC42 /* FriendListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42262542A7E23F9005AAC42 /* FriendListViewModelProtocol.swift */; };
 		D422625D2A7E5F41005AAC42 /* NotificationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422625C2A7E5F41005AAC42 /* NotificationMessage.swift */; };
 		D422625F2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422625E2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift */; };
-		D454A0502A71D692003E1E64 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D454A04F2A71D692003E1E64 /* GoogleService-Info.plist */; };
 		D49734082998E1F400FA6272 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49734072998E1F400FA6272 /* SettingScreen.swift */; };
 		D497340B2998E25700FA6272 /* AppInfoList in Frameworks */ = {isa = PBXBuildFile; productRef = D497340A2998E25700FA6272 /* AppInfoList */; };
 		D497340D2998E2B300FA6272 /* license-list.plist in Resources */ = {isa = PBXBuildFile; fileRef = D497340C2998E2B200FA6272 /* license-list.plist */; };
@@ -50,6 +49,7 @@
 		D4E6010D2A81C89A006999AE /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6010C2A81C89A006999AE /* AdmobBannerView.swift */; };
 		D4E6010F2A81CB2D006999AE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6010E2A81CB2D006999AE /* Configuration.swift */; };
 		D4E601112A8230ED006999AE /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601102A8230ED006999AE /* UIApplication+Extension.swift */; };
+		D4E601132A830439006999AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4E601122A830438006999AE /* GoogleService-Info.plist */; };
 		D4FE57BF2A71DEDE005DD3FC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +76,6 @@
 		D42262542A7E23F9005AAC42 /* FriendListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModelProtocol.swift; sourceTree = "<group>"; };
 		D422625C2A7E5F41005AAC42 /* NotificationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationMessage.swift; sourceTree = "<group>"; };
 		D422625E2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailViewModelProtocol.swift; sourceTree = "<group>"; };
-		D454A04F2A71D692003E1E64 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D49734072998E1F400FA6272 /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
 		D497340C2998E2B200FA6272 /* license-list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "license-list.plist"; sourceTree = "<group>"; };
 		D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeetupReminder.entitlements; sourceTree = "<group>"; };
@@ -114,6 +113,7 @@
 		D4E6010C2A81C89A006999AE /* AdmobBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobBannerView.swift; sourceTree = "<group>"; };
 		D4E6010E2A81CB2D006999AE /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		D4E601102A8230ED006999AE /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		D4E601122A830438006999AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +286,7 @@
 				D49734062998E1E400FA6272 /* Setting */,
 				D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */,
 				D4096B0029930131009090AE /* Info.plist */,
-				D454A04F2A71D692003E1E64 /* GoogleService-Info.plist */,
+				D4E601122A830438006999AE /* GoogleService-Info.plist */,
 				D4A90104298F23AA00BCCA5D /* Extensions */,
 				D4A90101298F1B7B00BCCA5D /* PushNotification */,
 				D4C6D1782980FAB700029E0B /* FriendDetail */,
@@ -510,7 +510,7 @@
 			files = (
 				D497340D2998E2B300FA6272 /* license-list.plist in Resources */,
 				D4C6D14D297F371100029E0B /* Preview Assets.xcassets in Resources */,
-				D454A0502A71D692003E1E64 /* GoogleService-Info.plist in Resources */,
+				D4E601132A830439006999AE /* GoogleService-Info.plist in Resources */,
 				D4C6D14A297F371100029E0B /* Assets.xcassets in Resources */,
 				D4CEE79929833C3A005B863F /* friendships.json in Resources */,
 			);
@@ -682,6 +682,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = targeted;
 			};
 			name = Debug;
 		};
@@ -736,6 +737,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = targeted;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -765,7 +767,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamimi.MeetupReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -800,7 +802,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamimi.MeetupReminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

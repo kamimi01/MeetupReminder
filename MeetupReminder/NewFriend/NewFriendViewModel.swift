@@ -9,33 +9,33 @@ import Foundation
 import GoogleMobileAds
 import UserMessagingPlatform
 
+enum UMPError: Error {
+    /// formStatus が available ではない
+    case formStatusIsNotAvailable(_ formStatus: UMPFormStatus)
+    /// ads をリクエストできない
+    case cannotRequestAds
+    /// rootViewController を取得できない
+    case cannotGetRootViewController
+}
+
 class NewFriendViewModel: ObservableObject {
     func addFriend(personList: [PersonModel]) {
-        setupAdmobIfNeeded(personList: personList)
+        Task {
+            await setupAdmobIfNeeded(personList: personList)
+        }
     }
 
-    private func setupAdmobIfNeeded(personList: [PersonModel]) {
+    private func setupAdmobIfNeeded(personList: [PersonModel]) async {
         if fulfilled(personList: personList) == false {
             print("don't setup admob because of not fulfilled")
             return
         }
 
-        let parameters = UMPRequestParameters()
-        parameters.tagForUnderAgeOfConsent = false
-
-        UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters) { [weak self] requestConsentError in
-            guard let self = self else { return }
-
-            if let requestConsentError = requestConsentError {
-                print("Error: \(requestConsentError.localizedDescription)")
-                return
-            }
-
-            if UMPConsentInformation.sharedInstance.formStatus == .available {
-                self.loadForm()
-            } else {
-                print("formstatus of UMPConsentInformation is not available. status is: \(UMPConsentInformation.sharedInstance.formStatus)")
-            }
+        do {
+            try await presentFormIfPossible()
+            await setupAdmob()
+        } catch {
+            print(error.localizedDescription)
         }
     }
 
@@ -45,35 +45,35 @@ class NewFriendViewModel: ObservableObject {
         return threshhold == numOfPerson
     }
 
-    private func loadForm() {
-        UMPConsentForm.load { form, loadError in
-            if let loadError = loadError {
-                print("Error: \(loadError.localizedDescription)")
-                return
-            }
+    private func presentFormIfPossible() async throws {
+        let parameters = UMPRequestParameters()
+        parameters.tagForUnderAgeOfConsent = false
 
-            if UMPConsentInformation.sharedInstance.consentStatus == .required {
+        try await UMPConsentInformation.sharedInstance.requestConsentInfoUpdate(with: parameters)
 
-                guard let rootViewController = UIApplication.shared.rootViewController else {
-                    print("Cannot get rootviewcontroller")
-                    return
-                }
-
-                form?.present(from: rootViewController) { dismissError in
-
-                    if let dismissError = dismissError {
-                        print("Error: \(dismissError.localizedDescription)")
-                        return
-                    }
-
-                    if UMPConsentInformation.sharedInstance.consentStatus == .obtained {
-                        GADMobileAds.sharedInstance().start()
-                    } else {
-                        print("consentStatus of UMPConsentInformation is not obtained. status is: \(UMPConsentInformation.sharedInstance.consentStatus)")
-                    }
-                }
-            }
+        let formStatus = UMPConsentInformation.sharedInstance.formStatus
+        if formStatus != .available {
+            throw UMPError.formStatusIsNotAvailable(formStatus)
         }
+
+        try await loadAndPresentIfPossible()
+
+        if UMPConsentInformation.sharedInstance.canRequestAds == false {
+            throw UMPError.cannotRequestAds
+        }
+    }
+
+    @MainActor
+    private func loadAndPresentIfPossible() async throws {
+        guard let rootViewController = UIApplication.shared.rootViewController else {
+            throw UMPError.cannotGetRootViewController
+        }
+        try await UMPConsentForm.loadAndPresentIfRequired(from: rootViewController)
+    }
+
+    private func setupAdmob() async {
+        print(#function)
+        await GADMobileAds.sharedInstance().start()
     }
 
     func onAppear() {

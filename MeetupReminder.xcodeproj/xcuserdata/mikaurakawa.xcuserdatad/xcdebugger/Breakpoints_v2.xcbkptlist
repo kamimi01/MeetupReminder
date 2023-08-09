@@ -556,8 +556,8 @@
             filePath = "MeetupReminder/NewFriend/NewFriendViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "setupAdmobIfNeeded(personList:)"
             landmarkType = "7">
             <Locations>
@@ -590,6 +590,21 @@
                   startingLineNumber = "23"
                   endingLineNumber = "23"
                   offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "B0D4129F-D9E2-496A-B39A-EDCE18DCA9BA - 40d25538cf60952c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for MeetupReminder.NewFriendViewModel.setupAdmobIfNeeded(personList: Swift.Array&lt;MeetupReminder.PersonModel&gt;) async -&gt; ()"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "112">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -624,308 +639,6 @@
             endingLineNumber = "45"
             landmarkName = "fulfilled(personList:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0ED22837-DFD2-4220-BBF6-184608C6B8BA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeetupReminder/NewFriend/NewFriendViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "setupAdmobIfNeeded(personList:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B4FBD665-E392-429A-85AE-6529B1B55249"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeetupReminder/NewFriend/NewFriendViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "setupAdmobIfNeeded(personList:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D917E1C5-F6AE-4E70-82DE-3DF7C772C79F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeetupReminder/NewFriend/NewFriendViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "loadForm()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D917E1C5-F6AE-4E70-82DE-3DF7C772C79F - 5119a860422073e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "204">
-               </Location>
-               <Location
-                  uuid = "D917E1C5-F6AE-4E70-82DE-3DF7C772C79F - 36f143468bb01666"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.UMPConsentForm&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "92">
-               </Location>
-               <Location
-                  uuid = "D917E1C5-F6AE-4E70-82DE-3DF7C772C79F - 36f143468bb01649"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.UMPConsentForm&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "435E7C04-60D3-4355-8C06-269B4E6FEE36"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeetupReminder/NewFriend/NewFriendViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "loadForm()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "435E7C04-60D3-4355-8C06-269B4E6FEE36 - 36f143468bb01783"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.UMPConsentForm&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "136">
-               </Location>
-               <Location
-                  uuid = "435E7C04-60D3-4355-8C06-269B4E6FEE36 - 36f143468bb017e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.UMPConsentForm&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "136">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "866BC3E4-00CC-40D2-94E7-E460ABF18649"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeetupReminder/NewFriend/NewFriendViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "loadForm()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "866BC3E4-00CC-40D2-94E7-E460ABF18649 - 73f944a119daac1d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.UMPConsentForm&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "866BC3E4-00CC-40D2-94E7-E460ABF18649 - 73f944a119daacfe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.UMPConsentForm&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "64"
-                  endingLineNumber = "64"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5B638265-CB6D-4D3B-A06F-8F24A8AC79B8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeetupReminder/NewFriend/NewFriendViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "loadForm()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5B638265-CB6D-4D3B-A06F-8F24A8AC79B8 - 73f944a119daadb0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.UMPConsentForm&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "140">
-               </Location>
-               <Location
-                  uuid = "5B638265-CB6D-4D3B-A06F-8F24A8AC79B8 - 73f944a119daad91"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (Swift.Optional&lt;__C.UMPConsentForm&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "120">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FF3CA154-A89E-46D0-83B3-D40FA033A0BE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MeetupReminder/NewFriend/NewFriendViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "loadForm()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FF3CA154-A89E-46D0-83B3-D40FA033A0BE - 5119a86042207301"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "FF3CA154-A89E-46D0-83B3-D40FA033A0BE - 5119a86042207301"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "49"
-                  endingLineNumber = "49"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  uuid = "FF3CA154-A89E-46D0-83B3-D40FA033A0BE - 36f143468bb01649"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.UMPConsentForm&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MeetupReminder.NewFriendViewModel.loadForm() -&gt; ()"
-                  moduleName = "MeetupReminder"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/NewFriend/NewFriendViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "50"
-                  endingLineNumber = "50"
-                  offsetFromSymbolStart = "92">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
