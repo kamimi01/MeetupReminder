@@ -17,6 +17,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         // Firebase の初期化設定
         FirebaseApp.configure()
 
+        // Admob の初期化設定
+        AdmobManager.configure()
+
         return true
     }
 }
