@@ -23,11 +23,10 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
     }
 
     var body: some View {
-        let columns: [GridItem] = Array(repeating: .init(.flexible()),
-                                                count: 3)
+        let columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
 
         ZStack {
-            viewModel.cardColor.carViewBackground
+            viewModel.cardColor.cardViewBackground
                 .edgesIgnoringSafeArea(.all)
             ScrollView {
                 VStack(spacing: 20) {
@@ -91,7 +90,7 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
                     updateButton
                 }
             }
-            .toolbarBackground(viewModel.cardColor.carViewBackground, for: .navigationBar)
+            .toolbarBackground(viewModel.cardColor.cardViewBackground, for: .navigationBar)
         }
         .onAppear {
             viewModel.onAppear()

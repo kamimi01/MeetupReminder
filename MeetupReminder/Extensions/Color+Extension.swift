@@ -30,7 +30,7 @@ enum CardViewColor {
     case blue
     case yellow
 
-    var carViewBackground: Color {
+    var cardViewBackground: Color {
         switch self {
         case .red:
             return Color.cardViewRed

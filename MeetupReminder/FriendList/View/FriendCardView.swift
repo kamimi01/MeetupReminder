@@ -47,7 +47,7 @@ struct FriendCardView: View {
         }
         .frame(height: 170)
         .frame(maxWidth: .infinity)
-        .background(cardColor.carViewBackground)
+        .background(cardColor.cardViewBackground)
         .cornerRadius(20)
     }
 }
