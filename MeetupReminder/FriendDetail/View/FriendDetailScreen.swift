@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
-    @ObservedObject var viewModel: ViewModel
+    @StateObject private var viewModel: ViewModel
 
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
 
     init(viewModel: ViewModel, person: PersonModel, cardIndex: Int) {
-        self.viewModel = viewModel
+        _viewModel = StateObject(wrappedValue: viewModel)
         viewModel.initialize(person: person, cardIndex: cardIndex)
 
         //ナビゲーションバーの背景色の設定

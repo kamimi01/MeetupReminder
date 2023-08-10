@@ -42,22 +42,7 @@ class FriendListViewModel: FriendListViewModelProtocol {
     }
 
     func onAppear() {
-
-        setNotification()
         logEvent()
-    }
-
-    private func setNotification() {
-        let notificationUtil = UserNotificationUtil.shared
-        notificationUtil.initialize()
-        notificationUtil.showPushPermission { result in
-            switch result {
-            case .success(let isGranted):
-                print("isGranted:", isGranted)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
     }
 
     private func logEvent() {

@@ -25,12 +25,6 @@ struct AdmobManager {
         }
     }
 
-    private static func fulfilled(personList: [PersonModel]) -> Bool {
-        let numOfPerson = personList.count
-        let threshhold = 2
-        return threshhold == numOfPerson
-    }
-
     private static func presentFormIfPossible() async throws {
         let parameters = UMPRequestParameters()
         parameters.tagForUnderAgeOfConsent = false

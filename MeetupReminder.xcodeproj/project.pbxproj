@@ -51,6 +51,7 @@
 		D4E601112A8230ED006999AE /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601102A8230ED006999AE /* UIApplication+Extension.swift */; };
 		D4E601132A830439006999AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4E601122A830438006999AE /* GoogleService-Info.plist */; };
 		D4E601152A8454BB006999AE /* AdmobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601142A8454BB006999AE /* AdmobManager.swift */; };
+		D4E601172A845734006999AE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601162A845734006999AE /* UserDefaults+Extension.swift */; };
 		D4FE57BF2A71DEDE005DD3FC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */; };
 /* End PBXBuildFile section */
 
@@ -116,6 +117,7 @@
 		D4E601102A8230ED006999AE /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		D4E601122A830438006999AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4E601142A8454BB006999AE /* AdmobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobManager.swift; sourceTree = "<group>"; };
+		D4E601162A845734006999AE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 				D4C6D1752980A70700029E0B /* Color+Extension.swift */,
 				D4A90105298F23CB00BCCA5D /* Date+Extension.swift */,
 				D4E601102A8230ED006999AE /* UIApplication+Extension.swift */,
+				D4E601162A845734006999AE /* UserDefaults+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 			files = (
 				D4E6010D2A81C89A006999AE /* AdmobBannerView.swift in Sources */,
 				D4A90103298F1B9500BCCA5D /* UserNotificationUtil.swift in Sources */,
+				D4E601172A845734006999AE /* UserDefaults+Extension.swift in Sources */,
 				D4E600FE2A7FABEE006999AE /* FirebaseAnalyticsHelper.swift in Sources */,
 				D4C6D170298084EF00029E0B /* Person.swift in Sources */,
 				D4E601022A7FADB6006999AE /* SettingViewModel.swift in Sources */,

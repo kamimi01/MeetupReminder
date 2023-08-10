@@ -546,5 +546,229 @@
             landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D67CF9F-D40C-41EB-91E4-CFD9F2F664B5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "setNotificationIfNeeded(isOnReminder:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8D67CF9F-D40C-41EB-91E4-CFD9F2F664B5 - 5c9aa298f51dbd5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MeetupReminder.FriendDetailViewModel.setNotificationIfNeeded(isOnReminder: Swift.Bool) -&gt; ()"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  uuid = "8D67CF9F-D40C-41EB-91E4-CFD9F2F664B5 - 5c9aa298f51dbd5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MeetupReminder.FriendDetailViewModel.setNotificationIfNeeded(isOnReminder: Swift.Bool) -&gt; ()"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "171"
+                  endingLineNumber = "171"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "344B0DDE-2566-4AA8-BBFF-31C8D4C1F541"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "isOnReminder"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "344B0DDE-2566-4AA8-BBFF-31C8D4C1F541 - d375a28c04c9e73c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in MeetupReminder.FriendDetailViewModel.isOnReminder.didset : Swift.Bool"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "344B0DDE-2566-4AA8-BBFF-31C8D4C1F541 - 1ddf48268ecc4341"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MeetupReminder.FriendDetailViewModel.isOnReminder.didset : Swift.Bool"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0617219-ED6E-49F1-9A20-7F564770DED6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "setNotification()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C0617219-ED6E-49F1-9A20-7F564770DED6 - 2bdd41cfbb07fa08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; () in MeetupReminder.FriendDetailViewModel.setNotification() -&gt; ()"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "C0617219-ED6E-49F1-9A20-7F564770DED6 - 2af69cf039974a7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MeetupReminder.FriendDetailViewModel.setNotification() -&gt; ()"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "180"
+                  endingLineNumber = "180"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE84848A-3B08-4F68-AD4E-2CB69D43923B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "setNotification()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DE84848A-3B08-4F68-AD4E-2CB69D43923B - 2bdd41cfbb07fb57"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; () in MeetupReminder.FriendDetailViewModel.setNotification() -&gt; ()"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "652">
+               </Location>
+               <Location
+                  uuid = "DE84848A-3B08-4F68-AD4E-2CB69D43923B - 2bdd41cfbb07fab4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Bool, Swift.Error&gt;) -&gt; () in MeetupReminder.FriendDetailViewModel.setNotification() -&gt; ()"
+                  moduleName = "MeetupReminder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mikaurakawa/Documents/SourceCode/MeetupReminder/MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "185"
+                  endingLineNumber = "185"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1AE492E-B62D-4610-ADDA-0915BE1D95F0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "setNotification()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "43A52F70-22BD-4E89-8BBA-716084AC7DD4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MeetupReminder/FriendDetail/ViewModel/FriendDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "isOnReminder"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

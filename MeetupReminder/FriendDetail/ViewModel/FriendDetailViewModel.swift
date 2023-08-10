@@ -29,8 +29,16 @@ class FriendDetailViewModel: FriendDetailViewModelProtocol {
     private var isTappedSlackButton = false
     /// Toggle に onChange モディファイアをつけても呼ばれず、View の再描画が行われなかったので、ここで明示的に対応した
     @Published var isOnReminder = false {
+        willSet {
+            print("isOnReminder is set: \(newValue)")
+        }
         didSet {
+            // FIXME: 挙動は問題ないが、通知ダイアログ表示後に isOnReminder の値が false にリセットされてしまう
             objectWillChange.send()
+            Task {
+                try await Task.sleep(nanoseconds: 1_000_000_000)
+                setNotificationIfNeeded(isOnReminder: isOnReminder)
+            }
         }
     }
     @Published var selectedRemindDate = Date()
@@ -156,5 +164,29 @@ class FriendDetailViewModel: FriendDetailViewModelProtocol {
             remark: remarkLabel,
             remindDate: remindDate
         )
+    }
+
+    /// 通知許可のダイアログを表示する
+    /// 条件：過去にリマインダーが設定されたことがない場合
+    private func setNotificationIfNeeded(isOnReminder: Bool) {
+        if isOnReminder && UserDefaults.standard.isFirstReminderSetting == false {
+            setNotification()
+        }
+    }
+
+    /// 通知許可の初期設定
+    private func setNotification() {
+        UserDefaults.standard.isFirstReminderSetting = true
+
+        let notificationUtil = UserNotificationUtil.shared
+        notificationUtil.initialize()
+        notificationUtil.showPushPermission { result in
+            switch result {
+            case .success(let isGranted):
+                print("isGranted:", isGranted)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }
