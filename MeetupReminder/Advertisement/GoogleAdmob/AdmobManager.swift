@@ -55,13 +55,13 @@ struct AdmobManager {
         print(#function)
         await GADMobileAds.sharedInstance().start()
     }
-}
 
-enum UMPError: Error {
-    /// formStatus が available ではない
-    case formStatusIsNotAvailable(_ formStatus: UMPFormStatus)
-    /// ads をリクエストできない
-    case cannotRequestAds
-    /// rootViewController を取得できない
-    case cannotGetRootViewController
+    private enum UMPError: Error {
+        /// formStatus が available ではない
+        case formStatusIsNotAvailable(_ formStatus: UMPFormStatus)
+        /// ads をリクエストできない
+        case cannotRequestAds
+        /// rootViewController を取得できない
+        case cannotGetRootViewController
+    }
 }
