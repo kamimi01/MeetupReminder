@@ -49,6 +49,7 @@ struct FriendCardView: View {
         .frame(maxWidth: .infinity)
         .background(cardColor.cardViewBackground)
         .cornerRadius(20)
+        .shadow(color: .gray, radius: 2, x: 2, y: 2)
     }
 }
 

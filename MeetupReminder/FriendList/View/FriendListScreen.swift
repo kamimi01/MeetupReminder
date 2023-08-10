@@ -69,11 +69,11 @@ private extension FriendListScreen {
 
     func friendListView() -> some View {
         ScrollView {
-            LazyVStack(spacing: 15) {
+            LazyVStack(spacing: 20) {
                 ForEach(Array(viewModel.personList.enumerated()), id: \.offset) { personIndex, person in
                     NavigationLink(destination: FriendDetailScreen(viewModel: FriendDetailViewModel(), person: person, cardIndex: personIndex)) {
                         FriendCardView(person: person, cardIndex: personIndex)
-                             .padding(.horizontal, 16)
+                             .padding(.horizontal, 20)
                     }
                 }
                 Color.mainBackground
