@@ -27,9 +27,6 @@ struct NewFriendScreen: View {
 
     init(personList: [PersonModel]){
         self.personList = personList
-
-        //ナビゲーションバーの背景色の設定
-        UINavigationBar.appearance().barTintColor = UIColor(Color.cardViewRed)
     }
 
     var body: some View {
@@ -159,6 +156,7 @@ struct NewFriendScreen: View {
                     addButton
                 }
             }
+            .toolbarBackground(Color.cardViewRed, for: .navigationBar)
         }
         .onAppear {
             viewModel.onAppear()

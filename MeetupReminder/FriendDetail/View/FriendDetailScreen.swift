@@ -20,9 +20,6 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
         // 原因解明のため、不具合があったコードを残しておく
 //        self.viewModel = viewModel
         viewModel.initialize(person: person, cardIndex: cardIndex)
-
-        //ナビゲーションバーの背景色の設定
-        UINavigationBar.appearance().barTintColor = UIColor(viewModel.cardColor.carViewBackground)
     }
 
     var body: some View {
@@ -94,6 +91,7 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
                     updateButton
                 }
             }
+            .toolbarBackground(viewModel.cardColor.carViewBackground, for: .navigationBar)
         }
         .onAppear {
             viewModel.onAppear()
