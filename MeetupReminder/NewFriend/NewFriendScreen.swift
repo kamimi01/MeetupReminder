@@ -60,6 +60,11 @@ struct NewFriendScreen: View {
                         Spacer()
                     }
                 }
+                VStack {
+                    Spacer()
+                    AdmobBannerView()
+                        .frame(width: 320, height: 50)
+                }
             }
             .navigationTitle("新しいともだち")
             .navigationBarTitleDisplayMode(.inline)

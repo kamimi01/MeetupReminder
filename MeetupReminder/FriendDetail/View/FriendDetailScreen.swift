@@ -82,16 +82,22 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
                     }
                     .padding(16)
                     deleteButton
+                        .padding(.bottom, 60)
                     Spacer()
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing){
-                    updateButton
-                }
+            VStack {
+                Spacer()
+                AdmobBannerView()
+                    .frame(width: 320, height: 50)
             }
-            .toolbarBackground(viewModel.cardColor.cardViewBackground, for: .navigationBar)
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing){
+                updateButton
+            }
+        }
+        .toolbarBackground(viewModel.cardColor.cardViewBackground, for: .navigationBar)
         .onAppear {
             viewModel.onAppear()
         }
