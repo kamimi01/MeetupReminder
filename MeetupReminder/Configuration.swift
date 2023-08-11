@@ -16,14 +16,18 @@ struct Configuration {
         return plist["AppConfig"] as! [AnyHashable: Any]
      }()
 
-    /// Google Admob の広告 ID
-    let admobUnitID: String
+    /// Google Admob のバナー広告 ID
+    let admobBannerUnitID: String
+    /// Google Admob のインタースティシャル広告 ID
+    let admobInterstitialUnitID: String
 
     enum AppConfig: String {
-        case admobUnitID = "AdmobUnitID"
+        case admobBannerUnitID = "AdmobBannerUnitID"
+        case admobInterstitialUnitID = "AdmobInterstitialUnitID"
     }
 
     private init() {
-        admobUnitID = config[AppConfig.admobUnitID.rawValue] as! String
+        admobBannerUnitID = config[AppConfig.admobBannerUnitID.rawValue] as! String
+        admobInterstitialUnitID = config[AppConfig.admobInterstitialUnitID.rawValue] as! String
     }
 }

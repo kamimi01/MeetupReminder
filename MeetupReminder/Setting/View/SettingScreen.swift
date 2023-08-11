@@ -12,6 +12,8 @@ struct SettingScreen<ViewModel: SettingViewModelProtocol>: View {
 
     @ObservedObject var viewModel: ViewModel
     @Environment(\.dismiss) private var dismiss
+    private let adViewControllerRepresentable = AdViewControllerRepresentable()
+    private let admobInterstitialCoordinator = AdmobInterstitialCoordinator()
 
     var body: some View {
         NavigationView {
@@ -37,9 +39,18 @@ struct SettingScreen<ViewModel: SettingViewModelProtocol>: View {
                 }
             }
         }
+        .background {
+            adViewControllerRepresentable
+                .frame(width: .zero, height: .zero)
+        }
         .accentColor(.mainText)
         .onAppear {
             viewModel.onAppear()
+            Task {
+                // インタースティシャル広告の読み込みが終わるまで待つので1秒待機
+                try await Task.sleep(nanoseconds: 1_000_000_000)
+                admobInterstitialCoordinator.presentAd(from: adViewControllerRepresentable.viewController)
+            }
         }
     }
 }

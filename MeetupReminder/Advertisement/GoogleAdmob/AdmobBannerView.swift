@@ -13,7 +13,7 @@ struct AdmobBannerView: UIViewRepresentable {
 
     func makeUIView(context: Context) -> GADBannerView {
         let view = GADBannerView(adSize: GADAdSizeBanner)
-        view.adUnitID = Configuration.shared.admobUnitID
+        view.adUnitID = Configuration.shared.admobBannerUnitID
         view.rootViewController = UIApplication.shared.rootViewController
         view.load(GADRequest())
         return view
