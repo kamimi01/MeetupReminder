@@ -16,6 +16,7 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
 
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
+    @FocusState private var isFocusedEmojiTextField: Bool
 
     init(viewModel: ViewModel, person: PersonModel, cardIndex: Int) {
         _viewModel = StateObject(wrappedValue: viewModel)
@@ -111,12 +112,21 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
 private extension FriendDetailScreen {
     var profileImage: some View {
         VStack(spacing: 10) {
-            OneEmojiTextField(inputText: $profileImageEmoji, fontSize: 80)
-                .frame(width: 140, height : 140)
-                .padding()
-                .padding(.leading, 50)
-                .background(Color.mainBackground)
-                .clipShape(Circle())
+            Group {
+                if canShowEmojiKeyboard {
+                    OneEmojiTextField(inputText: $profileImageEmoji, fontSize: 80)
+                        .frame(width: 140, height : 140)
+                        .padding()
+                        .padding(.leading, 50)
+                } else {
+                    Text("🙂")
+                        .font(.system(size: 80))
+                        .frame(width: 140, height : 140)
+                        .padding()
+                }
+            }
+            .background(Color.mainBackground)
+            .clipShape(Circle())
             TextField("なまえ", text: $viewModel.nameLabel)
                 .frame(maxWidth: .infinity)
                 .font(.title2)
@@ -124,6 +134,13 @@ private extension FriendDetailScreen {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 16)
         }
+    }
+
+    var canShowEmojiKeyboard: Bool {
+        for mode in UITextInputMode.activeInputModes where mode.primaryLanguage == "emoji" {
+            return true
+        }
+        return false
     }
 
     var deleteButton: some View {
