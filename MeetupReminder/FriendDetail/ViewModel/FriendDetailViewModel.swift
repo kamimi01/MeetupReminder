@@ -13,6 +13,7 @@ class FriendDetailViewModel: FriendDetailViewModelProtocol {
 
     private var person = PersonModel()
     @Published var nameLabel = ""
+    @Published var profileImage = ""
     @Published var remarkLabel = ""
     private(set) var cardColor = CardViewColor.blue
     /// 連絡方法のいずれかが押下された場合に、View を再描画する。

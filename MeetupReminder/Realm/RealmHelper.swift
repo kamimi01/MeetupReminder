@@ -14,7 +14,13 @@ class RealmHelper {
 
     init() {
         let key = RealmHelper.getKey()
-        let config = Realm.Configuration(encryptionKey: key, schemaVersion: 2)
+        let migrationBlock: MigrationBlock = { migration, oldSchemaVesion in
+            if oldSchemaVesion < 3 {
+                migration.enumerateObjects(ofType: Person.className()) { _, _ in
+                }
+            }
+        }
+        let config = Realm.Configuration(encryptionKey: key, schemaVersion: 3, migrationBlock: migrationBlock)
         realm = try! Realm(configuration: config)
 
         print("key:", key.map { String(format: "%.2hhx", $0) }.joined())

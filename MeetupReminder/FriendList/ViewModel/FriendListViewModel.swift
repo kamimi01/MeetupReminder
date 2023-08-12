@@ -31,7 +31,19 @@ class FriendListViewModel: FriendListViewModelProtocol {
             }
             self.personList = Array(allFriendsNotOptional).map {
                 var person = PersonModel()
-                person.initialize(id: $0.id, name: $0.name, canContactWithLINE: $0.canContactWithLINE, canContactWithFacebook: $0.canContactWithFacebook, canContactWithTwitter: $0.canContactWithTwitter, canContactWithLinkedIn: $0.canContactWithLinkedIn, canContactWithSlack: $0.canContactWithSlack, remark: $0.remark, remindDate: $0.remindDate)
+                person.initialize(
+                    id: $0.id,
+                    profileImage: $0.profileImage,
+                    name: $0.name,
+                    canContactWithLINE: $0.canContactWithLINE,
+                    canContactWithFacebook: $0.canContactWithFacebook,
+                    canContactWithTwitter: $0.canContactWithTwitter,
+                    canContactWithLinkedIn: $0.canContactWithLinkedIn,
+                    canContactWithSlack: $0.canContactWithSlack,
+                    canContactWithWhatsApp: $0.canContactWithWhatsApp,
+                    remark: $0.remark,
+                    remindDate: $0.remindDate
+                )
                 return person
             }
         }

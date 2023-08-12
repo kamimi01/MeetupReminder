@@ -11,11 +11,13 @@ import RealmSwift
 class Person: Object, Identifiable {
     @objc dynamic var id = UUID().uuidString
     @objc dynamic var name = ""
+    @objc dynamic var profileImage = ""
     @objc dynamic var canContactWithLINE = false
     @objc dynamic var canContactWithFacebook = false
     @objc dynamic var canContactWithTwitter = false
     @objc dynamic var canContactWithLinkedIn = false
     @objc dynamic var canContactWithSlack = false
+    @objc dynamic var canContactWithWhatsApp = false
     @objc dynamic var remark = ""
     @objc dynamic var remindDate: Date?
 }

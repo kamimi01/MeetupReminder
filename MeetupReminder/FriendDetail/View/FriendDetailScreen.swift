@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Combine
 
 struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
     @StateObject private var viewModel: ViewModel
+    @State private var profileImageEmoji: String = ""
     // 原因解明のため、不具合があったコードを残しておく
 //    @ObservedObject var viewModel: ViewModel
 
@@ -109,14 +111,14 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
 private extension FriendDetailScreen {
     var profileImage: some View {
         VStack(spacing: 10) {
-            Image(viewModel.cardColor.profileImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            OneEmojiTextField(inputText: $profileImageEmoji, fontSize: 80)
+                .frame(width: 140, height : 140)
+                .padding()
+                .padding(.leading, 50)
                 .background(Color.mainBackground)
                 .clipShape(Circle())
-                .frame(maxWidth: 130, maxHeight: 130)
             TextField("なまえ", text: $viewModel.nameLabel)
-                .frame(width: 200)
+                .frame(maxWidth: .infinity)
                 .font(.title2)
                 .foregroundColor(.mainText)
                 .multilineTextAlignment(.center)
