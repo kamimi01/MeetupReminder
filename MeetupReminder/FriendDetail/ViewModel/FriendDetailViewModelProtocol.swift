@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import EmojiPicker
 
 protocol FriendDetailViewModelProtocol: ObservableObject {
     var nameLabel: String { get set }
     var remarkLabel: String { get set }
+    var profileEmoji: Emoji? { get set }
     var profileImage: String { get set }
     var cardColor: CardViewColor { get }
     var isOnReminder: Bool { get set }

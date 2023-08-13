@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import EmojiPicker
 
 class FriendDetailViewModel: FriendDetailViewModelProtocol {
     private(set) var objectWillChange = ObservableObjectPublisher()
@@ -15,6 +16,7 @@ class FriendDetailViewModel: FriendDetailViewModelProtocol {
     @Published var nameLabel = ""
     @Published var profileImage = ""
     @Published var remarkLabel = ""
+    @Published var profileEmoji: Emoji? = Emoji(value: "🙂", name: "Slightly Smile Face")
     private(set) var cardColor = CardViewColor.blue
     /// 連絡方法のいずれかが押下された場合に、View を再描画する。
     /// そうすることで、連絡方法のアイコンの画像が切り替わる。

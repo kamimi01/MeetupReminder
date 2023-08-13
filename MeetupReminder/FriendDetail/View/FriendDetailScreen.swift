@@ -7,10 +7,12 @@
 
 import SwiftUI
 import Combine
+import EmojiPicker
 
 struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
     @StateObject private var viewModel: ViewModel
     @State private var profileImageEmoji: String = ""
+    @State private var displayEmojiPicker = false
     // 原因解明のため、不具合があったコードを残しておく
 //    @ObservedObject var viewModel: ViewModel
 
@@ -112,27 +114,29 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
 private extension FriendDetailScreen {
     var profileImage: some View {
         VStack(spacing: 10) {
-            Group {
-                if canShowEmojiKeyboard {
-                    OneEmojiTextField(inputText: $profileImageEmoji, fontSize: 80)
-                        .frame(width: 140, height : 140)
-                        .padding()
-                        .padding(.leading, 50)
-                } else {
-                    Text("🙂")
-                        .font(.system(size: 80))
-                        .frame(width: 140, height : 140)
-                        .padding()
-                }
+            Button(action: {
+                displayEmojiPicker = true
+            }) {
+                Text(viewModel.profileEmoji?.value ?? "🫥")
+                    .font(.system(size: 80))
+                    .frame(width: 140, height : 140)
+                    .padding()
+                    .background(Color.mainBackground)
+                    .clipShape(Circle())
             }
-            .background(Color.mainBackground)
-            .clipShape(Circle())
             TextField("なまえ", text: $viewModel.nameLabel)
                 .frame(maxWidth: .infinity)
                 .font(.title2)
                 .foregroundColor(.mainText)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 16)
+        }
+        .sheet(isPresented: $displayEmojiPicker) {
+            NavigationView {
+                EmojiPickerView(selectedEmoji: $viewModel.profileEmoji, selectedColor: .cardViewRed)
+                    .navigationTitle("プロフィール絵文字")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
         }
     }
 

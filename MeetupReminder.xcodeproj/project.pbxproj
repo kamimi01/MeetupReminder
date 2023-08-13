@@ -11,8 +11,7 @@
 		D42262552A7E23F9005AAC42 /* FriendListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42262542A7E23F9005AAC42 /* FriendListViewModelProtocol.swift */; };
 		D422625D2A7E5F41005AAC42 /* NotificationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422625C2A7E5F41005AAC42 /* NotificationMessage.swift */; };
 		D422625F2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422625E2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift */; };
-		D48BAA8D2A87C6FB000AB41D /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48BAA8C2A87C6FB000AB41D /* UITextField+Extension.swift */; };
-		D48BAA8F2A880031000AB41D /* UITextInputMode+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48BAA8E2A880031000AB41D /* UITextInputMode+Extension.swift */; };
+		D48BAA922A88AB70000AB41D /* EmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = D48BAA912A88AB70000AB41D /* EmojiPicker */; };
 		D49734082998E1F400FA6272 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49734072998E1F400FA6272 /* SettingScreen.swift */; };
 		D497340B2998E25700FA6272 /* AppInfoList in Frameworks */ = {isa = PBXBuildFile; productRef = D497340A2998E25700FA6272 /* AppInfoList */; };
 		D497340D2998E2B300FA6272 /* license-list.plist in Resources */ = {isa = PBXBuildFile; fileRef = D497340C2998E2B200FA6272 /* license-list.plist */; };
@@ -54,9 +53,6 @@
 		D4E601132A830439006999AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4E601122A830438006999AE /* GoogleService-Info.plist */; };
 		D4E601152A8454BB006999AE /* AdmobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601142A8454BB006999AE /* AdmobManager.swift */; };
 		D4E601172A845734006999AE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601162A845734006999AE /* UserDefaults+Extension.swift */; };
-		D4E601192A85A6E2006999AE /* EmojiTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601182A85A6E2006999AE /* EmojiTextField.swift */; };
-		D4E6011B2A85A77B006999AE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6011A2A85A77B006999AE /* String+Extension.swift */; };
-		D4E6011D2A85A7B2006999AE /* Character+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6011C2A85A7B2006999AE /* Character+Extension.swift */; };
 		D4E601212A86461C006999AE /* AdmobInterstitialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601202A86461C006999AE /* AdmobInterstitialCoordinator.swift */; };
 		D4E601232A8646B1006999AE /* AdViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601222A8646B1006999AE /* AdViewControllerRepresentable.swift */; };
 		D4FE57BF2A71DEDE005DD3FC /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */; };
@@ -85,8 +81,6 @@
 		D42262542A7E23F9005AAC42 /* FriendListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModelProtocol.swift; sourceTree = "<group>"; };
 		D422625C2A7E5F41005AAC42 /* NotificationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationMessage.swift; sourceTree = "<group>"; };
 		D422625E2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailViewModelProtocol.swift; sourceTree = "<group>"; };
-		D48BAA8C2A87C6FB000AB41D /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
-		D48BAA8E2A880031000AB41D /* UITextInputMode+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextInputMode+Extension.swift"; sourceTree = "<group>"; };
 		D49734072998E1F400FA6272 /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
 		D497340C2998E2B200FA6272 /* license-list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "license-list.plist"; sourceTree = "<group>"; };
 		D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeetupReminder.entitlements; sourceTree = "<group>"; };
@@ -127,9 +121,6 @@
 		D4E601122A830438006999AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D4E601142A8454BB006999AE /* AdmobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobManager.swift; sourceTree = "<group>"; };
 		D4E601162A845734006999AE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
-		D4E601182A85A6E2006999AE /* EmojiTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiTextField.swift; sourceTree = "<group>"; };
-		D4E6011A2A85A77B006999AE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		D4E6011C2A85A7B2006999AE /* Character+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Extension.swift"; sourceTree = "<group>"; };
 		D4E601202A86461C006999AE /* AdmobInterstitialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobInterstitialCoordinator.swift; sourceTree = "<group>"; };
 		D4E601222A8646B1006999AE /* AdViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewControllerRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -140,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4E601092A7FDA97006999AE /* GoogleMobileAds in Frameworks */,
+				D48BAA922A88AB70000AB41D /* EmojiPicker in Frameworks */,
 				D497340B2998E25700FA6272 /* AppInfoList in Frameworks */,
 				D4CEE791298299FE005B863F /* RealmSwift in Frameworks */,
 				D4CEE78F298299FE005B863F /* Realm in Frameworks */,
@@ -268,10 +260,6 @@
 				D4A90105298F23CB00BCCA5D /* Date+Extension.swift */,
 				D4E601102A8230ED006999AE /* UIApplication+Extension.swift */,
 				D4E601162A845734006999AE /* UserDefaults+Extension.swift */,
-				D4E6011A2A85A77B006999AE /* String+Extension.swift */,
-				D4E6011C2A85A7B2006999AE /* Character+Extension.swift */,
-				D48BAA8C2A87C6FB000AB41D /* UITextField+Extension.swift */,
-				D48BAA8E2A880031000AB41D /* UITextInputMode+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -321,7 +309,6 @@
 				D4C6D149297F371100029E0B /* Assets.xcassets */,
 				D4C6D14B297F371100029E0B /* Preview Content */,
 				D4E6010E2A81CB2D006999AE /* Configuration.swift */,
-				D4E601182A85A6E2006999AE /* EmojiTextField.swift */,
 			);
 			path = MeetupReminder;
 			sourceTree = "<group>";
@@ -439,6 +426,7 @@
 				D497340A2998E25700FA6272 /* AppInfoList */,
 				D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */,
 				D4E601082A7FDA97006999AE /* GoogleMobileAds */,
+				D48BAA912A88AB70000AB41D /* EmojiPicker */,
 			);
 			productName = MeetupReminder;
 			productReference = D4C6D142297F370F00029E0B /* MeetupReminder.app */;
@@ -518,6 +506,7 @@
 				D49734092998E25700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */,
 				D4FE57BD2A71DEDE005DD3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				D4E601072A7FDA97006999AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				D48BAA902A88AB70000AB41D /* XCRemoteSwiftPackageReference "EmojiPicker" */,
 			);
 			productRefGroup = D4C6D143297F370F00029E0B /* Products */;
 			projectDirPath = "";
@@ -594,8 +583,6 @@
 				D4E601022A7FADB6006999AE /* SettingViewModel.swift in Sources */,
 				D42262552A7E23F9005AAC42 /* FriendListViewModelProtocol.swift in Sources */,
 				D4096B0229965B80009090AE /* AppReview.swift in Sources */,
-				D4E6011B2A85A77B006999AE /* String+Extension.swift in Sources */,
-				D48BAA8F2A880031000AB41D /* UITextInputMode+Extension.swift in Sources */,
 				D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */,
 				D4CEE7972982B93E005B863F /* PersonModel.swift in Sources */,
 				D4E601042A7FADF9006999AE /* SettingViewModelProtocol.swift in Sources */,
@@ -605,7 +592,6 @@
 				D4E601212A86461C006999AE /* AdmobInterstitialCoordinator.swift in Sources */,
 				D4C6D17C2980FAEF00029E0B /* NewFriendScreen.swift in Sources */,
 				D4E600FC2A7FAB6A006999AE /* LogEvent.swift in Sources */,
-				D48BAA8D2A87C6FB000AB41D /* UITextField+Extension.swift in Sources */,
 				D4B50B982A7B05D0002B4F91 /* FriendDetailViewModel.swift in Sources */,
 				D4CEE7932982A5C1005B863F /* RealmHelper.swift in Sources */,
 				D4C6D146297F370F00029E0B /* MeetupReminderApp.swift in Sources */,
@@ -615,14 +601,12 @@
 				D4B50B9A2A7B0B2A002B4F91 /* ContactMethod.swift in Sources */,
 				D4C6D1742980867B00029E0B /* FriendCardView.swift in Sources */,
 				D4E601002A7FAD11006999AE /* Loggable.swift in Sources */,
-				D4E6011D2A85A7B2006999AE /* Character+Extension.swift in Sources */,
 				D4C6D17E298148B500029E0B /* FriendDetailScreen.swift in Sources */,
 				D49734082998E1F400FA6272 /* SettingScreen.swift in Sources */,
 				D4A90106298F23CB00BCCA5D /* Date+Extension.swift in Sources */,
 				D422625F2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift in Sources */,
 				D4C6D172298085DF00029E0B /* FriendListViewModel.swift in Sources */,
 				D4E601112A8230ED006999AE /* UIApplication+Extension.swift in Sources */,
-				D4E601192A85A6E2006999AE /* EmojiTextField.swift in Sources */,
 				D4CEE79B29833C65005B863F /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -970,6 +954,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		D48BAA902A88AB70000AB41D /* XCRemoteSwiftPackageReference "EmojiPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kelvas09/EmojiPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		D49734092998E25700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kamimi01/AppInfoList.git";
@@ -1013,6 +1005,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D48BAA912A88AB70000AB41D /* EmojiPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D48BAA902A88AB70000AB41D /* XCRemoteSwiftPackageReference "EmojiPicker" */;
+			productName = EmojiPicker;
+		};
 		D497340A2998E25700FA6272 /* AppInfoList */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D49734092998E25700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */;
