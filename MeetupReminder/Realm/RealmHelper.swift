@@ -111,6 +111,7 @@ class RealmHelper {
     func updateFriend(
         id: String,
         name: String? = nil,
+        profileImage: String? = nil,
         canContactWithLINE: Bool? = nil,
         canContactWithFacebook: Bool? = nil,
         canContactWithTwitter: Bool? = nil,
@@ -127,6 +128,9 @@ class RealmHelper {
                 try realm.write {
                     if let newName = name {
                         willUpdateFriend.name = newName
+                    }
+                    if let newProfileImage = profileImage {
+                        willUpdateFriend.profileImage = newProfileImage
                     }
                     if let newCanContactWithLINE = canContactWithLINE {
                         willUpdateFriend.canContactWithLINE = newCanContactWithLINE

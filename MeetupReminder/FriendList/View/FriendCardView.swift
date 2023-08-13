@@ -59,11 +59,11 @@ struct FriendCardView: View {
 private extension FriendCardView {
     var profileImage: some View {
         VStack {
-            Image(cardColor.profileImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .clipShape(Circle())
+            Text(person.profileImage)
+                .font(.system(size: 40))
                 .frame(maxWidth: 60, maxHeight: 60)
+                .background(Color.mainBackground)
+                .clipShape(Circle())
             Spacer()
         }
     }

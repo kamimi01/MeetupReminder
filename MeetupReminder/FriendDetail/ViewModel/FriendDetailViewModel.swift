@@ -14,7 +14,6 @@ class FriendDetailViewModel: FriendDetailViewModelProtocol {
 
     private var person = PersonModel()
     @Published var nameLabel = ""
-    @Published var profileImage = ""
     @Published var remarkLabel = ""
     @Published var profileEmoji: Emoji? = Emoji(value: "🙂", name: "Slightly Smile Face")
     private(set) var cardColor = CardViewColor.blue
@@ -56,6 +55,7 @@ class FriendDetailViewModel: FriendDetailViewModelProtocol {
         self.person = person
         nameLabel = person.name
         remarkLabel = person.remark
+        profileEmoji = Emoji(value: person.profileImage, name: "emoji")
         isTappedLineButton = person.canContactWithLINE
         isTappedFacebookButton = person.canContactWithFacebook
         isTappedTwitterButton = person.canContactWithTwitter
@@ -159,6 +159,7 @@ class FriendDetailViewModel: FriendDetailViewModelProtocol {
         realmHelper.updateFriend(
             id: id,
             name: nameLabel,
+            profileImage: profileEmoji?.value ?? "🫥",
             canContactWithLINE: isTappedLineButton,
             canContactWithFacebook: isTappedFacebookButton,
             canContactWithTwitter: isTappedTwitterButton,
