@@ -65,7 +65,13 @@ extension OneEmojiTextField {
         func textFieldDidChangeSelection(_ textField: UITextField) {
             guard let profileImageEmoji = textField.text else { return }
 
-            let emojiText = String(profileImageEmoji.onlyEmoji().prefix(1))
+            var emojiText: String {
+                let tmpEmojiText = profileImageEmoji.onlyEmoji()
+                if tmpEmojiText.count > 1 {
+                    return String(tmpEmojiText.suffix(1))
+                }
+                return String(tmpEmojiText.prefix(1))
+            }
             textField.text = emojiText
             parent.inputText = emojiText
         }
