@@ -113,20 +113,31 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
 
 private extension FriendDetailScreen {
     var profileImage: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 20) {
             Button(action: {
                 displayEmojiPicker = true
             }) {
-                Text(viewModel.profileEmoji?.value ?? "🫥")
-                    .font(.system(size: 80))
-                    .frame(width: 140, height : 140)
-                    .padding()
-                    .background(Color.mainBackground)
-                    .clipShape(Circle())
+                ZStack {
+                    Text(viewModel.profileEmoji?.value ?? "🫥")
+                        .font(.system(size: 80))
+                        .padding()
+                        .frame(width: 120, height : 120)
+                        .background(Color.mainBackground)
+                        .clipShape(Circle())
+                    Circle()
+                        .frame(width: 120)
+                        .foregroundColor(.black)
+                        .opacity(0.2)
+                    Image(systemName: "square.and.pencil")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.mainBackground)
+                }
             }
             TextField("なまえ", text: $viewModel.nameLabel)
                 .frame(maxWidth: .infinity)
                 .font(.title2)
+                .fontWeight(.bold)
                 .foregroundColor(.mainText)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 16)
