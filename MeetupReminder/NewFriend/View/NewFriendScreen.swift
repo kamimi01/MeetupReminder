@@ -152,6 +152,10 @@ private extension NewFriendScreen {
             Text("追加")
                 .foregroundColor(.mainText)
         }
+        .alert(isPresented: $viewModel.isShowingAddAlert) {
+            print("alert!!")
+            return Alert(title: Text("なまえを入力してください"))
+        }
     }
 
     func contactMethodOption(contactMethod: ContactMethod) -> some View {

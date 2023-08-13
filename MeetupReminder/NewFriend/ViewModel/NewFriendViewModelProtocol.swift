@@ -16,5 +16,6 @@ protocol NewFriendViewModeProtocol: ObservableObject {
     func onAppear()
     func didTapContactButton(contactMethod: ContactMethod)
     func isTappedContactMethodButton(contactMethod: ContactMethod) -> Bool
+    var isShowingAddAlert: Bool { get set }
     func didTapAddButton(completionHandler: () -> Void)
 }

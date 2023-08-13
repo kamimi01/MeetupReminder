@@ -20,6 +20,11 @@ class NewFriendViewModel: NewFriendViewModeProtocol {
             objectWillChange.send()
         }
     }
+    @Published var isShowingAddAlert = false {
+        willSet {
+            objectWillChange.send()
+        }
+    }
     private(set) var cardColor = CardViewColor.red
     /// 連絡方法のいずれかが押下された場合に、View を再描画する。
     /// そうすることで、連絡方法のアイコンの画像が切り替わる。
@@ -76,10 +81,18 @@ class NewFriendViewModel: NewFriendViewModeProtocol {
     }
 
     func didTapAddButton(completionHandler: () -> Void) {
+        if canAddFriend == false {
+            isShowingAddAlert = true
+            return
+        }
         let result = addFriend()
         if result {
             completionHandler()
         }
+    }
+
+    private var canAddFriend: Bool {
+        return !nameLabel.isEmpty
     }
 
     private func addFriend() -> Bool{
