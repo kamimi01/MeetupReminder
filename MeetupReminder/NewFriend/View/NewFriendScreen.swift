@@ -8,8 +8,8 @@
 import SwiftUI
 import EmojiPicker
 
-struct NewFriendScreen: View {
-    @ObservedObject private var viewModel = NewFriendViewModel()
+struct NewFriendScreen<ViewModel: NewFriendViewModeProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     @State private var displayEmojiPicker = false
 
     /// アプリレビュー画面を表示するための条件として使用している
@@ -18,7 +18,8 @@ struct NewFriendScreen: View {
     @Environment(\.dismiss) private var dismiss
     @FocusState private var isFocused: Bool
 
-    init(personList: [PersonModel]){
+    init(viewModel: ViewModel, personList: [PersonModel]){
+        self.viewModel = viewModel
         self.personList = personList
     }
 
@@ -167,6 +168,6 @@ private extension NewFriendScreen {
 
 struct AddFriendScreen_Previews: PreviewProvider {
     static var previews: some View {
-        NewFriendScreen(personList: [PersonModel(id: "", name: "加藤花子", canContactWithLINE: false, canContactWithFacebook: false, canContactWithTwitter: false, canContactWithLinkedIn: false, canContactWithSlack: false, remark: "", remindDate: nil)])
+        NewFriendScreen(viewModel: NewFriendViewModel(), personList: [PersonModel(id: "", name: "加藤花子", canContactWithLINE: false, canContactWithFacebook: false, canContactWithTwitter: false, canContactWithLinkedIn: false, canContactWithSlack: false, remark: "", remindDate: nil)])
     }
 }

@@ -108,7 +108,7 @@ private extension FriendListScreen {
         .clipShape(Circle())
         .shadow(color: .gray, radius: 3, x: 3, y: 3)
         .fullScreenCover(isPresented: $viewModel.isShowingAddFriendScreen) {
-            NewFriendScreen(personList: viewModel.personList)
+            NewFriendScreen(viewModel: NewFriendViewModel(), personList: viewModel.personList)
         }
     }
 }

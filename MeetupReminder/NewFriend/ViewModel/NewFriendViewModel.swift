@@ -10,7 +10,7 @@ import Combine
 import RealmSwift
 import EmojiPicker
 
-class NewFriendViewModel: ObservableObject {
+class NewFriendViewModel: NewFriendViewModeProtocol {
     private(set) var objectWillChange = ObservableObjectPublisher()
 
     @Published var nameLabel = ""

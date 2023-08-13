@@ -12,6 +12,7 @@
 		D422625D2A7E5F41005AAC42 /* NotificationMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422625C2A7E5F41005AAC42 /* NotificationMessage.swift */; };
 		D422625F2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D422625E2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift */; };
 		D48BAA922A88AB70000AB41D /* EmojiPicker in Frameworks */ = {isa = PBXBuildFile; productRef = D48BAA912A88AB70000AB41D /* EmojiPicker */; };
+		D48BAA972A898C57000AB41D /* NewFriendViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48BAA962A898C57000AB41D /* NewFriendViewModelProtocol.swift */; };
 		D49734082998E1F400FA6272 /* SettingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49734072998E1F400FA6272 /* SettingScreen.swift */; };
 		D497340B2998E25700FA6272 /* AppInfoList in Frameworks */ = {isa = PBXBuildFile; productRef = D497340A2998E25700FA6272 /* AppInfoList */; };
 		D497340D2998E2B300FA6272 /* license-list.plist in Resources */ = {isa = PBXBuildFile; fileRef = D497340C2998E2B200FA6272 /* license-list.plist */; };
@@ -81,6 +82,7 @@
 		D42262542A7E23F9005AAC42 /* FriendListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewModelProtocol.swift; sourceTree = "<group>"; };
 		D422625C2A7E5F41005AAC42 /* NotificationMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationMessage.swift; sourceTree = "<group>"; };
 		D422625E2A7E7488005AAC42 /* FriendDetailViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailViewModelProtocol.swift; sourceTree = "<group>"; };
+		D48BAA962A898C57000AB41D /* NewFriendViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFriendViewModelProtocol.swift; sourceTree = "<group>"; };
 		D49734072998E1F400FA6272 /* SettingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreen.swift; sourceTree = "<group>"; };
 		D497340C2998E2B200FA6272 /* license-list.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "license-list.plist"; sourceTree = "<group>"; };
 		D4A900FF298F1AEF00BCCA5D /* MeetupReminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeetupReminder.entitlements; sourceTree = "<group>"; };
@@ -235,6 +237,23 @@
 			path = Realm;
 			sourceTree = "<group>";
 		};
+		D48BAA942A898C3B000AB41D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4C6D17B2980FAEF00029E0B /* NewFriendScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D48BAA952A898C40000AB41D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D4CEE7942982AE89005B863F /* NewFriendViewModel.swift */,
+				D48BAA962A898C57000AB41D /* NewFriendViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		D49734062998E1E400FA6272 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,8 +360,8 @@
 		D4C6D1772980FAAC00029E0B /* NewFriend */ = {
 			isa = PBXGroup;
 			children = (
-				D4C6D17B2980FAEF00029E0B /* NewFriendScreen.swift */,
-				D4CEE7942982AE89005B863F /* NewFriendViewModel.swift */,
+				D48BAA952A898C40000AB41D /* ViewModel */,
+				D48BAA942A898C3B000AB41D /* View */,
 			);
 			path = NewFriend;
 			sourceTree = "<group>";
@@ -585,6 +604,7 @@
 				D4096B0229965B80009090AE /* AppReview.swift in Sources */,
 				D4C6D1762980A70700029E0B /* Color+Extension.swift in Sources */,
 				D4CEE7972982B93E005B863F /* PersonModel.swift in Sources */,
+				D48BAA972A898C57000AB41D /* NewFriendViewModelProtocol.swift in Sources */,
 				D4E601042A7FADF9006999AE /* SettingViewModelProtocol.swift in Sources */,
 				D4E601152A8454BB006999AE /* AdmobManager.swift in Sources */,
 				D4E6010F2A81CB2D006999AE /* Configuration.swift in Sources */,
