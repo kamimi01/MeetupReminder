@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import EmojiPicker
 
 struct NewFriendScreen: View {
     @ObservedObject private var viewModel = NewFriendViewModel()
+    @State private var displayEmojiPicker = false
 
     /// アプリレビュー画面を表示するための条件として使用している
     private let personList: [PersonModel]
@@ -88,19 +90,41 @@ struct NewFriendScreen: View {
 
 private extension NewFriendScreen {
     var profileImage: some View {
-        VStack(spacing: 10) {
-            Image(viewModel.cardColor.profileImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .background(Color.mainBackground)
-                .clipShape(Circle())
-                .frame(maxWidth: 130, maxHeight: 130)
+        VStack(spacing: 20) {
+            Button(action: {
+                displayEmojiPicker = true
+            }) {
+                ZStack {
+                    Text(viewModel.profileEmoji?.value ?? "🫥")
+                        .font(.system(size: 80))
+                        .padding()
+                        .frame(width: 120, height : 120)
+                        .background(Color.mainBackground)
+                        .clipShape(Circle())
+                    Circle()
+                        .frame(width: 120)
+                        .foregroundColor(.black)
+                        .opacity(0.2)
+                    Image(systemName: "square.and.pencil")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.mainBackground)
+                }
+            }
             TextField("", text: $viewModel.nameLabel, prompt: Text("なまえ"))
                 .frame(width: 150)
                 .font(.title2)
+                .fontWeight(.bold)
                 .foregroundColor(.mainText)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 16)
+        }
+        .sheet(isPresented: $displayEmojiPicker) {
+            NavigationView {
+                EmojiPickerView(selectedEmoji: $viewModel.profileEmoji, selectedColor: .cardViewRed)
+                    .navigationTitle("プロフィール絵文字")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
         }
     }
 

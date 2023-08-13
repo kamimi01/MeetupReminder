@@ -8,12 +8,18 @@
 import Foundation
 import Combine
 import RealmSwift
+import EmojiPicker
 
 class NewFriendViewModel: ObservableObject {
     private(set) var objectWillChange = ObservableObjectPublisher()
 
     @Published var nameLabel = ""
     @Published var remarkLabel = ""
+    @Published var profileEmoji: Emoji? = Emoji(value: "🙂", name: "Slightly Smile Face") {
+        didSet {
+            print("emoji:", profileEmoji?.value)
+        }
+    }
     private(set) var cardColor = CardViewColor.red
     /// 連絡方法のいずれかが押下された場合に、View を再描画する。
     /// そうすることで、連絡方法のアイコンの画像が切り替わる。
@@ -79,6 +85,7 @@ class NewFriendViewModel: ObservableObject {
     private func addFriend() -> Bool{
         let person = Person()
         person.name = nameLabel
+        person.profileImage = profileEmoji?.value ?? "🫥"
         person.canContactWithLINE = isTappedLineButton
         person.canContactWithFacebook = isTappedFacebookButton
         person.canContactWithTwitter = isTappedTwitterButton
