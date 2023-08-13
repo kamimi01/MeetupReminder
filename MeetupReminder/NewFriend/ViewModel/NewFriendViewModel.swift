@@ -15,9 +15,9 @@ class NewFriendViewModel: NewFriendViewModeProtocol {
 
     @Published var nameLabel = ""
     @Published var remarkLabel = ""
-    @Published var profileEmoji: Emoji? = Emoji(value: "🙂", name: "Slightly Smile Face") {
-        didSet {
-            print("emoji:", profileEmoji?.value)
+    @Published var profileEmoji: Emoji? {
+        willSet {
+            objectWillChange.send()
         }
     }
     private(set) var cardColor = CardViewColor.red

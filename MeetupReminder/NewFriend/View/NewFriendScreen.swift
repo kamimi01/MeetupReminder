@@ -9,7 +9,7 @@ import SwiftUI
 import EmojiPicker
 
 struct NewFriendScreen<ViewModel: NewFriendViewModeProtocol>: View {
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject private var viewModel: ViewModel
     @State private var displayEmojiPicker = false
 
     /// アプリレビュー画面を表示するための条件として使用している

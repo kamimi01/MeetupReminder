@@ -15,7 +15,7 @@ class FriendDetailViewModel: FriendDetailViewModelProtocol {
     private var person = PersonModel()
     @Published var nameLabel = ""
     @Published var remarkLabel = ""
-    @Published var profileEmoji: Emoji? = Emoji(value: "🙂", name: "Slightly Smile Face")
+    @Published var profileEmoji: Emoji?
     private(set) var cardColor = CardViewColor.blue
     /// 連絡方法のいずれかが押下された場合に、View を再描画する。
     /// そうすることで、連絡方法のアイコンの画像が切り替わる。
