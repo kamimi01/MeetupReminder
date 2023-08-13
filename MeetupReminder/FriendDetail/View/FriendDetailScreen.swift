@@ -11,14 +11,12 @@ import EmojiPicker
 
 struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
     @StateObject private var viewModel: ViewModel
-    @State private var profileImageEmoji: String = ""
     @State private var displayEmojiPicker = false
     // 原因解明のため、不具合があったコードを残しておく
 //    @ObservedObject var viewModel: ViewModel
 
     @Environment(\.presentationMode) var presentation
     @FocusState private var isFocused: Bool
-    @FocusState private var isFocusedEmojiTextField: Bool
 
     init(viewModel: ViewModel, person: PersonModel, cardIndex: Int) {
         _viewModel = StateObject(wrappedValue: viewModel)
