@@ -1,0 +1,15 @@
+name: "Build an iOS App"
+
+on:
+  workflow_dispatch:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: check Xcode version
+        run: /usr/bin/xcodebuild -version
+
+      - name: checkout repository
+        uses: actions/checkout@v3
