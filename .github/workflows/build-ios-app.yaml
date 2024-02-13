@@ -22,8 +22,8 @@ jobs:
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         run: |
           # create variables
-          CERTIFICATE_PATH=$RUNNER_TEMP/build_certificate.p12
-          PP_PATH=$RUNNER_TEMP/build_pp.mobileprovision
+          CERTIFICATE_PATH=$RUNNER_TEMP/Certificates-dev.p12
+          PP_PATH=$RUNNER_TEMP/efb6d454-b625-4f28-adf4-dcd180ed5c04.mobileprovision
           KEYCHAIN_PATH=$RUNNER_TEMP/app-signing.keychain-db
 
           # create temporary keychain
