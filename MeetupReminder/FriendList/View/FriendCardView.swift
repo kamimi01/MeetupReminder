@@ -23,7 +23,7 @@ struct FriendCardView: View {
                     VStack(alignment: .leading, spacing: 5) {
                         HStack {
                             Text(person.name)
-                                .foregroundColor(cardColor.cardViewText)
+                                .foregroundColor(.black)
                                 .font(.title2)
                                 .bold()
                             Spacer()
@@ -47,9 +47,8 @@ struct FriendCardView: View {
         }
         .frame(height: 170)
         .frame(maxWidth: .infinity)
-        .background(cardColor.cardViewBackground)
+        .background(Color.cardViewBackground)
         .cornerRadius(20)
-        .shadow(color: .gray, radius: 2, x: 2, y: 2)
     }
 }
 

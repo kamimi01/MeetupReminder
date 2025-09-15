@@ -13,6 +13,9 @@ extension Color {
     static let mainBackground = Color("main_background_color")
 
     // カードビューの背景色
+    static let cardViewBackground = Color("main_card_background_color")
+
+    // カードビューの左端の色
     static let cardViewRed = Color("person_card_color_red")
     static let cardViewGreen = Color("person_card_color_green")
     static let cardViewBlue = Color("person_card_color_blue")
