@@ -91,8 +91,8 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
             }
             VStack {
                 Spacer()
-                AdmobBannerView()
-                    .frame(width: 320, height: 50)
+//                AdmobBannerView()
+//                    .frame(width: 320, height: 50)
             }
         }
         .toolbar {

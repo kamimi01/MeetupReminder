@@ -211,7 +211,7 @@
 			<key>licenseType</key>
 			<string>Apache license 2.0</string>
 			<key>name</key>
-			<string>abseil</string>
+			<string>abseil-cpp-binary</string>
 		</dict>
 		<dict>
 			<key>licenseBody</key>
@@ -467,7 +467,7 @@ SOFTWARE.
 			<key>licenseType</key>
 			<string>Apache license 2.0</string>
 			<key>name</key>
-			<string>Firebase</string>
+			<string>firebase-ios-sdk</string>
 		</dict>
 		<dict>
 			<key>licenseBody</key>
@@ -1769,7 +1769,7 @@ Fuller's blog&lt;/a&gt;
 			<key>licenseType</key>
 			<string>Apache license 2.0</string>
 			<key>name</key>
-			<string>gRPC</string>
+			<string>grpc-binary</string>
 		</dict>
 		<dict>
 			<key>licenseBody</key>
@@ -1979,7 +1979,7 @@ Fuller's blog&lt;/a&gt;
 			<key>licenseType</key>
 			<string>Apache license 2.0</string>
 			<key>name</key>
-			<string>GTMSessionFetcher</string>
+			<string>gtm-session-fetcher</string>
 		</dict>
 		<dict>
 			<key>licenseBody</key>
@@ -2252,7 +2252,7 @@ SOFTWARE.
 			<key>licenseType</key>
 			<string>Apache license 2.0</string>
 			<key>name</key>
-			<string>Lottie</string>
+			<string>lottie-ios</string>
 		</dict>
 		<dict>
 			<key>licenseBody</key>
@@ -2490,7 +2490,7 @@ redistribute it freely, subject to the following restrictions:
 			<key>licenseType</key>
 			<string>Apache license 2.0</string>
 			<key>name</key>
-			<string>Promises</string>
+			<string>promises</string>
 		</dict>
 		<dict>
 			<key>licenseBody</key>
@@ -2674,7 +2674,7 @@ redistribute it freely, subject to the following restrictions:
 			<key>licenseType</key>
 			<string>Apache license 2.0</string>
 			<key>name</key>
-			<string>Realm</string>
+			<string>realm-core</string>
 		</dict>
 		<dict>
 			<key>licenseBody</key>
@@ -2858,7 +2858,7 @@ redistribute it freely, subject to the following restrictions:
 			<key>licenseType</key>
 			<string>Apache license 2.0</string>
 			<key>name</key>
-			<string>RealmDatabase</string>
+			<string>realm-swift</string>
 		</dict>
 		<dict>
 			<key>licenseBody</key>
@@ -3107,7 +3107,7 @@ redistribute it freely, subject to the following restrictions:
 			<key>licenseType</key>
 			<string>Apache license 2.0</string>
 			<key>name</key>
-			<string>SwiftProtobuf</string>
+			<string>swift-protobuf</string>
 		</dict>
 	</array>
 </dict>

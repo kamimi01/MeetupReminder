@@ -47,7 +47,6 @@
 		D4E601002A7FAD11006999AE /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E600FF2A7FAD11006999AE /* Loggable.swift */; };
 		D4E601022A7FADB6006999AE /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601012A7FADB6006999AE /* SettingViewModel.swift */; };
 		D4E601042A7FADF9006999AE /* SettingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601032A7FADF9006999AE /* SettingViewModelProtocol.swift */; };
-		D4E601092A7FDA97006999AE /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = D4E601082A7FDA97006999AE /* GoogleMobileAds */; };
 		D4E6010D2A81C89A006999AE /* AdmobBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6010C2A81C89A006999AE /* AdmobBannerView.swift */; };
 		D4E6010F2A81CB2D006999AE /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6010E2A81CB2D006999AE /* Configuration.swift */; };
 		D4E601112A8230ED006999AE /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E601102A8230ED006999AE /* UIApplication+Extension.swift */; };
@@ -132,7 +131,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4E601092A7FDA97006999AE /* GoogleMobileAds in Frameworks */,
 				D48BAA922A88AB70000AB41D /* EmojiPicker in Frameworks */,
 				D497340B2998E25700FA6272 /* AppInfoList in Frameworks */,
 				D4CEE791298299FE005B863F /* RealmSwift in Frameworks */,
@@ -444,7 +442,6 @@
 				D4CEE79D29833C8E005B863F /* Lottie */,
 				D497340A2998E25700FA6272 /* AppInfoList */,
 				D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */,
-				D4E601082A7FDA97006999AE /* GoogleMobileAds */,
 				D48BAA912A88AB70000AB41D /* EmojiPicker */,
 			);
 			productName = MeetupReminder;
@@ -524,7 +521,6 @@
 				D4CEE79C29833C8D005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				D49734092998E25700FA6272 /* XCRemoteSwiftPackageReference "AppInfoList" */,
 				D4FE57BD2A71DEDE005DD3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				D4E601072A7FDA97006999AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				D48BAA902A88AB70000AB41D /* XCRemoteSwiftPackageReference "EmojiPicker" */,
 			);
 			productRefGroup = D4C6D143297F370F00029E0B /* Products */;
@@ -1006,14 +1002,6 @@
 				version = 4.1.2;
 			};
 		};
-		D4E601072A7FDA97006999AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
 		D4FE57BD2A71DEDE005DD3FC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1049,11 +1037,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D4CEE79C29833C8D005B863F /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
-		};
-		D4E601082A7FDA97006999AE /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D4E601072A7FDA97006999AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
 		};
 		D4FE57BE2A71DEDE005DD3FC /* FirebaseAnalyticsSwift */ = {
 			isa = XCSwiftPackageProductDependency;

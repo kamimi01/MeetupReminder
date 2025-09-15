@@ -22,8 +22,8 @@ struct FriendListScreen<ViewModel: FriendListViewModelProtocol>: View {
                     } else {
                         friendListView()
                     }
-                    AdmobBannerView()
-                        .frame(width: 320, height: 50)
+//                    AdmobBannerView()
+//                        .frame(width: 320, height: 50)
                 }
                 addButton
                     .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 280)
