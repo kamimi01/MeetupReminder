@@ -35,11 +35,21 @@ struct FriendListScreen<ViewModel: FriendListViewModelProtocol>: View {
                 }
             }
         }
+        .searchable(text: $viewModel.searchText, isPresented: $viewModel.isSearchPresented, prompt: "検索")
+        .onSubmit(of: .search) {
+            viewModel.search()
+        }
+        .onChange(of: viewModel.isSearchPresented) { _, newValue in
+            if !newValue {
+                print("Searching cancelled")
+                viewModel.resetSearch()
+            }
+        }
         .accentColor(.mainText)
         .onAppear {
             viewModel.onAppear()
         }
-        .onChange(of: scenePhase) { phase in
+        .onChange(of: scenePhase) { _, phase in
             switch phase {
             case .active:
                 print("active")

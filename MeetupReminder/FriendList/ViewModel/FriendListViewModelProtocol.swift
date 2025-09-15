@@ -11,8 +11,13 @@ protocol FriendListViewModelProtocol: ObservableObject {
     var personList: [PersonModel] { get set }
     var isShowingAppInfoScreen: Bool { get set }
     var isShowingAddFriendScreen: Bool { get set }
+    var searchText: String { get set }
+    var isSearchPresented: Bool { get set }
+
     func onAppear()
     func didActivate()
     func didTapInfoButton()
     func didTapAddButton()
+    func search()
+    func resetSearch()
 }

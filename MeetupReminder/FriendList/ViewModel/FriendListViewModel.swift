@@ -10,13 +10,17 @@ import RealmSwift
 import FirebaseAnalytics
 
 class FriendListViewModel: FriendListViewModelProtocol {
-
     @Published var personList: [PersonModel] = []
-    private var allFriends: Results<Person>? = nil
-    private let realmHelper: RealmHelper
-    private var token: NotificationToken?
     @Published var isShowingAppInfoScreen = false
     @Published var isShowingAddFriendScreen = false
+    @Published var searchText: String = ""
+    @Published var isSearchPresented: Bool = false
+
+    private var allFriends: Results<Person>? = nil
+    private var token: NotificationToken?
+    private var originalPersonList: [PersonModel] = []
+
+    private let realmHelper: RealmHelper
 
     init() {
         print("init呼ばれた")
@@ -29,7 +33,7 @@ class FriendListViewModel: FriendListViewModelProtocol {
             else {
                 return
             }
-            self.personList = Array(allFriendsNotOptional).map {
+            let mappedPersons = Array(allFriendsNotOptional).map {
                 var person = PersonModel()
                 person.initialize(
                     id: $0.id,
@@ -46,6 +50,8 @@ class FriendListViewModel: FriendListViewModelProtocol {
                 )
                 return person
             }
+            self.originalPersonList = mappedPersons
+            self.personList = mappedPersons
         }
     }
 
@@ -73,5 +79,20 @@ class FriendListViewModel: FriendListViewModelProtocol {
 
     func didTapAddButton() {
         isShowingAddFriendScreen = true
+    }
+
+    func search() {
+        if searchText.isEmpty {
+            personList = originalPersonList
+        } else {
+            personList = originalPersonList.filter {
+                $0.name.contains(searchText) || $0.remark.contains(searchText)
+            }
+        }
+    }
+
+    func resetSearch() {
+        searchText = ""
+        personList = originalPersonList
     }
 }
