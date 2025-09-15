@@ -35,10 +35,10 @@ struct NewFriendScreen<ViewModel: NewFriendViewModeProtocol>: View {
                         profileImage
                         VStack(alignment: .leading, spacing: 40) {
                             VStack(alignment: .leading, spacing: 5) {
-                                Text("メモ")
+                                Text("Note")
                                     .foregroundColor(.mainText)
                                     .padding(.horizontal, 5)
-                                TextField("会社の同僚。悩み相談先。", text: $viewModel.remarkLabel, axis: .vertical)
+                                TextField("Colleague", text: $viewModel.remarkLabel, axis: .vertical)
                                     .padding()
                                     .frame(height: 110.0, alignment: .top)
                                     .background(Color.mainBackground)
@@ -49,7 +49,7 @@ struct NewFriendScreen<ViewModel: NewFriendViewModeProtocol>: View {
                                     }
                             }
                             VStack(alignment: .leading, spacing: 20) {
-                                Text("連絡方法")
+                                Text("Contact Methods")
                                     .foregroundColor(.mainText)
                                     .padding(.horizontal, 5)
                                 LazyVGrid(columns: columns) {
@@ -69,7 +69,7 @@ struct NewFriendScreen<ViewModel: NewFriendViewModeProtocol>: View {
 //                        .frame(width: 320, height: 50)
                 }
             }
-            .navigationTitle("新しいともだち")
+            .navigationTitle("New Friend")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading){
@@ -112,7 +112,7 @@ private extension NewFriendScreen {
                         .foregroundColor(.mainBackground)
                 }
             }
-            TextField("", text: $viewModel.nameLabel, prompt: Text("なまえ"))
+            TextField("", text: $viewModel.nameLabel, prompt: Text("Name"))
                 .frame(width: 150)
                 .font(.title2)
                 .fontWeight(.bold)
@@ -123,7 +123,7 @@ private extension NewFriendScreen {
         .sheet(isPresented: $displayEmojiPicker) {
             NavigationView {
                 EmojiPickerView(selectedEmoji: $viewModel.profileEmoji, selectedColor: .cardViewRed)
-                    .navigationTitle("プロフィール絵文字")
+                    .navigationTitle("Emoji")
                     .navigationBarTitleDisplayMode(.inline)
             }
         }
@@ -149,12 +149,12 @@ private extension NewFriendScreen {
                 }
             }
         }) {
-            Text("追加")
+            Text("Add")
                 .foregroundColor(.mainText)
         }
         .alert(isPresented: $viewModel.isShowingAddAlert) {
             print("alert!!")
-            return Alert(title: Text("なまえを入力してください"))
+            return Alert(title: Text("Input friend's name"))
         }
     }
 

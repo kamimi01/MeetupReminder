@@ -28,14 +28,14 @@ struct FriendListScreen<ViewModel: FriendListViewModelProtocol>: View {
                 addButton
                     .position(x: UIScreen.main.bounds.width - 70, y: UIScreen.main.bounds.height - 280)
             }
-            .navigationTitle("ともだち")
+            .navigationTitle("Friend")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing){
                     appInfoButton
                 }
             }
         }
-        .searchable(text: $viewModel.searchText, isPresented: $viewModel.isSearchPresented, prompt: "検索")
+        .searchable(text: $viewModel.searchText, isPresented: $viewModel.isSearchPresented, prompt: "Search")
         .onSubmit(of: .search) {
             viewModel.search()
         }

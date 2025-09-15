@@ -36,10 +36,10 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
                     profileImage
                     VStack(alignment: .leading, spacing: 40) {
                         VStack(alignment: .leading, spacing: 5) {
-                            Text("メモ")
+                            Text("Note")
                                 .foregroundColor(.mainText)
                                 .padding(.horizontal, 5)
-                            TextField("高校の友達。今度ランチに行く。", text: $viewModel.remarkLabel, axis: .vertical)
+                            TextField("Friend from my high school", text: $viewModel.remarkLabel, axis: .vertical)
                                 .padding()
                                 .frame(height : 110.0, alignment: .top)
                                 .background(Color.mainBackground)
@@ -50,7 +50,7 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
                                 }
                         }
                         VStack(alignment: .leading, spacing: 20) {
-                            Text("連絡方法")
+                            Text("Contact Methods")
                                 .foregroundColor(.mainText)
                                 .padding(.horizontal, 5)
                             LazyVGrid(columns: columns) {
@@ -61,7 +61,7 @@ struct FriendDetailScreen<ViewModel: FriendDetailViewModelProtocol>: View {
                         }
                         VStack(alignment: .leading, spacing: 20) {
                             HStack {
-                                Text("通知設定")
+                                Text("Notification Setting")
                                     .foregroundColor(.mainText)
                                     .padding(.horizontal, 5)
                                 Toggle("", isOn: $viewModel.isOnReminder)
@@ -132,7 +132,7 @@ private extension FriendDetailScreen {
                         .foregroundColor(.mainBackground)
                 }
             }
-            TextField("なまえ", text: $viewModel.nameLabel)
+            TextField("Name", text: $viewModel.nameLabel)
                 .frame(maxWidth: .infinity)
                 .font(.title2)
                 .fontWeight(.bold)
@@ -143,7 +143,7 @@ private extension FriendDetailScreen {
         .sheet(isPresented: $displayEmojiPicker) {
             NavigationView {
                 EmojiPickerView(selectedEmoji: $viewModel.profileEmoji, selectedColor: .cardViewRed)
-                    .navigationTitle("プロフィール絵文字")
+                    .navigationTitle("Emoji")
                     .navigationBarTitleDisplayMode(.inline)
             }
         }
@@ -162,7 +162,7 @@ private extension FriendDetailScreen {
                 self.presentation.wrappedValue.dismiss()
             }
         }) {
-            Text("ともだちから削除")
+            Text("Delete")
                 .foregroundColor(viewModel.cardColor.cardViewText)
                 .font(.title3)
                 .bold()
@@ -176,7 +176,7 @@ private extension FriendDetailScreen {
                 presentation.wrappedValue.dismiss()
             }
         }) {
-            Text("完了")
+            Text("Done")
                 .foregroundColor(.mainText)
         }
     }

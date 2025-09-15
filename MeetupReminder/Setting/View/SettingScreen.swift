@@ -31,7 +31,7 @@ struct SettingScreen<ViewModel: SettingViewModelProtocol>: View {
                 ),
                 licenseFileURL: Bundle.main.url(forResource: "license-list", withExtension: "plist")!
             )
-            .navigationTitle("アプリについて")
+            .navigationTitle("About App")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading){
